@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMovimiento));
             this.lbMovimientos = new System.Windows.Forms.Label();
             this.rdDeposito = new System.Windows.Forms.RadioButton();
             this.rdRetiro = new System.Windows.Forms.RadioButton();
@@ -201,6 +202,7 @@
             this.Controls.Add(this.lblClaveCuenta);
             this.Controls.Add(this.grpTipoMovimiento);
             this.Controls.Add(this.lbMovimientos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMovimiento";
             this.Text = "FrmMovimientos";
             this.Load += new System.EventHandler(this.FrmMovimiento_Load);

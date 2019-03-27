@@ -46,6 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmConsultaCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaCuentas.Designer.cs">
+      <DependentUpon>frmConsultaCuentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCuentas.Designer.cs">
+      <DependentUpon>frmCuentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaClientes.Designer.cs">
+      <DependentUpon>frmConsultaClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConsultaCuentasBanco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,19 +94,31 @@
     <Compile Include="FrmMovimiento.Designer.cs">
       <DependentUpon>FrmMovimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tucola.cs">
+    <Compile Include="VentanaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tucola.Designer.cs">
-      <DependentUpon>Tucola.cs</DependentUpon>
+    <Compile Include="VentanaPrincipal.Designer.cs">
+      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmClientes.resx">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaClientes.resx">
+      <DependentUpon>frmConsultaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaCuentas.resx">
+      <DependentUpon>frmConsultaCuentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmConsultaCuentasBanco.resx">
       <DependentUpon>FrmConsultaCuentasBanco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsultaMovimientos.resx">
       <DependentUpon>FrmConsultaMovimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCuentas.resx">
+      <DependentUpon>frmCuentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCuentasBanco.resx">
       <DependentUpon>FrmCuentasBanco.cs</DependentUpon>
@@ -90,8 +126,8 @@
     <EmbeddedResource Include="FrmMovimiento.resx">
       <DependentUpon>FrmMovimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tucola.resx">
-      <DependentUpon>Tucola.cs</DependentUpon>
+    <EmbeddedResource Include="VentanaPrincipal.resx">
+      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
