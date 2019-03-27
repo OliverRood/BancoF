@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmConsultaCuentasBanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultaCuentasBanco.Designer.cs">
+      <DependentUpon>FrmConsultaCuentasBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsultaMovimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultaMovimientos.Designer.cs">
+      <DependentUpon>FrmConsultaMovimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCuentasBanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCuentasBanco.Designer.cs">
+      <DependentUpon>FrmCuentasBanco.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMovimiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +78,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmConsultaCuentasBanco.resx">
+      <DependentUpon>FrmConsultaCuentasBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsultaMovimientos.resx">
+      <DependentUpon>FrmConsultaMovimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCuentasBanco.resx">
+      <DependentUpon>FrmCuentasBanco.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMovimiento.resx">
       <DependentUpon>FrmMovimiento.cs</DependentUpon>
     </EmbeddedResource>
