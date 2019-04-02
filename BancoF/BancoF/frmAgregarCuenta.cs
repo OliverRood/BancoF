@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace BancoF
 {
-    public partial class frnClientes : Form
+    public partial class frmAgregarCuenta : Form
     {
-        public frnClientes()
+        public frmAgregarCuenta()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnConsultaCuenta_Click(object sender, EventArgs e)
         {
 
         }

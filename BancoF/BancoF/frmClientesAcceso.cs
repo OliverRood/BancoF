@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace BancoF
 {
-    public partial class frmCuentas : Form
+    public partial class frmClientesAcceso : Form
     {
-        public frmCuentas()
+        public frmClientesAcceso()
         {
             InitializeComponent();
+        }
+
+        private void lblNombreUsuario_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
