@@ -16,5 +16,11 @@ namespace BancoF
         {
             InitializeComponent();
         }
+
+        private void FrmConsultaMovimientos_Load(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

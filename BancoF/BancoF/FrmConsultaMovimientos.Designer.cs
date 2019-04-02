@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaMovimientos));
             this.dgvMovimientos = new System.Windows.Forms.DataGridView();
-            this.lbMovimientos = new System.Windows.Forms.Label();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClaveDeCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbMovimientos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,6 +45,7 @@
             this.dgvMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMovimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Numero,
+            this.Fecha,
             this.Tipo,
             this.ClaveDeCuenta,
             this.Importe,
@@ -52,22 +55,16 @@
             this.dgvMovimientos.Size = new System.Drawing.Size(964, 442);
             this.dgvMovimientos.TabIndex = 0;
             // 
-            // lbMovimientos
-            // 
-            this.lbMovimientos.AutoSize = true;
-            this.lbMovimientos.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMovimientos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.lbMovimientos.Location = new System.Drawing.Point(18, 36);
-            this.lbMovimientos.Name = "lbMovimientos";
-            this.lbMovimientos.Size = new System.Drawing.Size(183, 32);
-            this.lbMovimientos.TabIndex = 6;
-            this.lbMovimientos.Text = "Movimientos";
-            // 
             // Numero
             // 
             this.Numero.HeaderText = "#";
             this.Numero.Name = "Numero";
             this.Numero.Width = 30;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
             // 
             // Tipo
             // 
@@ -92,6 +89,17 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.Width = 400;
             // 
+            // lbMovimientos
+            // 
+            this.lbMovimientos.AutoSize = true;
+            this.lbMovimientos.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMovimientos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.lbMovimientos.Location = new System.Drawing.Point(18, 36);
+            this.lbMovimientos.Name = "lbMovimientos";
+            this.lbMovimientos.Size = new System.Drawing.Size(183, 32);
+            this.lbMovimientos.TabIndex = 6;
+            this.lbMovimientos.Text = "Movimientos";
+            // 
             // FrmConsultaMovimientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -99,9 +107,11 @@
             this.ClientSize = new System.Drawing.Size(1042, 566);
             this.Controls.Add(this.lbMovimientos);
             this.Controls.Add(this.dgvMovimientos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsultaMovimientos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmConsultaMovimientos";
+            this.Load += new System.EventHandler(this.FrmConsultaMovimientos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -113,6 +123,7 @@
         private System.Windows.Forms.DataGridView dgvMovimientos;
         private System.Windows.Forms.Label lbMovimientos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClaveDeCuenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;

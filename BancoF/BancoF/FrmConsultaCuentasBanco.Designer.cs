@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaCuentasBanco));
             this.lbCuentasBanco = new System.Windows.Forms.Label();
             this.cmbNombre = new System.Windows.Forms.ComboBox();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -142,6 +143,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.cmbNombre);
             this.Controls.Add(this.lbCuentasBanco);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsultaCuentasBanco";
             this.Text = "FrmConsultaCuentasBanco";
             this.ResumeLayout(false);
