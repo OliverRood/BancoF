@@ -1,6 +1,6 @@
 ﻿namespace BancoF
 {
-    partial class frmCuentas
+    partial class frmAgregarCuenta
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCuentas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregarCuenta));
             this.lblCuentas = new System.Windows.Forms.Label();
             this.lblNúmeroCliente = new System.Windows.Forms.Label();
             this.txtNumeroCliente = new System.Windows.Forms.TextBox();
@@ -166,6 +166,7 @@
             this.btnConsultaCuenta.TabIndex = 16;
             this.btnConsultaCuenta.Text = "Consultar";
             this.btnConsultaCuenta.UseVisualStyleBackColor = false;
+            this.btnConsultaCuenta.Click += new System.EventHandler(this.btnConsultaCuenta_Click);
             // 
             // btnLimpiar
             // 
@@ -181,7 +182,7 @@
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             // 
-            // frmCuentas
+            // frmAgregarCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -199,8 +200,8 @@
             this.Controls.Add(this.lblNúmeroCliente);
             this.Controls.Add(this.lblCuentas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmCuentas";
-            this.Text = "Acceso a cuentas";
+            this.Name = "frmAgregarCuenta";
+            this.Text = "Añadir nueva cuenta";
             this.ResumeLayout(false);
             this.PerformLayout();
 

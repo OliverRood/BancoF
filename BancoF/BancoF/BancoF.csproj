@@ -33,8 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,25 +47,34 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cliente.cs" />
+    <Compile Include="Cuenta.cs" />
+    <Compile Include="frmClientesAcceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientesAcceso.Designer.cs">
+      <DependentUpon>frmClientesAcceso.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConsultaCuentas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmConsultaCuentas.Designer.cs">
       <DependentUpon>frmConsultaCuentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCuentas.cs">
+    <Compile Include="frmAgregarCuenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCuentas.Designer.cs">
-      <DependentUpon>frmCuentas.cs</DependentUpon>
+    <Compile Include="frmAgregarCuenta.Designer.cs">
+      <DependentUpon>frmAgregarCuenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmClientes.cs">
+    <Compile Include="frmAñadirCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmClientes.Designer.cs">
-      <DependentUpon>frmClientes.cs</DependentUpon>
+    <Compile Include="frmAñadirCliente.Designer.cs">
+      <DependentUpon>frmAñadirCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="frmConsultaClientes.cs">
       <SubType>Form</SubType>
@@ -88,12 +100,23 @@
     <Compile Include="FrmCuentasBanco.Designer.cs">
       <DependentUpon>FrmCuentasBanco.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMenuClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuClientes.Designer.cs">
+      <DependentUpon>frmMenuClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMovimiento.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMovimiento.Designer.cs">
       <DependentUpon>FrmMovimiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManejaCatalogoCuenta.cs" />
+    <Compile Include="ManejaCliente.cs" />
+    <Compile Include="ManejaCuentas.cs" />
+    <Compile Include="Movimiento.cs" />
+    <Compile Include="TipoCuenta.cs" />
     <Compile Include="VentanaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,8 +125,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmClientes.resx">
-      <DependentUpon>frmClientes.cs</DependentUpon>
+    <EmbeddedResource Include="frmAñadirCliente.resx">
+      <DependentUpon>frmAñadirCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClientesAcceso.resx">
+      <DependentUpon>frmClientesAcceso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultaClientes.resx">
       <DependentUpon>frmConsultaClientes.cs</DependentUpon>
@@ -117,11 +143,14 @@
     <EmbeddedResource Include="FrmConsultaMovimientos.resx">
       <DependentUpon>FrmConsultaMovimientos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCuentas.resx">
-      <DependentUpon>frmCuentas.cs</DependentUpon>
+    <EmbeddedResource Include="frmAgregarCuenta.resx">
+      <DependentUpon>frmAgregarCuenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCuentasBanco.resx">
       <DependentUpon>FrmCuentasBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuClientes.resx">
+      <DependentUpon>frmMenuClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMovimiento.resx">
       <DependentUpon>FrmMovimiento.cs</DependentUpon>

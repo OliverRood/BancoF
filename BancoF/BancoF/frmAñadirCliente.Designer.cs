@@ -1,6 +1,6 @@
 ﻿namespace BancoF
 {
-    partial class frnClientes
+    partial class frmAgregarCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frnClientes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregarCliente));
             this.lblClientes = new System.Windows.Forms.Label();
             this.btnGuardarCliente = new System.Windows.Forms.Button();
             this.brnConsultarCliente = new System.Windows.Forms.Button();
@@ -61,7 +61,7 @@
             this.btnGuardarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGuardarCliente.Location = new System.Drawing.Point(45, 167);
+            this.btnGuardarCliente.Location = new System.Drawing.Point(45, 172);
             this.btnGuardarCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardarCliente.Name = "btnGuardarCliente";
             this.btnGuardarCliente.Size = new System.Drawing.Size(198, 62);
@@ -180,7 +180,7 @@
             this.txtTelefono.Size = new System.Drawing.Size(275, 23);
             this.txtTelefono.TabIndex = 11;
             // 
-            // frnClientes
+            // frmAgregarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -200,8 +200,8 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frnClientes";
-            this.Text = "Acceso a clientes";
+            this.Name = "frmAgregarCliente";
+            this.Text = "Añadir nuevo cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 
