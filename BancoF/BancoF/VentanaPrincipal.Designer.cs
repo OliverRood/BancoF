@@ -34,6 +34,7 @@
             this.tsBank = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.cerrarCesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMovimiento = new System.Windows.Forms.ToolStripMenuItem();
             this.realizarMovimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,23 +42,22 @@
             this.porCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.todoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsCuenta = new System.Windows.Forms.ToolStripMenuItem();
+            this.aperturarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsCliente = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsAltaCliente = new System.Windows.Forms.ToolStripMenuItem();
             this.tsBanco = new System.Windows.Forms.ToolStripMenuItem();
             this.crearTipoCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.movimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsCuenta = new System.Windows.Forms.ToolStripMenuItem();
             this.lblFecha = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblHola = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.aperturarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsCliente = new System.Windows.Forms.ToolStripMenuItem();
-            this.darDeAltaClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cerrarCesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -107,19 +107,26 @@
             // 
             this.acercaDeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(151, 6);
+            // 
+            // cerrarCesionToolStripMenuItem
+            // 
+            this.cerrarCesionToolStripMenuItem.Name = "cerrarCesionToolStripMenuItem";
+            this.cerrarCesionToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.cerrarCesionToolStripMenuItem.Text = "Cerrar sesion";
+            this.cerrarCesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarCesionToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -152,19 +159,55 @@
             // porCuentaToolStripMenuItem
             // 
             this.porCuentaToolStripMenuItem.Name = "porCuentaToolStripMenuItem";
-            this.porCuentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.porCuentaToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.porCuentaToolStripMenuItem.Text = "Por cuenta";
             // 
             // todoToolStripMenuItem
             // 
             this.todoToolStripMenuItem.Name = "todoToolStripMenuItem";
-            this.todoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.todoToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.todoToolStripMenuItem.Text = "Todo";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(196, 6);
+            // 
+            // tsCuenta
+            // 
+            this.tsCuenta.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aperturarToolStripMenuItem,
+            this.consultarToolStripMenuItem2});
+            this.tsCuenta.Name = "tsCuenta";
+            this.tsCuenta.Size = new System.Drawing.Size(63, 21);
+            this.tsCuenta.Text = "Cuenta";
+            // 
+            // aperturarToolStripMenuItem
+            // 
+            this.aperturarToolStripMenuItem.Name = "aperturarToolStripMenuItem";
+            this.aperturarToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.aperturarToolStripMenuItem.Text = "Aperturar cuenta";
+            // 
+            // consultarToolStripMenuItem2
+            // 
+            this.consultarToolStripMenuItem2.Name = "consultarToolStripMenuItem2";
+            this.consultarToolStripMenuItem2.Size = new System.Drawing.Size(179, 22);
+            this.consultarToolStripMenuItem2.Text = "Consultar";
+            // 
+            // tsCliente
+            // 
+            this.tsCliente.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsAltaCliente});
+            this.tsCliente.Name = "tsCliente";
+            this.tsCliente.Size = new System.Drawing.Size(62, 21);
+            this.tsCliente.Text = "Cliente";
+            // 
+            // tsAltaCliente
+            // 
+            this.tsAltaCliente.Name = "tsAltaCliente";
+            this.tsAltaCliente.Size = new System.Drawing.Size(184, 22);
+            this.tsAltaCliente.Text = "Dar de alta cliente";
+            this.tsAltaCliente.Click += new System.EventHandler(this.tsAltaCliente_Click);
             // 
             // tsBanco
             // 
@@ -182,40 +225,31 @@
             this.creaToolStripMenuItem,
             this.consultaToolStripMenuItem});
             this.crearTipoCuentaToolStripMenuItem.Name = "crearTipoCuentaToolStripMenuItem";
-            this.crearTipoCuentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.crearTipoCuentaToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.crearTipoCuentaToolStripMenuItem.Text = "Cuentas banco";
             // 
             // creaToolStripMenuItem
             // 
             this.creaToolStripMenuItem.Name = "creaToolStripMenuItem";
-            this.creaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.creaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.creaToolStripMenuItem.Text = "Crear tipo";
             // 
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.consultaToolStripMenuItem.Text = "Consulta";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(162, 6);
             // 
             // movimientosToolStripMenuItem
             // 
             this.movimientosToolStripMenuItem.Name = "movimientosToolStripMenuItem";
-            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.movimientosToolStripMenuItem.Text = "Movimientos";
-            // 
-            // tsCuenta
-            // 
-            this.tsCuenta.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aperturarToolStripMenuItem,
-            this.consultarToolStripMenuItem2});
-            this.tsCuenta.Name = "tsCuenta";
-            this.tsCuenta.Size = new System.Drawing.Size(63, 21);
-            this.tsCuenta.Text = "Cuenta";
             // 
             // lblFecha
             // 
@@ -260,7 +294,7 @@
             this.lblHola.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
             this.lblHola.Location = new System.Drawing.Point(435, 199);
             this.lblHola.Name = "lblHola";
-            this.lblHola.Size = new System.Drawing.Size(123, 62);
+            this.lblHola.Size = new System.Drawing.Size(128, 75);
             this.lblHola.TabIndex = 9;
             this.lblHola.Text = "Hola";
             // 
@@ -272,42 +306,9 @@
             this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
             this.lblNombre.Location = new System.Drawing.Point(432, 261);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(267, 81);
+            this.lblNombre.Size = new System.Drawing.Size(272, 95);
             this.lblNombre.TabIndex = 10;
             this.lblNombre.Text = "Nombre";
-            // 
-            // aperturarToolStripMenuItem
-            // 
-            this.aperturarToolStripMenuItem.Name = "aperturarToolStripMenuItem";
-            this.aperturarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aperturarToolStripMenuItem.Text = "Aperturar cuenta";
-            // 
-            // consultarToolStripMenuItem2
-            // 
-            this.consultarToolStripMenuItem2.Name = "consultarToolStripMenuItem2";
-            this.consultarToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.consultarToolStripMenuItem2.Text = "Consultar";
-            // 
-            // tsCliente
-            // 
-            this.tsCliente.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.darDeAltaClienteToolStripMenuItem});
-            this.tsCliente.Name = "tsCliente";
-            this.tsCliente.Size = new System.Drawing.Size(62, 21);
-            this.tsCliente.Text = "Cliente";
-            // 
-            // darDeAltaClienteToolStripMenuItem
-            // 
-            this.darDeAltaClienteToolStripMenuItem.Name = "darDeAltaClienteToolStripMenuItem";
-            this.darDeAltaClienteToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.darDeAltaClienteToolStripMenuItem.Text = "Dar de alta cliente";
-            // 
-            // cerrarCesionToolStripMenuItem
-            // 
-            this.cerrarCesionToolStripMenuItem.Name = "cerrarCesionToolStripMenuItem";
-            this.cerrarCesionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cerrarCesionToolStripMenuItem.Text = "Cerrar sesion";
-            this.cerrarCesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarCesionToolStripMenuItem_Click);
             // 
             // frnVentanaPrincipal
             // 
@@ -365,7 +366,7 @@
         private System.Windows.Forms.ToolStripMenuItem aperturarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem tsCliente;
-        private System.Windows.Forms.ToolStripMenuItem darDeAltaClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsAltaCliente;
         private System.Windows.Forms.ToolStripMenuItem cerrarCesionToolStripMenuItem;
     }
 }

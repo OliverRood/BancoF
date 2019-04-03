@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ProyectoBancoP2
+namespace BancoF
 {
     public class ManejaCliente
     {
@@ -19,6 +19,18 @@ namespace ProyectoBancoP2
         {
             clientes.Add(countClave, new Cliente(Nombre, Domicilio, Ciudad, Telefono));
             countClave++;
+        }
+
+        public Cliente[] ObtenerClientes()
+        {
+            Cliente[] temp = new Cliente[clientes.Count()];
+
+            for(int i = 0; i < clientes.Count(); i++)
+            {
+                temp[i] = clientes.ElementAt(i).Value;
+            }
+
+            return temp;
         }
 
         public int Count()

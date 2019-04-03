@@ -1,5 +1,5 @@
 ﻿using System;
-namespace ProyectoBancoP2
+namespace BancoF
 {
     public class TipoCuenta
     {

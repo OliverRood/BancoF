@@ -13,22 +13,31 @@ namespace BancoF
     public partial class frnVentanaPrincipal : Form
     {
 
-        bool FlagUsuario = true;
-        string Nombre = "";
+        private bool flagUsuario = true;
+        private string nombre = "¡";
+        private ManejaCliente manejaCli;
+        private ManejaCuentas manejaCuentas;
+        private ManejaCatalogoCuenta manejaCatalogo;
+        private ManejaMovimiento manejaMovi;
 
-        public frnVentanaPrincipal(bool FlagUsuario, string Nombre)
+        public frnVentanaPrincipal(bool FlagUsuario, string Nombre, ManejaCliente mCli, ManejaCuentas mCue, ManejaCatalogoCuenta mCat, ManejaMovimiento mMov)
         {
+            this.manejaCli = mCli;
+            this.manejaCuentas = mCue;
+            this.manejaCatalogo = mCat;
+            this.manejaMovi = mMov;
+
             InitializeComponent();
-            this.FlagUsuario = FlagUsuario;
-            this.Nombre = Nombre;
+            this.flagUsuario = FlagUsuario;
+            this.nombre += Nombre;
         }
 
         private void frnVentanaPrincipal_Load(object sender, EventArgs e)
         {
             DateTime fecha = DateTime.Now;
             lblFecha.Text = Convert.ToString(fecha);
-            lblNombre.Text = Nombre + " !";
-            if (FlagUsuario == true)
+            lblNombre.Text = nombre + " !";
+            if (flagUsuario)
             {
                 tsMovimiento.Visible = true;
                 tsCuenta.Visible = true;
@@ -46,12 +55,12 @@ namespace BancoF
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void realizarMovimientoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,6 +72,12 @@ namespace BancoF
         private void cerrarCesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tsAltaCliente_Click(object sender, EventArgs e)
+        {
+            frmAgregarCliente altaCliente = new frmAgregarCliente(manejaCli);
+            altaCliente.ShowDialog();
         }
     }
 }

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ProyectoBancoP2
+namespace BancoF
 {
     public class ManejaCuentas
     {

@@ -127,6 +127,7 @@
     <Compile Include="ManejaCatalogoCuenta.cs" />
     <Compile Include="ManejaCliente.cs" />
     <Compile Include="ManejaCuentas.cs" />
+    <Compile Include="ManejaMovimiento.cs" />
     <Compile Include="Movimiento.cs" />
     <Compile Include="TipoCuenta.cs" />
     <Compile Include="VentanaPrincipal.cs">

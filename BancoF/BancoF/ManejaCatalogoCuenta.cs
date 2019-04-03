@@ -1,15 +1,17 @@
 ﻿using System;
-namespace ProyectoBancoP2
+using System.Collections.Generic;
+
+namespace BancoF
 {
     public class ManejaCatalogoCuenta
     {
 
-        private TipoCuenta[] catalogo;
+        private List <TipoCuenta> catalogo;
         private static int pos=0;
 
         public ManejaCatalogoCuenta()
         {
-            catalogo = new TipoCuenta[10];
+            catalogo = new List<TipoCuenta>();
             agregaBase();
         }
 
@@ -22,13 +24,12 @@ namespace ProyectoBancoP2
 
         public void agrega(string Nombre, double MontoMinimo, string Descripcion)
         {
-            catalogo[pos] = new TipoCuenta(Nombre, MontoMinimo, Descripcion);
-            pos++;
+            catalogo.Add(new TipoCuenta(Nombre, MontoMinimo, Descripcion));
         }
 
         public int Count()
         {
-            return pos;
+            return catalogo.Count;
         }
 
         public TipoCuenta consulta(string Nombre)
