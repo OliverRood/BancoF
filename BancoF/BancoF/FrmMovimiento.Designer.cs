@@ -168,8 +168,9 @@
             // 
             // btnRealizarMovimiento
             // 
-            this.btnRealizarMovimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(203)))), ((int)(((byte)(218)))));
+            this.btnRealizarMovimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnRealizarMovimiento.FlatAppearance.BorderSize = 0;
+            this.btnRealizarMovimiento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(203)))), ((int)(((byte)(218)))));
             this.btnRealizarMovimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRealizarMovimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRealizarMovimiento.ForeColor = System.Drawing.SystemColors.ControlLightLight;

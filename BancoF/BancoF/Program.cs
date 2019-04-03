@@ -16,7 +16,7 @@ namespace BancoF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frnVentanaPrincipal());
+            Application.Run(new FrmLogin());
         }
     }
 }
