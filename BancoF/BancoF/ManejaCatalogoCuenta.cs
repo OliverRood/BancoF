@@ -6,12 +6,12 @@ namespace BancoF
     public class ManejaCatalogoCuenta
     {
 
-        private List <TipoCuenta> catalogo;
+        private TipoCuenta[] catalogo;
         private static int pos=0;
 
         public ManejaCatalogoCuenta()
         {
-            catalogo = new List<TipoCuenta>();
+            catalogo = new TipoCuenta[10];
             agregaBase();
         }
 
@@ -24,12 +24,13 @@ namespace BancoF
 
         public void agrega(string Nombre, double MontoMinimo, string Descripcion)
         {
-            catalogo.Add(new TipoCuenta(Nombre, MontoMinimo, Descripcion));
+            catalogo[pos] = new TipoCuenta(Nombre, MontoMinimo, Descripcion);
+            pos++;
         }
 
         public int Count()
         {
-            return catalogo.Count;
+            return pos;
         }
 
         public TipoCuenta consulta(string Nombre)
