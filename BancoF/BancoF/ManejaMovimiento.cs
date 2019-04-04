@@ -66,6 +66,16 @@ namespace BancoF
             }
             return movimientosClientes;
         }
+        public Movimiento[] obtieneMovimientos()
+        {
+            Movimiento[] movimientosAux = new Movimiento[movimientos.Count];
+            for (int i = 0; i < movimientos.Count; i++)
+            {
+                movimientosAux[i] = movimientos[i];
+            }
+            return movimientosAux;
+        }
+
 
         public String ImprimirPorCuenta(int claveC)
         {

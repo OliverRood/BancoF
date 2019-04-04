@@ -19,35 +19,59 @@ namespace BancoF
         KeyValuePair<int, Cuenta>[] cuentasCliente;
         Movimiento[] movimientosPorCliente;
         string nombreCliente;
-        bool flagDisplay;
+        int DisplayIndicator; // 1.- Por cuenta 2.- Todo (Movimientos del cliente) 3.- Movimientos (Todos los movimientos en el banco)
 
-        public FrmConsultaMovimientos(ManejaMovimiento manejaMovimiento, ManejaCliente manejaCliente, ManejaCuentas manejaCuentas, string nombreCliente, bool flagDisplay)
+        public FrmConsultaMovimientos(ManejaMovimiento manejaMovimiento, ManejaCliente manejaCliente, ManejaCuentas manejaCuentas, string nombreCliente, int DisplayIndicator)
         {
             this.manejaMovimiento = manejaMovimiento;
             this.manejaCliente = manejaCliente;
             this.manejaCuentas = manejaCuentas;
             this.nombreCliente = nombreCliente;
-            this.flagDisplay = flagDisplay;
+            this.DisplayIndicator = DisplayIndicator;
             InitializeComponent();
         }
 
         private void FrmConsultaMovimientos_Load(object sender, EventArgs e)
         {
-            int claveCliente = manejaCliente.KeyCliente(nombreCliente);
-            cuentasCliente = manejaCuentas.ObtenerPorCliente(claveCliente);
-            foreach (KeyValuePair<int, Cuenta> item in cuentasCliente)
+            switch (DisplayIndicator)
             {
-                if (item.Value.pClaveCliente == claveCliente)
-                {
-                    cmbCuentas.Items.Add(item.Key);
-                }
+                case 1:
+                case 2:
+                    int claveCliente = manejaCliente.KeyCliente(nombreCliente);
+                    cuentasCliente = manejaCuentas.ObtenerPorCliente(claveCliente);
+                    foreach (KeyValuePair<int, Cuenta> item in cuentasCliente)
+                    {
+                        if (item.Value.pClaveCliente == claveCliente)
+                        {
+                            cmbCuentas.Items.Add(item.Key);
+                        }
+                    }
+                    movimientosPorCliente = manejaMovimiento.obtieneMovimientos();
+                    foreach (Movimiento item in movimientosPorCliente)
+                    {
+                        if (item != null)
+                        {
+                            for (int i = 0; i < cuentasCliente.Length; i++)
+                            {
+                                if (item.pClaveCuenta == cuentasCliente[i].Key)
+                                {
+                                    dgvMovimientos.Rows.Add(item.pFecha, item.pTipo, item.pClaveCuenta, item.pImporte, item.pNombreDepositador);
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 3:
+                    Movimiento[] movimientos = manejaMovimiento.obtieneMovimientos();
+                    foreach (Movimiento item in movimientos)
+                    {
+                        if (item != null) dgvMovimientos.Rows.Add(item.pFecha, item.pTipo, item.pClaveCuenta, item.pImporte, item.pNombreDepositador);
+                    }
+                    break;
+                default:
+                    break;
             }
-            movimientosPorCliente = manejaMovimiento.obtieneMovimientosPorCliente(claveCliente);
-            foreach (Movimiento item in movimientosPorCliente)
-            {
-                dgvMovimientos.Rows.Add(item.pFecha, item.pTipo, item.pClaveCuenta, item.pImporte, item.pNombreDepositador);
-            }
-            if (flagDisplay) cmbCuentas.Visible=false;
+            if (DisplayIndicator!=1) cmbCuentas.Visible=false;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -60,7 +84,7 @@ namespace BancoF
             string cuentaCmb = Convert.ToString(cmbCuentas.SelectedItem);
             for (int i = 0; i < movimientosPorCliente.Length; i++)
             {
-                if (dgvMovimientos.Rows[i].Cells[2].ToString().Equals(cuentaCmb))
+                if (dgvMovimientos.Rows[i].Cells[3].Value.Equals(cuentaCmb))
                 {
                     dgvMovimientos.Rows[i].Visible = false;
                 }

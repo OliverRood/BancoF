@@ -84,12 +84,7 @@ namespace BancoF
             frmAgregarCliente altaCliente = new frmAgregarCliente(manejaCli);
             altaCliente.ShowDialog();
         }
-
-        private void tsCuenta_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmConsultaCuentasBanco frmConsultaCuentasBanco = new FrmConsultaCuentasBanco(manejaCatalogo);
@@ -107,6 +102,24 @@ namespace BancoF
             int claveCliente = manejaCli.KeyCliente(nombre);
             frmAgregarCuenta añadirCuenta = new frmAgregarCuenta(claveCliente, manejaCuentas, manejaCatalogo);
             añadirCuenta.ShowDialog();
+        }
+
+        private void porCuentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultaMovimientos frmConsultaMovimientos = new FrmConsultaMovimientos(manejaMovi, manejaCli, manejaCuentas, nombre, 1);
+            frmConsultaMovimientos.ShowDialog();
+        }
+
+        private void todoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultaMovimientos frmConsultaMovimientos = new FrmConsultaMovimientos(manejaMovi, manejaCli, manejaCuentas, nombre, 2);
+            frmConsultaMovimientos.ShowDialog();
+        }
+
+        private void movimientosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultaMovimientos frmConsultaMovimientos = new FrmConsultaMovimientos(manejaMovi, manejaCli, manejaCuentas, nombre, 3);
+            frmConsultaMovimientos.ShowDialog();
         }
     }
 }

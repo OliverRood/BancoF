@@ -66,6 +66,7 @@ namespace BancoF
                         if (manejaMovimiento.Deposito(fecha, monto, claveCuenta, nombre))
                         {
                             MessageBox.Show("Deposito realizado con exito", "Realizar movimiento", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
                         }
                         else
                         {
@@ -92,6 +93,14 @@ namespace BancoF
                     }
                 }
             }
+        }
+
+        public void LimpiarAux()
+        {
+            txtClave.Clear();
+            txtMonto.Clear();
+            if (string.IsNullOrEmpty(nombre)) txtNombre.Clear();
+            epMovimiento.Clear();
         }
 
         public bool Valida(string claveCuenta, string monto, string nombre)

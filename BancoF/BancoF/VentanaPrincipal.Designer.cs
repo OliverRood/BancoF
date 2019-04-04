@@ -160,14 +160,14 @@
             // porCuentaToolStripMenuItem
             // 
             this.porCuentaToolStripMenuItem.Name = "porCuentaToolStripMenuItem";
-            this.porCuentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.porCuentaToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.porCuentaToolStripMenuItem.Text = "Por cuenta";
             this.porCuentaToolStripMenuItem.Click += new System.EventHandler(this.porCuentaToolStripMenuItem_Click);
             // 
             // todoToolStripMenuItem
             // 
             this.todoToolStripMenuItem.Name = "todoToolStripMenuItem";
-            this.todoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.todoToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.todoToolStripMenuItem.Text = "Todo";
             this.todoToolStripMenuItem.Click += new System.EventHandler(this.todoToolStripMenuItem_Click);
             // 
@@ -184,19 +184,18 @@
             this.tsCuenta.Name = "tsCuenta";
             this.tsCuenta.Size = new System.Drawing.Size(69, 21);
             this.tsCuenta.Text = "Cuentas";
-            this.tsCuenta.Click += new System.EventHandler(this.tsCuenta_Click);
             // 
             // tsAgregarCuenta
             // 
             this.tsAgregarCuenta.Name = "tsAgregarCuenta";
-            this.tsAgregarCuenta.Size = new System.Drawing.Size(180, 22);
+            this.tsAgregarCuenta.Size = new System.Drawing.Size(179, 22);
             this.tsAgregarCuenta.Text = "Aperturar cuenta";
             this.tsAgregarCuenta.Click += new System.EventHandler(this.tsAgregarCuenta_Click);
             // 
             // consultarToolStripMenuItem2
             // 
             this.consultarToolStripMenuItem2.Name = "consultarToolStripMenuItem2";
-            this.consultarToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.consultarToolStripMenuItem2.Size = new System.Drawing.Size(179, 22);
             this.consultarToolStripMenuItem2.Text = "Consultar";
             // 
             // tsCliente
@@ -309,7 +308,7 @@
             this.lblHola.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
             this.lblHola.Location = new System.Drawing.Point(435, 199);
             this.lblHola.Name = "lblHola";
-            this.lblHola.Size = new System.Drawing.Size(128, 75);
+            this.lblHola.Size = new System.Drawing.Size(123, 62);
             this.lblHola.TabIndex = 9;
             this.lblHola.Text = "Hola";
             // 
@@ -321,7 +320,7 @@
             this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
             this.lblNombre.Location = new System.Drawing.Point(432, 261);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(272, 95);
+            this.lblNombre.Size = new System.Drawing.Size(267, 81);
             this.lblNombre.TabIndex = 10;
             this.lblNombre.Text = "Nombre";
             // 
