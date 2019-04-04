@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregarCuenta));
             this.lblCuentas = new System.Windows.Forms.Label();
             this.lblTipodeCuenta = new System.Windows.Forms.Label();
@@ -36,13 +37,15 @@
             this.lblNumeroCuenta = new System.Windows.Forms.Label();
             this.txtNumCuenta = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.msktxtMonto = new System.Windows.Forms.MaskedTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsGuardarCuenta = new System.Windows.Forms.ToolStripMenuItem();
             this.tsSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.txtMontoApertura = new System.Windows.Forms.TextBox();
+            this.errorP = new System.Windows.Forms.ErrorProvider(this.components);
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorP)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCuentas
@@ -110,6 +113,7 @@
             this.txtNumCuenta.Name = "txtNumCuenta";
             this.txtNumCuenta.Size = new System.Drawing.Size(288, 25);
             this.txtNumCuenta.TabIndex = 14;
+            this.txtNumCuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumCuenta_KeyPress);
             // 
             // button1
             // 
@@ -125,15 +129,7 @@
             this.button1.TabIndex = 18;
             this.button1.Text = "Limpiar";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // msktxtMonto
-            // 
-            this.msktxtMonto.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msktxtMonto.Location = new System.Drawing.Point(543, 334);
-            this.msktxtMonto.Mask = "$";
-            this.msktxtMonto.Name = "msktxtMonto";
-            this.msktxtMonto.Size = new System.Drawing.Size(262, 24);
-            this.msktxtMonto.TabIndex = 19;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // menuStrip1
             // 
@@ -180,13 +176,30 @@
             this.btnSalir.Text = "x";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
+            // txtMontoApertura
+            // 
+            this.txtMontoApertura.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtMontoApertura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtMontoApertura.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMontoApertura.Location = new System.Drawing.Point(543, 335);
+            this.txtMontoApertura.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMontoApertura.Name = "txtMontoApertura";
+            this.txtMontoApertura.Size = new System.Drawing.Size(262, 25);
+            this.txtMontoApertura.TabIndex = 22;
+            // 
+            // errorP
+            // 
+            this.errorP.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorP.ContainerControl = this;
+            this.errorP.Icon = ((System.Drawing.Icon)(resources.GetObject("errorP.Icon")));
+            // 
             // frmAgregarCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.txtMontoApertura);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.msktxtMonto);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtNumCuenta);
             this.Controls.Add(this.lblNumeroCuenta);
@@ -204,6 +217,7 @@
             this.Load += new System.EventHandler(this.frmAgregarCuenta_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,11 +232,12 @@
         private System.Windows.Forms.Label lblNumeroCuenta;
         private System.Windows.Forms.TextBox txtNumCuenta;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.MaskedTextBox msktxtMonto;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cuentasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsGuardarCuenta;
         private System.Windows.Forms.ToolStripMenuItem tsSalir;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.TextBox txtMontoApertura;
+        private System.Windows.Forms.ErrorProvider errorP;
     }
 }

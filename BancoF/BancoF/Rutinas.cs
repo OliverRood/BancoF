@@ -55,6 +55,15 @@ namespace BancoF
             return false;
         }
 
+        public static bool ValidaDecimal(string value)
+        {
+            Regex regex = new Regex(@"^\d+([.]\d{1,2})?$");
+            Match match = regex.Match(value);
+            if (match.Success)
+                return true;
+
+            return false;
+        }
 
     }
 }

@@ -39,16 +39,23 @@ namespace BancoF
 
         private void tsGuardarCliente_Click(object sender, EventArgs e)
         {
-            string nombreCliente = txtNombreCliente.Text;
-            string domicilio = txtDomicilio.Text;
-            string ciudad = cmbCiudad.Text;
-            string tel = txtTelefono.Text;
-
-            if (ValidaDatos())
+            DialogResult res= MessageBox.Show("¿Desea guardar los datos del cliente?","Guardar",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+            if(res==DialogResult.Yes)
             {
-                manejaCli.Agrega(nombreCliente, domicilio, ciudad, tel);
-                MessageBox.Show("Cliente agregado exitosamente.","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                string nombreCliente = txtNombreCliente.Text;
+                string domicilio = txtDomicilio.Text;
+                string ciudad = cmbCiudad.Text;
+                string tel = txtTelefono.Text;
+
+                if (ValidaDatos())
+                {
+                    manejaCli.Agrega(nombreCliente, domicilio, ciudad, tel);
+                    MessageBox.Show("Cliente agregado exitosamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    limpiar();
+                }
             }
+
+            
 
         }
 
