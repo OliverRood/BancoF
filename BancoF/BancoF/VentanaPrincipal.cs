@@ -70,7 +70,7 @@ namespace BancoF
 
         private void realizarMovimientoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmMovimiento frmMovimiento = new FrmMovimiento(manejaMovi, manejaCuentas, manejaCli, nombre);
+            FrmMovimiento frmMovimiento = new FrmMovimiento(manejaMovi, manejaCuentas, manejaCli, manejaCatalogo, nombre);
             frmMovimiento.ShowDialog();
         }
 
@@ -90,10 +90,16 @@ namespace BancoF
 
         }
 
-        private void tsConsultaClientes_Click(object sender, EventArgs e)
+        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmConsultaClientes consultaClientes = new frmConsultaClientes(manejaCli, manejaCuentas);
-            consultaClientes.ShowDialog();
+            FrmConsultaCuentasBanco frmConsultaCuentasBanco = new FrmConsultaCuentasBanco(manejaCatalogo);
+            frmConsultaCuentasBanco.ShowDialog();
+        }
+
+        private void creaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCuentasBanco frmCuentasBanco = new FrmCuentasBanco(manejaCatalogo);
+            frmCuentasBanco.ShowDialog();
         }
     }
 }

@@ -48,6 +48,8 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.epMovimiento = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.lblDateTimeNow = new System.Windows.Forms.Label();
             this.grpTipoMovimiento.SuspendLayout();
             this.msMovimiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epMovimiento)).BeginInit();
@@ -79,7 +81,6 @@
             this.rdDeposito.TabStop = true;
             this.rdDeposito.Text = "Deposito";
             this.rdDeposito.UseVisualStyleBackColor = true;
-            this.rdDeposito.CheckedChanged += new System.EventHandler(this.rdDeposito_CheckedChanged);
             // 
             // rdRetiro
             // 
@@ -95,7 +96,6 @@
             this.rdRetiro.TabStop = true;
             this.rdRetiro.Text = "Retiro";
             this.rdRetiro.UseVisualStyleBackColor = true;
-            this.rdRetiro.CheckedChanged += new System.EventHandler(this.rdRetiro_CheckedChanged);
             // 
             // grpTipoMovimiento
             // 
@@ -132,6 +132,7 @@
             this.txtClave.Size = new System.Drawing.Size(412, 19);
             this.txtClave.TabIndex = 8;
             this.txtClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClave_KeyPress);
+            this.txtClave.Validated += new System.EventHandler(this.txtClave_Validated);
             // 
             // txtMonto
             // 
@@ -144,6 +145,7 @@
             this.txtMonto.Size = new System.Drawing.Size(412, 19);
             this.txtMonto.TabIndex = 10;
             this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
+            this.txtMonto.Validated += new System.EventHandler(this.txtMonto_Validated);
             // 
             // lblMonto
             // 
@@ -167,6 +169,7 @@
             this.txtNombre.Size = new System.Drawing.Size(412, 19);
             this.txtNombre.TabIndex = 12;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            this.txtNombre.Validated += new System.EventHandler(this.txtNombre_Validated);
             // 
             // lblNombre
             // 
@@ -191,6 +194,7 @@
             this.btnLimpiar.TabIndex = 15;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnSalir
             // 
@@ -229,19 +233,20 @@
             // realizarMovimientoToolStripMenuItem
             // 
             this.realizarMovimientoToolStripMenuItem.Name = "realizarMovimientoToolStripMenuItem";
-            this.realizarMovimientoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.realizarMovimientoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
+            this.realizarMovimientoToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.realizarMovimientoToolStripMenuItem.Text = "Realizar movimiento";
             this.realizarMovimientoToolStripMenuItem.Click += new System.EventHandler(this.realizarMovimientoToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(179, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(215, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -249,12 +254,36 @@
             // 
             this.epMovimiento.ContainerControl = this;
             // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
+            this.lblFecha.Location = new System.Drawing.Point(121, 320);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(59, 20);
+            this.lblFecha.TabIndex = 18;
+            this.lblFecha.Text = "Fecha";
+            // 
+            // lblDateTimeNow
+            // 
+            this.lblDateTimeNow.AutoSize = true;
+            this.lblDateTimeNow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateTimeNow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.lblDateTimeNow.Location = new System.Drawing.Point(136, 358);
+            this.lblDateTimeNow.Name = "lblDateTimeNow";
+            this.lblDateTimeNow.Size = new System.Drawing.Size(14, 20);
+            this.lblDateTimeNow.TabIndex = 19;
+            this.lblDateTimeNow.Text = "-";
+            // 
             // FrmMovimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.lblDateTimeNow);
+            this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.txtNombre);
@@ -303,5 +332,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ErrorProvider epMovimiento;
+        private System.Windows.Forms.Label lblDateTimeNow;
+        private System.Windows.Forms.Label lblFecha;
     }
 }

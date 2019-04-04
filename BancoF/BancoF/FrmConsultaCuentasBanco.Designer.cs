@@ -59,6 +59,7 @@
             this.cmbNombre.Name = "cmbNombre";
             this.cmbNombre.Size = new System.Drawing.Size(227, 21);
             this.cmbNombre.TabIndex = 8;
+            this.cmbNombre.SelectedIndexChanged += new System.EventHandler(this.cmbNombre_SelectedIndexChanged);
             // 
             // lblNombre
             // 
@@ -161,6 +162,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsultaCuentasBanco";
             this.Text = "FrmConsultaCuentasBanco";
+            this.Load += new System.EventHandler(this.FrmConsultaCuentasBanco_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
