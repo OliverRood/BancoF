@@ -52,17 +52,30 @@ namespace BancoF
             return cuentas.Count;
         }
 
-        public String ImprimirPorCliente(int claveCliente)
+        public int NumCuentasCliente(int claveCliente)
         {
-            string res = "";
-            foreach (KeyValuePair<int, Cuenta> data in cuentas)
-            {
-                if (claveCliente == data.Value.pClaveCliente)
+            int numCuentas = 0;
+
+            foreach (Cuenta item in cuentas.Values)
+                if (item.pClaveCliente == claveCliente)
+                    numCuentas++;
+
+            return numCuentas;
+        }
+
+        public KeyValuePair<int, Cuenta>[] ObtenerPorCliente(int claveCliente)
+        {
+            KeyValuePair<int, Cuenta>[] temp = new KeyValuePair<int, Cuenta>[NumCuentasCliente(claveCliente)];
+            int count = 0;
+
+            foreach(KeyValuePair<int, Cuenta> item in cuentas)
+                if (item.Value.pClaveCliente == claveCliente)
                 {
-                    res += String.Format(" CLAVE DE LA CUENTA: {0,-3:D4}\n{1}",data.Key,data.Value.ToString());
+                    temp[count] = item;
+                    count++;
                 }
-            }
-            return res;         
+            
+            return temp;         
         }
     }
 }

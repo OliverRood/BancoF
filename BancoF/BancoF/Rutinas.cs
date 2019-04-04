@@ -45,6 +45,16 @@ namespace BancoF
             return false;
         }
 
+        public static bool ValidaNumCuenta(string value)
+        {
+            Regex regex = new Regex(@"^(\d{7})$");
+            Match match = regex.Match(value);
+            if (match.Success)
+                return true;
+
+            return false;
+        }
+
 
     }
 }

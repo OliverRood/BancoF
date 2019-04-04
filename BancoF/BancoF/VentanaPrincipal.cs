@@ -90,5 +90,10 @@ namespace BancoF
 
         }
 
+        private void tsConsultaClientes_Click(object sender, EventArgs e)
+        {
+            frmConsultaClientes consultaClientes = new frmConsultaClientes(manejaCli, manejaCuentas);
+            consultaClientes.ShowDialog();
+        }
     }
 }

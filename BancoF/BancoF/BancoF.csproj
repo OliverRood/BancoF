@@ -64,12 +64,6 @@
     <Compile Include="frmClientesAcceso.Designer.cs">
       <DependentUpon>frmClientesAcceso.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaCuentas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmConsultaCuentas.Designer.cs">
-      <DependentUpon>frmConsultaCuentas.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAgregarCuenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,9 +144,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultaClientes.resx">
       <DependentUpon>frmConsultaClientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultaCuentas.resx">
-      <DependentUpon>frmConsultaCuentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsultaCuentasBanco.resx">
       <DependentUpon>FrmConsultaCuentasBanco.cs</DependentUpon>
