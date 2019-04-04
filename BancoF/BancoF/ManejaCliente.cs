@@ -59,20 +59,15 @@ namespace BancoF
             return keyC;
         }
 
-        public string Consulta(int key)
+        public Cliente ObtenerCliente(int key)
         {
-            string str="";
-            for (int i = 0; i < clientes.Count; i++)
-            {
-                var dato = clientes.ElementAt(i);
-                Cliente c = dato.Value;
-                int keyA = dato.Key;
-                if (keyA==key)
-                {
-                    str = "\n CLAVE CLIENTE: "+keyA+"\n"+c.ToString();
-                }
-            }
-            return str;
+            Cliente temp = null;
+
+            foreach (KeyValuePair<int, Cliente> item in clientes)
+                if (item.Key == key)
+                    temp = item.Value;
+
+            return temp;
         }
 
         public override string ToString()

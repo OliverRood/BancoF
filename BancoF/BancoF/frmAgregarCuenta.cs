@@ -12,6 +12,11 @@ namespace BancoF
 {
     public partial class frmAgregarCuenta : Form
     {
+
+        private ManejaCuentas manejaCuentas;
+        private ManejaCatalogoCuenta manejaCatalogo;
+        int ClaveCliente;
+
         public frmAgregarCuenta()
         {
             InitializeComponent();
@@ -20,6 +25,13 @@ namespace BancoF
         private void btnConsultaCuenta_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmAgregarCuenta_Load(object sender, EventArgs e)
+        {
+            
+
+            cmbTipoCuenta.SelectedIndex = 0;
         }
     }
 }

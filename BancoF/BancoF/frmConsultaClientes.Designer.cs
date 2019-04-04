@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaClientes));
             this.lblClientes = new System.Windows.Forms.Label();
             this.lblClienteConsulta = new System.Windows.Forms.Label();
@@ -39,9 +42,13 @@
             this.txtCiudad = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.btnLimpiar = new System.Windows.Forms.Button();
             this.cmbNombreCliente = new System.Windows.Forms.ComboBox();
             this.dgvCuentasCliente = new System.Windows.Forms.DataGridView();
+            this.txtClaveCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTipoCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSaldoActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblCuentasCliente = new System.Windows.Forms.Label();
+            this.lblDatosCli = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuentasCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +78,7 @@
             // 
             this.lblClaveCliente.AutoSize = true;
             this.lblClaveCliente.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClaveCliente.Location = new System.Drawing.Point(52, 198);
+            this.lblClaveCliente.Location = new System.Drawing.Point(52, 244);
             this.lblClaveCliente.Name = "lblClaveCliente";
             this.lblClaveCliente.Size = new System.Drawing.Size(45, 17);
             this.lblClaveCliente.TabIndex = 4;
@@ -83,7 +90,7 @@
             this.txtClaveCliente.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtClaveCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtClaveCliente.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClaveCliente.Location = new System.Drawing.Point(55, 224);
+            this.txtClaveCliente.Location = new System.Drawing.Point(55, 270);
             this.txtClaveCliente.Name = "txtClaveCliente";
             this.txtClaveCliente.ReadOnly = true;
             this.txtClaveCliente.Size = new System.Drawing.Size(239, 24);
@@ -93,7 +100,7 @@
             // 
             this.lblDomicilio.AutoSize = true;
             this.lblDomicilio.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDomicilio.Location = new System.Drawing.Point(52, 259);
+            this.lblDomicilio.Location = new System.Drawing.Point(52, 305);
             this.lblDomicilio.Name = "lblDomicilio";
             this.lblDomicilio.Size = new System.Drawing.Size(68, 17);
             this.lblDomicilio.TabIndex = 6;
@@ -104,7 +111,7 @@
             this.txtDomicilio.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtDomicilio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDomicilio.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDomicilio.Location = new System.Drawing.Point(55, 286);
+            this.txtDomicilio.Location = new System.Drawing.Point(55, 332);
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.ReadOnly = true;
             this.txtDomicilio.Size = new System.Drawing.Size(239, 24);
@@ -114,7 +121,7 @@
             // 
             this.lblCiudad.AutoSize = true;
             this.lblCiudad.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCiudad.Location = new System.Drawing.Point(52, 324);
+            this.lblCiudad.Location = new System.Drawing.Point(52, 370);
             this.lblCiudad.Name = "lblCiudad";
             this.lblCiudad.Size = new System.Drawing.Size(54, 17);
             this.lblCiudad.TabIndex = 8;
@@ -125,7 +132,7 @@
             this.txtCiudad.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtCiudad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCiudad.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCiudad.Location = new System.Drawing.Point(55, 353);
+            this.txtCiudad.Location = new System.Drawing.Point(55, 399);
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.ReadOnly = true;
             this.txtCiudad.Size = new System.Drawing.Size(239, 24);
@@ -135,7 +142,7 @@
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono.Location = new System.Drawing.Point(52, 393);
+            this.lblTelefono.Location = new System.Drawing.Point(52, 439);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(135, 17);
             this.lblTelefono.TabIndex = 10;
@@ -146,51 +153,90 @@
             this.txtTelefono.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtTelefono.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtTelefono.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(55, 426);
+            this.txtTelefono.Location = new System.Drawing.Point(55, 472);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.ReadOnly = true;
             this.txtTelefono.Size = new System.Drawing.Size(239, 24);
             this.txtTelefono.TabIndex = 11;
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnLimpiar.Location = new System.Drawing.Point(55, 463);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(141, 32);
-            this.btnLimpiar.TabIndex = 13;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = false;
             // 
             // cmbNombreCliente
             // 
             this.cmbNombreCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNombreCliente.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbNombreCliente.FormattingEnabled = true;
+            this.cmbNombreCliente.Items.AddRange(new object[] {
+            "SELECCIONE AL CLIENTE"});
             this.cmbNombreCliente.Location = new System.Drawing.Point(55, 160);
             this.cmbNombreCliente.Name = "cmbNombreCliente";
             this.cmbNombreCliente.Size = new System.Drawing.Size(239, 25);
             this.cmbNombreCliente.TabIndex = 14;
+            this.cmbNombreCliente.SelectedIndexChanged += new System.EventHandler(this.cmbNombreCliente_SelectedIndexChanged);
             // 
             // dgvCuentasCliente
             // 
             this.dgvCuentasCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCuentasCliente.Location = new System.Drawing.Point(321, 160);
+            this.dgvCuentasCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.txtClaveCuenta,
+            this.txtTipoCuenta,
+            this.txtSaldoActual});
+            this.dgvCuentasCliente.Location = new System.Drawing.Point(419, 139);
             this.dgvCuentasCliente.Name = "dgvCuentasCliente";
-            this.dgvCuentasCliente.Size = new System.Drawing.Size(240, 150);
+            this.dgvCuentasCliente.Size = new System.Drawing.Size(474, 381);
             this.dgvCuentasCliente.TabIndex = 15;
+            // 
+            // txtClaveCuenta
+            // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClaveCuenta.DefaultCellStyle = dataGridViewCellStyle1;
+            this.txtClaveCuenta.HeaderText = "Clave";
+            this.txtClaveCuenta.Name = "txtClaveCuenta";
+            this.txtClaveCuenta.Width = 130;
+            // 
+            // txtTipoCuenta
+            // 
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipoCuenta.DefaultCellStyle = dataGridViewCellStyle2;
+            this.txtTipoCuenta.HeaderText = "Tipo de cuenta";
+            this.txtTipoCuenta.Name = "txtTipoCuenta";
+            this.txtTipoCuenta.Width = 160;
+            // 
+            // txtSaldoActual
+            // 
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSaldoActual.DefaultCellStyle = dataGridViewCellStyle3;
+            this.txtSaldoActual.HeaderText = "Saldo Actual ";
+            this.txtSaldoActual.Name = "txtSaldoActual";
+            this.txtSaldoActual.Width = 140;
+            // 
+            // lblCuentasCliente
+            // 
+            this.lblCuentasCliente.AutoSize = true;
+            this.lblCuentasCliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCuentasCliente.Location = new System.Drawing.Point(566, 97);
+            this.lblCuentasCliente.Name = "lblCuentasCliente";
+            this.lblCuentasCliente.Size = new System.Drawing.Size(157, 19);
+            this.lblCuentasCliente.TabIndex = 16;
+            this.lblCuentasCliente.Text = "Cuentas del Cliente";
+            // 
+            // lblDatosCli
+            // 
+            this.lblDatosCli.AutoSize = true;
+            this.lblDatosCli.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatosCli.Location = new System.Drawing.Point(51, 208);
+            this.lblDatosCli.Name = "lblDatosCli";
+            this.lblDatosCli.Size = new System.Drawing.Size(131, 18);
+            this.lblDatosCli.TabIndex = 17;
+            this.lblDatosCli.Text = "Datos del cliente:";
             // 
             // frmConsultaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 562);
+            this.Controls.Add(this.lblDatosCli);
+            this.Controls.Add(this.lblCuentasCliente);
             this.Controls.Add(this.dgvCuentasCliente);
             this.Controls.Add(this.cmbNombreCliente);
-            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.txtCiudad);
@@ -223,8 +269,12 @@
         private System.Windows.Forms.TextBox txtCiudad;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.ComboBox cmbNombreCliente;
         private System.Windows.Forms.DataGridView dgvCuentasCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtClaveCuenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtTipoCuenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtSaldoActual;
+        private System.Windows.Forms.Label lblCuentasCliente;
+        private System.Windows.Forms.Label lblDatosCli;
     }
 }

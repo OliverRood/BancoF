@@ -30,17 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregarCuenta));
             this.lblCuentas = new System.Windows.Forms.Label();
-            this.lblNúmeroCliente = new System.Windows.Forms.Label();
-            this.txtNumeroCliente = new System.Windows.Forms.TextBox();
             this.lblTipodeCuenta = new System.Windows.Forms.Label();
             this.cmbTipoCuenta = new System.Windows.Forms.ComboBox();
             this.lblMontoAper = new System.Windows.Forms.Label();
-            this.txtMontoAper = new System.Windows.Forms.TextBox();
             this.lblNumeroCuenta = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnGuardarCliente = new System.Windows.Forms.Button();
-            this.btnConsultaCuenta = new System.Windows.Forms.Button();
-            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.txtNumCuenta = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.msktxtMonto = new System.Windows.Forms.MaskedTextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.cuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCuentas
@@ -48,39 +50,18 @@
             this.lblCuentas.AutoSize = true;
             this.lblCuentas.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCuentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.lblCuentas.Location = new System.Drawing.Point(277, 54);
+            this.lblCuentas.Location = new System.Drawing.Point(178, 135);
             this.lblCuentas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCuentas.Name = "lblCuentas";
             this.lblCuentas.Size = new System.Drawing.Size(123, 32);
             this.lblCuentas.TabIndex = 1;
             this.lblCuentas.Text = "Cuentas";
             // 
-            // lblNúmeroCliente
-            // 
-            this.lblNúmeroCliente.AutoSize = true;
-            this.lblNúmeroCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNúmeroCliente.Location = new System.Drawing.Point(459, 95);
-            this.lblNúmeroCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNúmeroCliente.Name = "lblNúmeroCliente";
-            this.lblNúmeroCliente.Size = new System.Drawing.Size(111, 17);
-            this.lblNúmeroCliente.TabIndex = 4;
-            this.lblNúmeroCliente.Text = "Clave del cliente";
-            // 
-            // txtNumeroCliente
-            // 
-            this.txtNumeroCliente.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtNumeroCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNumeroCliente.Location = new System.Drawing.Point(462, 128);
-            this.txtNumeroCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNumeroCliente.Name = "txtNumeroCliente";
-            this.txtNumeroCliente.Size = new System.Drawing.Size(248, 20);
-            this.txtNumeroCliente.TabIndex = 7;
-            // 
             // lblTipodeCuenta
             // 
             this.lblTipodeCuenta.AutoSize = true;
-            this.lblTipodeCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipodeCuenta.Location = new System.Drawing.Point(459, 226);
+            this.lblTipodeCuenta.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipodeCuenta.Location = new System.Drawing.Point(540, 222);
             this.lblTipodeCuenta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTipodeCuenta.Name = "lblTipodeCuenta";
             this.lblTipodeCuenta.Size = new System.Drawing.Size(107, 17);
@@ -92,116 +73,135 @@
             this.cmbTipoCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoCuenta.FormattingEnabled = true;
-            this.cmbTipoCuenta.Location = new System.Drawing.Point(462, 256);
+            this.cmbTipoCuenta.Location = new System.Drawing.Point(543, 252);
             this.cmbTipoCuenta.Name = "cmbTipoCuenta";
-            this.cmbTipoCuenta.Size = new System.Drawing.Size(205, 24);
+            this.cmbTipoCuenta.Size = new System.Drawing.Size(262, 24);
             this.cmbTipoCuenta.TabIndex = 9;
             // 
             // lblMontoAper
             // 
             this.lblMontoAper.AutoSize = true;
-            this.lblMontoAper.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMontoAper.Location = new System.Drawing.Point(459, 296);
+            this.lblMontoAper.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMontoAper.Location = new System.Drawing.Point(540, 303);
             this.lblMontoAper.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMontoAper.Name = "lblMontoAper";
             this.lblMontoAper.Size = new System.Drawing.Size(125, 17);
             this.lblMontoAper.TabIndex = 11;
             this.lblMontoAper.Text = "Monto de apertura";
             // 
-            // txtMontoAper
-            // 
-            this.txtMontoAper.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtMontoAper.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtMontoAper.Location = new System.Drawing.Point(462, 326);
-            this.txtMontoAper.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMontoAper.Name = "txtMontoAper";
-            this.txtMontoAper.Size = new System.Drawing.Size(233, 20);
-            this.txtMontoAper.TabIndex = 12;
-            // 
             // lblNumeroCuenta
             // 
             this.lblNumeroCuenta.AutoSize = true;
-            this.lblNumeroCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroCuenta.Location = new System.Drawing.Point(459, 161);
+            this.lblNumeroCuenta.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroCuenta.Location = new System.Drawing.Point(540, 150);
             this.lblNumeroCuenta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumeroCuenta.Name = "lblNumeroCuenta";
-            this.lblNumeroCuenta.Size = new System.Drawing.Size(125, 17);
+            this.lblNumeroCuenta.Size = new System.Drawing.Size(128, 17);
             this.lblNumeroCuenta.TabIndex = 13;
             this.lblNumeroCuenta.Text = "Número de cuenta";
             // 
-            // textBox1
+            // txtNumCuenta
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Location = new System.Drawing.Point(462, 191);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(248, 20);
-            this.textBox1.TabIndex = 14;
+            this.txtNumCuenta.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtNumCuenta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNumCuenta.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumCuenta.Location = new System.Drawing.Point(543, 180);
+            this.txtNumCuenta.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNumCuenta.Name = "txtNumCuenta";
+            this.txtNumCuenta.Size = new System.Drawing.Size(288, 25);
+            this.txtNumCuenta.TabIndex = 14;
             // 
-            // btnGuardarCliente
+            // button1
             // 
-            this.btnGuardarCliente.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnGuardarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGuardarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGuardarCliente.Location = new System.Drawing.Point(54, 124);
-            this.btnGuardarCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.btnGuardarCliente.Name = "btnGuardarCliente";
-            this.btnGuardarCliente.Size = new System.Drawing.Size(197, 48);
-            this.btnGuardarCliente.TabIndex = 15;
-            this.btnGuardarCliente.Text = "Guardar";
-            this.btnGuardarCliente.UseVisualStyleBackColor = false;
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.CausesValidation = false;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(203)))), ((int)(((byte)(218)))));
+            this.button1.Location = new System.Drawing.Point(610, 434);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(166, 47);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Limpiar";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // btnConsultaCuenta
+            // msktxtMonto
             // 
-            this.btnConsultaCuenta.BackColor = System.Drawing.Color.LightSlateGray;
-            this.btnConsultaCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnConsultaCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultaCuenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnConsultaCuenta.Location = new System.Drawing.Point(54, 199);
-            this.btnConsultaCuenta.Margin = new System.Windows.Forms.Padding(4);
-            this.btnConsultaCuenta.Name = "btnConsultaCuenta";
-            this.btnConsultaCuenta.Size = new System.Drawing.Size(197, 53);
-            this.btnConsultaCuenta.TabIndex = 16;
-            this.btnConsultaCuenta.Text = "Consultar";
-            this.btnConsultaCuenta.UseVisualStyleBackColor = false;
-            this.btnConsultaCuenta.Click += new System.EventHandler(this.btnConsultaCuenta_Click);
+            this.msktxtMonto.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msktxtMonto.Location = new System.Drawing.Point(543, 334);
+            this.msktxtMonto.Mask = "$";
+            this.msktxtMonto.Name = "msktxtMonto";
+            this.msktxtMonto.Size = new System.Drawing.Size(262, 24);
+            this.msktxtMonto.TabIndex = 19;
             // 
-            // btnLimpiar
+            // menuStrip1
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.White;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnLimpiar.Location = new System.Drawing.Point(64, 285);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(177, 38);
-            this.btnLimpiar.TabIndex = 17;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cuentasToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1000, 24);
+            this.menuStrip1.TabIndex = 20;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // cuentasToolStripMenuItem
+            // 
+            this.cuentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.guardarToolStripMenuItem,
+            this.salirToolStripMenuItem});
+            this.cuentasToolStripMenuItem.Name = "cuentasToolStripMenuItem";
+            this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.cuentasToolStripMenuItem.Text = "Cuentas";
+            // 
+            // guardarToolStripMenuItem
+            // 
+            this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.guardarToolStripMenuItem.Text = "Guardar";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(975, 0);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(25, 29);
+            this.btnSalir.TabIndex = 21;
+            this.btnSalir.Text = "x";
+            this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // frmAgregarCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 412);
-            this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.btnConsultaCuenta);
-            this.Controls.Add(this.btnGuardarCliente);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.msktxtMonto);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtNumCuenta);
             this.Controls.Add(this.lblNumeroCuenta);
-            this.Controls.Add(this.txtMontoAper);
             this.Controls.Add(this.lblMontoAper);
             this.Controls.Add(this.cmbTipoCuenta);
             this.Controls.Add(this.lblTipodeCuenta);
-            this.Controls.Add(this.txtNumeroCliente);
-            this.Controls.Add(this.lblNúmeroCliente);
             this.Controls.Add(this.lblCuentas);
+            this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmAgregarCuenta";
             this.Text = "Añadir nueva cuenta";
+            this.Load += new System.EventHandler(this.frmAgregarCuenta_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,16 +210,17 @@
         #endregion
 
         private System.Windows.Forms.Label lblCuentas;
-        private System.Windows.Forms.Label lblNúmeroCliente;
-        private System.Windows.Forms.TextBox txtNumeroCliente;
         private System.Windows.Forms.Label lblTipodeCuenta;
         private System.Windows.Forms.ComboBox cmbTipoCuenta;
         private System.Windows.Forms.Label lblMontoAper;
-        private System.Windows.Forms.TextBox txtMontoAper;
         private System.Windows.Forms.Label lblNumeroCuenta;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnGuardarCliente;
-        private System.Windows.Forms.Button btnConsultaCuenta;
-        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.TextBox txtNumCuenta;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MaskedTextBox msktxtMonto;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem cuentasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

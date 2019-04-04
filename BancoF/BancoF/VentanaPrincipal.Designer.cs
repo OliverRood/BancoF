@@ -217,6 +217,7 @@
             this.tsConsultaClientes.Name = "tsConsultaClientes";
             this.tsConsultaClientes.Size = new System.Drawing.Size(184, 22);
             this.tsConsultaClientes.Text = "Consultar";
+            this.tsConsultaClientes.Click += new System.EventHandler(this.tsConsultaClientes_Click);
             // 
             // tsBanco
             // 
