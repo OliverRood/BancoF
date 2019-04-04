@@ -129,6 +129,7 @@
     <Compile Include="ManejaCuentas.cs" />
     <Compile Include="ManejaMovimiento.cs" />
     <Compile Include="Movimiento.cs" />
+    <Compile Include="Rutinas.cs" />
     <Compile Include="TipoCuenta.cs" />
     <Compile Include="VentanaPrincipal.cs">
       <SubType>Form</SubType>
