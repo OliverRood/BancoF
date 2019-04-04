@@ -61,7 +61,7 @@ namespace BancoF
             foreach (KeyValuePair<int, Cuenta> item in temp)
             {
                 string saldo = String.Format("{0:c}",item.Value.pSaldo);
-                dgvCuentasCliente.Rows.Add(item.Key, item.Value.pNombre, item.Value.pSaldo);
+                dgvCuentasCliente.Rows.Add(item.Key, item.Value.pNombre,saldo);
             }
 
         }
