@@ -47,6 +47,7 @@
             this.consultarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsCliente = new System.Windows.Forms.ToolStripMenuItem();
             this.tsAltaCliente = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsConsultaClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsBanco = new System.Windows.Forms.ToolStripMenuItem();
             this.crearTipoCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -179,8 +180,9 @@
             this.aperturarToolStripMenuItem,
             this.consultarToolStripMenuItem2});
             this.tsCuenta.Name = "tsCuenta";
-            this.tsCuenta.Size = new System.Drawing.Size(63, 21);
-            this.tsCuenta.Text = "Cuenta";
+            this.tsCuenta.Size = new System.Drawing.Size(69, 21);
+            this.tsCuenta.Text = "Cuentas";
+            this.tsCuenta.Click += new System.EventHandler(this.tsCuenta_Click);
             // 
             // aperturarToolStripMenuItem
             // 
@@ -197,10 +199,11 @@
             // tsCliente
             // 
             this.tsCliente.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsAltaCliente});
+            this.tsAltaCliente,
+            this.tsConsultaClientes});
             this.tsCliente.Name = "tsCliente";
-            this.tsCliente.Size = new System.Drawing.Size(62, 21);
-            this.tsCliente.Text = "Cliente";
+            this.tsCliente.Size = new System.Drawing.Size(68, 21);
+            this.tsCliente.Text = "Clientes";
             // 
             // tsAltaCliente
             // 
@@ -208,6 +211,12 @@
             this.tsAltaCliente.Size = new System.Drawing.Size(184, 22);
             this.tsAltaCliente.Text = "Dar de alta cliente";
             this.tsAltaCliente.Click += new System.EventHandler(this.tsAltaCliente_Click);
+            // 
+            // tsConsultaClientes
+            // 
+            this.tsConsultaClientes.Name = "tsConsultaClientes";
+            this.tsConsultaClientes.Size = new System.Drawing.Size(184, 22);
+            this.tsConsultaClientes.Text = "Consultar";
             // 
             // tsBanco
             // 
@@ -368,6 +377,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsCliente;
         private System.Windows.Forms.ToolStripMenuItem tsAltaCliente;
         private System.Windows.Forms.ToolStripMenuItem cerrarCesionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsConsultaClientes;
     }
 }
 

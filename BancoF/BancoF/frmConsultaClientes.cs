@@ -16,5 +16,15 @@ namespace BancoF
         {
             InitializeComponent();
         }
+
+        private void lblClaveCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmConsultaClientes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

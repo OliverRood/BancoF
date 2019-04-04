@@ -31,18 +31,21 @@ namespace BancoF
         {
             string nombre = txtNombre.Text;
 
-            if (manejaCli.KeyCliente(nombre) != -1)
-            {
-                frnVentanaPrincipal frnVentanaPrincipal = new frnVentanaPrincipal(true, nombre, manejaCli, manejaCuentas, manejaCatalogo, manejaMovi);
-                txtNombre.Clear();
-                frnVentanaPrincipal.ShowDialog();
-            }
+            if(!Rutinas.ValidaBlancos(nombre))
+                if (manejaCli.KeyCliente(nombre) != -1)
+                {
+                    frnVentanaPrincipal frnVentanaPrincipal = new frnVentanaPrincipal(true, nombre, manejaCli, manejaCuentas, manejaCatalogo, manejaMovi);
+                    txtNombre.Clear();
+                    frnVentanaPrincipal.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("No existe registro de ningún cliente con este nombre. Favor de ingresar algún otro.",
+                        "Nombre de cliente no encontrado.",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }
             else
-            {
-                MessageBox.Show("No existe registro de ningún cliente con este nombre, favor de ingresar algún otro",
-                    "Nombre de cliente no encontrado.",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-            }
-
+                MessageBox.Show("Nombre del cliente no capturado.",
+                       "Aviso.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnAdministrador_Click(object sender, EventArgs e)
