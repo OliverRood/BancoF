@@ -37,7 +37,9 @@ namespace BancoF
             string[] nombresCuentas = manejaCatalogo.obtieneNombres();
 
             foreach (string item in nombresCuentas)
-                cmbTipoCuenta.Items.Add(item);
+            {
+                if (item!=null) cmbTipoCuenta.Items.Add(item);
+            }
         }
 
         private void tsGuardarCuenta_Click(object sender, EventArgs e)

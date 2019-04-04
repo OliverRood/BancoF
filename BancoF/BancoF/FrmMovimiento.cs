@@ -52,7 +52,7 @@ namespace BancoF
 
         private void realizarMovimientoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult guardar = MessageBox.Show("Desea guardar?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult guardar = MessageBox.Show("Desea realizar movimiento?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (guardar == DialogResult.Yes)
             {
                 if (rdDeposito.Checked)

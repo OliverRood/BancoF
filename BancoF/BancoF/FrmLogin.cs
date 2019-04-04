@@ -85,5 +85,6 @@ namespace BancoF
             txtNombre.Clear();
             frnVentanaPrincipal.ShowDialog();
         }
+        
     }
 }
