@@ -160,14 +160,16 @@
             // porCuentaToolStripMenuItem
             // 
             this.porCuentaToolStripMenuItem.Name = "porCuentaToolStripMenuItem";
-            this.porCuentaToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.porCuentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.porCuentaToolStripMenuItem.Text = "Por cuenta";
+            this.porCuentaToolStripMenuItem.Click += new System.EventHandler(this.porCuentaToolStripMenuItem_Click);
             // 
             // todoToolStripMenuItem
             // 
             this.todoToolStripMenuItem.Name = "todoToolStripMenuItem";
-            this.todoToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.todoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.todoToolStripMenuItem.Text = "Todo";
+            this.todoToolStripMenuItem.Click += new System.EventHandler(this.todoToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -262,6 +264,7 @@
             this.movimientosToolStripMenuItem.Name = "movimientosToolStripMenuItem";
             this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.movimientosToolStripMenuItem.Text = "Movimientos";
+            this.movimientosToolStripMenuItem.Click += new System.EventHandler(this.movimientosToolStripMenuItem_Click);
             // 
             // lblFecha
             // 
