@@ -15,16 +15,16 @@ namespace BancoF
             this.manejaC = manejadora;
         }
 
-        private bool Agrega(string Tipo, int ClaveCuenta, double Importe, string NombreDepositador)
+        private bool Agrega(string Fecha, string Tipo, int ClaveCuenta, double Importe, string NombreDepositador)
         {
             bool flag = false;
-            movimientos.Add(new Movimiento(Tipo, ClaveCuenta, Importe, NombreDepositador));
+            movimientos.Add(new Movimiento(Fecha, Tipo, ClaveCuenta, Importe, NombreDepositador));
             flag = true;
 
             return flag;
         }
 
-        public bool Deposito(double cant, int claveC,string nombreDepositante)
+        public bool Deposito(string Fecha, double cant, int claveC,string nombreDepositante)
         {
             bool flag = false;
             Cuenta temp = manejaC.BuscarCuenta(claveC);
@@ -32,14 +32,14 @@ namespace BancoF
             if (temp!=null && cant>0)
             {
                 temp.pSaldo += cant;
-                Agrega("DEPOSITO",claveC,cant,nombreDepositante);
+                Agrega(Fecha, "DEPOSITO",claveC,cant,nombreDepositante);
                 flag = true;
             }
 
             return flag;
         }
 
-        public bool Retiro(double cant, int claveC, string nombreDepositante)
+        public bool Retiro(string Fecha, double cant, int claveC, string nombreDepositante)
         {
             bool flag = false;
             Cuenta temp = manejaC.BuscarCuenta(claveC);
@@ -47,7 +47,7 @@ namespace BancoF
             if (temp!=null && temp.pSaldo-cant>=0)
             {
                 temp.pSaldo -= cant;
-                Agrega("RETIRO", claveC, cant, nombreDepositante);
+                Agrega(Fecha, "RETIRO", claveC, cant, nombreDepositante);
                 flag = true;
             }
 

@@ -4,17 +4,26 @@ namespace BancoF
     public class Movimiento
     {
 
+        private string Fecha;
         private string Tipo;
         private double Importe;
         private int ClaveCuenta;
         private string NombreDepositador;
 
-        public Movimiento(string Tipo, int ClaveCuenta, double Importe, string NombreDepositador)
+        public Movimiento(string Fecha, string Tipo, int ClaveCuenta, double Importe, string NombreDepositador)
         {
+            this.Fecha = Fecha;
             this.Tipo = Tipo;
             this.ClaveCuenta = ClaveCuenta;
             this.Importe = Importe;
             this.NombreDepositador = NombreDepositador;
+
+        }
+
+        public string pFecha
+        {
+            get { return Fecha; }
+            set { Fecha = value; }
         }
 
         public int pClaveCuenta

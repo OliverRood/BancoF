@@ -70,7 +70,7 @@ namespace BancoF
 
         private void realizarMovimientoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmMovimiento frmMovimiento = new FrmMovimiento(manejaMovi, manejaCuentas, manejaCli, nombre);
+            FrmMovimiento frmMovimiento = new FrmMovimiento(manejaMovi, manejaCuentas, manejaCli, manejaCatalogo, nombre);
             frmMovimiento.ShowDialog();
         }
 
