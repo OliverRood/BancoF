@@ -101,5 +101,22 @@ namespace BancoF
             FrmCuentasBanco frmCuentasBanco = new FrmCuentasBanco(manejaCatalogo);
             frmCuentasBanco.ShowDialog();
         }
+
+        private void porCuentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultaMovimientos frmConsultaMovimientos = new FrmConsultaMovimientos(manejaMovi, manejaCli, manejaCuentas, nombre, false);
+            frmConsultaMovimientos.ShowDialog();
+        }
+
+        private void todoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultaMovimientos frmConsultaMovimientos = new FrmConsultaMovimientos(manejaMovi, manejaCli, manejaCuentas, nombre, true);
+            frmConsultaMovimientos.ShowDialog();
+        }
+
+        private void movimientosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -17,7 +17,6 @@ namespace BancoF
             this.ClaveCuenta = ClaveCuenta;
             this.Importe = Importe;
             this.NombreDepositador = NombreDepositador;
-
         }
 
         public string pFecha

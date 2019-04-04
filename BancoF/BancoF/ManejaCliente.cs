@@ -33,6 +33,8 @@ namespace BancoF
             return temp;
         }
 
+
+
         public int Count()
         {
             return clientes.Count;
