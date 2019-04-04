@@ -39,6 +39,12 @@
             this.lblDescripcionSelected = new System.Windows.Forms.Label();
             this.lblDivisor = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.msCuentasBanco = new System.Windows.Forms.MenuStrip();
+            this.tsTecBank = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsCuentasBanco = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.msCuentasBanco.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbCuentasBanco
@@ -142,6 +148,48 @@
             this.btnSalir.TabIndex = 21;
             this.btnSalir.Text = "x";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // msCuentasBanco
+            // 
+            this.msCuentasBanco.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsTecBank,
+            this.tsCuentasBanco});
+            this.msCuentasBanco.Location = new System.Drawing.Point(0, 0);
+            this.msCuentasBanco.Name = "msCuentasBanco";
+            this.msCuentasBanco.Size = new System.Drawing.Size(706, 24);
+            this.msCuentasBanco.TabIndex = 22;
+            this.msCuentasBanco.Text = "menuStrip1";
+            // 
+            // tsTecBank
+            // 
+            this.tsTecBank.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salirToolStripMenuItem});
+            this.tsTecBank.Name = "tsTecBank";
+            this.tsTecBank.Size = new System.Drawing.Size(63, 20);
+            this.tsTecBank.Text = "TecBank";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // tsCuentasBanco
+            // 
+            this.tsCuentasBanco.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salirToolStripMenuItem1});
+            this.tsCuentasBanco.Name = "tsCuentasBanco";
+            this.tsCuentasBanco.Size = new System.Drawing.Size(98, 20);
+            this.tsCuentasBanco.Text = "Cuentas Banco";
+            // 
+            // salirToolStripMenuItem1
+            // 
+            this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
+            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem1.Text = "Salir";
+            this.salirToolStripMenuItem1.Click += new System.EventHandler(this.salirToolStripMenuItem1_Click);
             // 
             // FrmConsultaCuentasBanco
             // 
@@ -158,11 +206,15 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.cmbNombre);
             this.Controls.Add(this.lbCuentasBanco);
+            this.Controls.Add(this.msCuentasBanco);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.msCuentasBanco;
             this.Name = "FrmConsultaCuentasBanco";
             this.Text = "FrmConsultaCuentasBanco";
             this.Load += new System.EventHandler(this.FrmConsultaCuentasBanco_Load);
+            this.msCuentasBanco.ResumeLayout(false);
+            this.msCuentasBanco.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +232,10 @@
         private System.Windows.Forms.Label lblDescripcionSelected;
         private System.Windows.Forms.Label lblDivisor;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.MenuStrip msCuentasBanco;
+        private System.Windows.Forms.ToolStripMenuItem tsTecBank;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsCuentasBanco;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem1;
     }
 }

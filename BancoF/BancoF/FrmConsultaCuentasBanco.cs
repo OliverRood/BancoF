@@ -23,7 +23,7 @@ namespace BancoF
 
         private void FrmConsultaCuentasBanco_Load(object sender, EventArgs e)
         {
-            String[] nombres = new String[manejaCatalogoCuenta.Count()];
+            String[] nombres = manejaCatalogoCuenta.obtieneNombres();
             for (int i = 0; i < nombres.Length; i++)
             {
                 if (nombres[i]!=null)
@@ -40,6 +40,21 @@ namespace BancoF
             lblNombreSelected.Text = temp.pNombre;
             lblMontoMInimoSelected.Text = Convert.ToString(temp.pMontoMinimo);
             lblDescripcionSelected.Text = temp.pDescripcion;
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
