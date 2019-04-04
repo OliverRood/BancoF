@@ -23,22 +23,21 @@ namespace BancoF
             this.manejaCatalogo = mCatalogo;
             this.claveCliente = claveCli;
             InitializeComponent();
+            
         }
 
         private void frmAgregarCuenta_Load(object sender, EventArgs e)
         {
-            AgregarTiposCuentas();
             cmbTipoCuenta.SelectedIndex = 0;
+            agregarTiposCuentas();
         }
 
-        public void AgregarTiposCuentas()
+        private void agregarTiposCuentas()
         {
             string[] nombresCuentas = manejaCatalogo.obtieneNombres();
 
             foreach (string item in nombresCuentas)
-            {
-                if(item!=null) cmbTipoCuenta.Items.Add(item);
-            }
+                cmbTipoCuenta.Items.Add(item);
         }
 
         private void tsGuardarCuenta_Click(object sender, EventArgs e)
@@ -80,7 +79,7 @@ namespace BancoF
                 flag = false;
             }
 
-            if (Rutinas.ValidaNumCuenta(claveCuenta))
+            if (!Rutinas.ValidaNumCuenta(claveCuenta))
             {
                 MessageBox.Show("Clave de cuenta con formato incorrecto.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 flag = false;
@@ -102,6 +101,7 @@ namespace BancoF
             {
                 MessageBox.Show("El monto de apertura es menor al monto minimo requerido para el tipo de cuenta seleccionado.", "Aviso",
                     MessageBoxButtons.OK,MessageBoxIcon.Error);
+                flag = false;
             }
 
             /*if (Rutinas.ValidaBlancos(monto))
@@ -114,24 +114,148 @@ namespace BancoF
  
         }
 
-        private void limpiar()
-        {
-            txtMontoApertura.Text = "";
-            txtNumCuenta.Text = "";
-            cmbTipoCuenta.SelectedIndex = 0;
-        }
-
         private void txtNumCuenta_KeyPress(object sender, KeyPressEventArgs e)
         {
+            string numCuenta = txtNumCuenta.Text;
+
             if (!(char.IsNumber)(e.KeyChar) && e.KeyChar != (char)Keys.Back)
             {
-
+                e.Handled = true;
+                errorP.SetError(txtNumCuenta,"Este campo solo acepta caracteres numericos.");
+            }
+            else
+            {
+                if (numCuenta.Length == 7)
+                {
+                    e.Handled = true;
+                    errorP.SetError(txtNumCuenta, "La longitud del número es de unicamente 7 digitos.");
+                }
+                else
+                    errorP.SetError(txtNumCuenta, "");
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             limpiar();
+        }
+
+        private void txtMontoApertura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string monto = txtMontoApertura.Text;
+
+            if (!Rutinas.ValidaDecimal(monto + e.KeyChar.ToString()) && e.KeyChar.ToString()!="." && e.KeyChar!=(char)Keys.Back)
+            {
+                e.Handled = true;
+                errorP.SetError(txtMontoApertura,
+               "El monto de apertura unicamente acepta valores enteros y decimales (hasta 2 digitos despues del punto).");
+            }
+            else
+              errorP.SetError(txtMontoApertura,"");
+        }
+
+        private void ValidaNumCuenta(object sender, EventArgs e)
+        {
+            string numCuenta = txtNumCuenta.Text;
+
+            if(Rutinas.ValidaBlancos(numCuenta))
+                errorP.SetError(txtNumCuenta, "Este campo es obligatorio.");
+
+            if (numCuenta.Length > 8)
+                errorP.SetError(txtNumCuenta, "La longitud del número debe de ser de 7 digitos.");
+
+            if (!txtNumCuenta.Focused && Rutinas.ValidaNumCuenta(numCuenta))
+                errorP.SetError(txtNumCuenta, "");
+        }
+
+        private void ValidaMontoApertura(object sender, EventArgs e)
+        {
+            string monto = txtMontoApertura.Text;
+
+            if (Rutinas.ValidaBlancos(monto))
+                errorP.SetError(txtMontoApertura, "Este campo es obligatorio.");
+
+            if(!txtMontoApertura.Focused && Rutinas.ValidaDecimal(monto)) 
+                errorP.SetError(txtMontoApertura, "");
+        }
+
+        private void ValidaTipoCuenta(object sender, EventArgs e)
+        {
+            if (cmbTipoCuenta.SelectedIndex == 0)
+                errorP.SetError(cmbTipoCuenta, "Seleccione un tipo de cuenta valido.");
+        }
+
+        private void limpiar()
+        {
+            txtMontoApertura.Text = "";
+            txtNumCuenta.Text = "";
+            cmbTipoCuenta.SelectedIndex = 0;
+            errorP.Clear();
+        }
+
+        private bool VentanaVacia()
+        {
+            bool flag = false;
+
+            string numCuenta = txtNumCuenta.Text;
+            string monto = txtMontoApertura.Text;
+            int datoTipo = cmbTipoCuenta.SelectedIndex;
+
+            if (Rutinas.ValidaBlancos(numCuenta + monto) && datoTipo == 0)
+                flag = true;
+
+            return flag;
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Cerrar();
+        }
+
+        private void tsSalir_Click(object sender, EventArgs e)
+        {
+            Cerrar();
+        }
+
+        public void Cerrar()
+        {
+            if (!VentanaVacia())
+            {
+                DialogResult res = MessageBox.Show("¿Seguro que desea salir?, hay cambios sin guardar y podría perderlos permanentemente.",
+                    "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (res == DialogResult.Yes)
+                    this.Close();
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
+        private void cmbTipoCuenta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmbTipoCuenta.SelectedIndex==0)
+            {
+                lblDatosTipo.Visible = false;
+                lblDescripción.Visible = false;
+                lblMontoMin.Visible = false;
+                rchDesc.Visible = false;
+                txtMontoMin.Visible = false;
+            }
+            else
+            {
+                TipoCuenta temp = manejaCatalogo.consulta(cmbTipoCuenta.Text);
+
+                lblDatosTipo.Visible = true;
+                lblDescripción.Visible = true;
+                lblMontoMin.Visible = true;
+                rchDesc.Visible = true;
+                txtMontoMin.Visible = true;
+
+                rchDesc.Text = temp.pDescripcion;
+                txtMontoMin.Text = String.Format("{0:c}", temp.pMontoMinimo);
+            }
+
         }
     }
 }

@@ -162,14 +162,12 @@
             this.porCuentaToolStripMenuItem.Name = "porCuentaToolStripMenuItem";
             this.porCuentaToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.porCuentaToolStripMenuItem.Text = "Por cuenta";
-            this.porCuentaToolStripMenuItem.Click += new System.EventHandler(this.porCuentaToolStripMenuItem_Click);
             // 
             // todoToolStripMenuItem
             // 
             this.todoToolStripMenuItem.Name = "todoToolStripMenuItem";
             this.todoToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.todoToolStripMenuItem.Text = "Todo";
-            this.todoToolStripMenuItem.Click += new System.EventHandler(this.todoToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -197,6 +195,7 @@
             this.consultarToolStripMenuItem2.Name = "consultarToolStripMenuItem2";
             this.consultarToolStripMenuItem2.Size = new System.Drawing.Size(179, 22);
             this.consultarToolStripMenuItem2.Text = "Consultar";
+            this.consultarToolStripMenuItem2.Click += new System.EventHandler(this.consultarToolStripMenuItem2_Click);
             // 
             // tsCliente
             // 
@@ -219,6 +218,7 @@
             this.tsConsultaClientes.Name = "tsConsultaClientes";
             this.tsConsultaClientes.Size = new System.Drawing.Size(184, 22);
             this.tsConsultaClientes.Text = "Consultar";
+            this.tsConsultaClientes.Click += new System.EventHandler(this.tsConsultaClientes_Click);
             // 
             // tsBanco
             // 
@@ -236,7 +236,7 @@
             this.creaToolStripMenuItem,
             this.consultaToolStripMenuItem});
             this.crearTipoCuentaToolStripMenuItem.Name = "crearTipoCuentaToolStripMenuItem";
-            this.crearTipoCuentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.crearTipoCuentaToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.crearTipoCuentaToolStripMenuItem.Text = "Cuentas banco";
             // 
             // creaToolStripMenuItem
@@ -256,14 +256,13 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(162, 6);
             // 
             // movimientosToolStripMenuItem
             // 
             this.movimientosToolStripMenuItem.Name = "movimientosToolStripMenuItem";
-            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.movimientosToolStripMenuItem.Text = "Movimientos";
-            this.movimientosToolStripMenuItem.Click += new System.EventHandler(this.movimientosToolStripMenuItem_Click);
             // 
             // lblFecha
             // 

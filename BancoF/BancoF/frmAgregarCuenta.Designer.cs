@@ -44,6 +44,11 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.txtMontoApertura = new System.Windows.Forms.TextBox();
             this.errorP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblDatosTipo = new System.Windows.Forms.Label();
+            this.lblDescripción = new System.Windows.Forms.Label();
+            this.rchDesc = new System.Windows.Forms.RichTextBox();
+            this.lblMontoMin = new System.Windows.Forms.Label();
+            this.txtMontoMin = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorP)).BeginInit();
             this.SuspendLayout();
@@ -76,10 +81,14 @@
             this.cmbTipoCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoCuenta.FormattingEnabled = true;
+            this.cmbTipoCuenta.Items.AddRange(new object[] {
+            "SELECCIONE EL TIPO DE CUENTA"});
             this.cmbTipoCuenta.Location = new System.Drawing.Point(543, 252);
             this.cmbTipoCuenta.Name = "cmbTipoCuenta";
             this.cmbTipoCuenta.Size = new System.Drawing.Size(262, 24);
             this.cmbTipoCuenta.TabIndex = 9;
+            this.cmbTipoCuenta.SelectedIndexChanged += new System.EventHandler(this.cmbTipoCuenta_SelectedIndexChanged);
+            this.cmbTipoCuenta.Validated += new System.EventHandler(this.ValidaTipoCuenta);
             // 
             // lblMontoAper
             // 
@@ -114,6 +123,7 @@
             this.txtNumCuenta.Size = new System.Drawing.Size(288, 25);
             this.txtNumCuenta.TabIndex = 14;
             this.txtNumCuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumCuenta_KeyPress);
+            this.txtNumCuenta.Validated += new System.EventHandler(this.ValidaNumCuenta);
             // 
             // button1
             // 
@@ -153,18 +163,20 @@
             // tsGuardarCuenta
             // 
             this.tsGuardarCuenta.Name = "tsGuardarCuenta";
-            this.tsGuardarCuenta.Size = new System.Drawing.Size(180, 22);
+            this.tsGuardarCuenta.Size = new System.Drawing.Size(116, 22);
             this.tsGuardarCuenta.Text = "Guardar";
             this.tsGuardarCuenta.Click += new System.EventHandler(this.tsGuardarCuenta_Click);
             // 
             // tsSalir
             // 
             this.tsSalir.Name = "tsSalir";
-            this.tsSalir.Size = new System.Drawing.Size(180, 22);
+            this.tsSalir.Size = new System.Drawing.Size(116, 22);
             this.tsSalir.Text = "Salir";
+            this.tsSalir.Click += new System.EventHandler(this.tsSalir_Click);
             // 
             // btnSalir
             // 
+            this.btnSalir.CausesValidation = false;
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -175,6 +187,7 @@
             this.btnSalir.TabIndex = 21;
             this.btnSalir.Text = "x";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // txtMontoApertura
             // 
@@ -186,6 +199,8 @@
             this.txtMontoApertura.Name = "txtMontoApertura";
             this.txtMontoApertura.Size = new System.Drawing.Size(262, 25);
             this.txtMontoApertura.TabIndex = 22;
+            this.txtMontoApertura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoApertura_KeyPress);
+            this.txtMontoApertura.Validated += new System.EventHandler(this.ValidaMontoApertura);
             // 
             // errorP
             // 
@@ -193,11 +208,74 @@
             this.errorP.ContainerControl = this;
             this.errorP.Icon = ((System.Drawing.Icon)(resources.GetObject("errorP.Icon")));
             // 
+            // lblDatosTipo
+            // 
+            this.lblDatosTipo.AutoSize = true;
+            this.lblDatosTipo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatosTipo.Location = new System.Drawing.Point(66, 222);
+            this.lblDatosTipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDatosTipo.Name = "lblDatosTipo";
+            this.lblDatosTipo.Size = new System.Drawing.Size(245, 19);
+            this.lblDatosTipo.TabIndex = 23;
+            this.lblDatosTipo.Text = "Información del tipo de cuenta:";
+            // 
+            // lblDescripción
+            // 
+            this.lblDescripción.AutoSize = true;
+            this.lblDescripción.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripción.Location = new System.Drawing.Point(71, 273);
+            this.lblDescripción.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescripción.Name = "lblDescripción";
+            this.lblDescripción.Size = new System.Drawing.Size(97, 18);
+            this.lblDescripción.TabIndex = 24;
+            this.lblDescripción.Text = "Descripción:";
+            // 
+            // rchDesc
+            // 
+            this.rchDesc.BackColor = System.Drawing.SystemColors.Control;
+            this.rchDesc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rchDesc.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rchDesc.Location = new System.Drawing.Point(175, 273);
+            this.rchDesc.Name = "rchDesc";
+            this.rchDesc.Size = new System.Drawing.Size(277, 76);
+            this.rchDesc.TabIndex = 25;
+            this.rchDesc.Text = "";
+            // 
+            // lblMontoMin
+            // 
+            this.lblMontoMin.AutoSize = true;
+            this.lblMontoMin.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMontoMin.Location = new System.Drawing.Point(71, 373);
+            this.lblMontoMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMontoMin.Name = "lblMontoMin";
+            this.lblMontoMin.Size = new System.Drawing.Size(112, 18);
+            this.lblMontoMin.TabIndex = 26;
+            this.lblMontoMin.Text = "Monto Minimo:";
+            // 
+            // txtMontoMin
+            // 
+            this.txtMontoMin.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtMontoMin.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtMontoMin.Enabled = false;
+            this.txtMontoMin.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMontoMin.Location = new System.Drawing.Point(245, 367);
+            this.txtMontoMin.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMontoMin.Name = "txtMontoMin";
+            this.txtMontoMin.ReadOnly = true;
+            this.txtMontoMin.Size = new System.Drawing.Size(113, 24);
+            this.txtMontoMin.TabIndex = 27;
+            this.txtMontoMin.Visible = false;
+            // 
             // frmAgregarCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.txtMontoMin);
+            this.Controls.Add(this.lblMontoMin);
+            this.Controls.Add(this.rchDesc);
+            this.Controls.Add(this.lblDescripción);
+            this.Controls.Add(this.lblDatosTipo);
             this.Controls.Add(this.txtMontoApertura);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.button1);
@@ -239,5 +317,10 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.TextBox txtMontoApertura;
         private System.Windows.Forms.ErrorProvider errorP;
+        private System.Windows.Forms.Label lblDatosTipo;
+        private System.Windows.Forms.Label lblDescripción;
+        private System.Windows.Forms.RichTextBox rchDesc;
+        private System.Windows.Forms.Label lblMontoMin;
+        private System.Windows.Forms.TextBox txtMontoMin;
     }
 }
