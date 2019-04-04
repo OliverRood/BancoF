@@ -39,8 +39,8 @@
             this.msktxtMonto = new System.Windows.Forms.MaskedTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsGuardarCuenta = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSalir = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +50,7 @@
             this.lblCuentas.AutoSize = true;
             this.lblCuentas.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCuentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.lblCuentas.Location = new System.Drawing.Point(178, 135);
+            this.lblCuentas.Location = new System.Drawing.Point(169, 135);
             this.lblCuentas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCuentas.Name = "lblCuentas";
             this.lblCuentas.Size = new System.Drawing.Size(123, 32);
@@ -148,23 +148,24 @@
             // cuentasToolStripMenuItem
             // 
             this.cuentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.guardarToolStripMenuItem,
-            this.salirToolStripMenuItem});
+            this.tsGuardarCuenta,
+            this.tsSalir});
             this.cuentasToolStripMenuItem.Name = "cuentasToolStripMenuItem";
             this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.cuentasToolStripMenuItem.Text = "Cuentas";
             // 
-            // guardarToolStripMenuItem
+            // tsGuardarCuenta
             // 
-            this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.guardarToolStripMenuItem.Text = "Guardar";
+            this.tsGuardarCuenta.Name = "tsGuardarCuenta";
+            this.tsGuardarCuenta.Size = new System.Drawing.Size(180, 22);
+            this.tsGuardarCuenta.Text = "Guardar";
+            this.tsGuardarCuenta.Click += new System.EventHandler(this.tsGuardarCuenta_Click);
             // 
-            // salirToolStripMenuItem
+            // tsSalir
             // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.salirToolStripMenuItem.Text = "Salir";
+            this.tsSalir.Name = "tsSalir";
+            this.tsSalir.Size = new System.Drawing.Size(180, 22);
+            this.tsSalir.Text = "Salir";
             // 
             // btnSalir
             // 
@@ -198,6 +199,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmAgregarCuenta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Añadir nueva cuenta";
             this.Load += new System.EventHandler(this.frmAgregarCuenta_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -219,8 +221,8 @@
         private System.Windows.Forms.MaskedTextBox msktxtMonto;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cuentasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsGuardarCuenta;
+        private System.Windows.Forms.ToolStripMenuItem tsSalir;
         private System.Windows.Forms.Button btnSalir;
     }
 }

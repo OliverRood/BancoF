@@ -43,7 +43,7 @@
             this.todoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsCuenta = new System.Windows.Forms.ToolStripMenuItem();
-            this.aperturarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsAgregarCuenta = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsCliente = new System.Windows.Forms.ToolStripMenuItem();
             this.tsAltaCliente = new System.Windows.Forms.ToolStripMenuItem();
@@ -177,18 +177,19 @@
             // tsCuenta
             // 
             this.tsCuenta.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aperturarToolStripMenuItem,
+            this.tsAgregarCuenta,
             this.consultarToolStripMenuItem2});
             this.tsCuenta.Name = "tsCuenta";
             this.tsCuenta.Size = new System.Drawing.Size(69, 21);
             this.tsCuenta.Text = "Cuentas";
             this.tsCuenta.Click += new System.EventHandler(this.tsCuenta_Click);
             // 
-            // aperturarToolStripMenuItem
+            // tsAgregarCuenta
             // 
-            this.aperturarToolStripMenuItem.Name = "aperturarToolStripMenuItem";
-            this.aperturarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aperturarToolStripMenuItem.Text = "Aperturar cuenta";
+            this.tsAgregarCuenta.Name = "tsAgregarCuenta";
+            this.tsAgregarCuenta.Size = new System.Drawing.Size(180, 22);
+            this.tsAgregarCuenta.Text = "Aperturar cuenta";
+            this.tsAgregarCuenta.Click += new System.EventHandler(this.tsAgregarCuenta_Click);
             // 
             // consultarToolStripMenuItem2
             // 
@@ -217,7 +218,6 @@
             this.tsConsultaClientes.Name = "tsConsultaClientes";
             this.tsConsultaClientes.Size = new System.Drawing.Size(184, 22);
             this.tsConsultaClientes.Text = "Consultar";
-            this.tsConsultaClientes.Click += new System.EventHandler(this.tsConsultaClientes_Click);
             // 
             // tsBanco
             // 
@@ -241,14 +241,14 @@
             // creaToolStripMenuItem
             // 
             this.creaToolStripMenuItem.Name = "creaToolStripMenuItem";
-            this.creaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.creaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.creaToolStripMenuItem.Text = "Crear tipo";
             this.creaToolStripMenuItem.Click += new System.EventHandler(this.creaToolStripMenuItem_Click);
             // 
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.consultaToolStripMenuItem.Text = "Consulta";
             this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
@@ -306,7 +306,7 @@
             this.lblHola.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
             this.lblHola.Location = new System.Drawing.Point(435, 199);
             this.lblHola.Name = "lblHola";
-            this.lblHola.Size = new System.Drawing.Size(123, 62);
+            this.lblHola.Size = new System.Drawing.Size(128, 75);
             this.lblHola.TabIndex = 9;
             this.lblHola.Text = "Hola";
             // 
@@ -318,7 +318,7 @@
             this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
             this.lblNombre.Location = new System.Drawing.Point(432, 261);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(267, 81);
+            this.lblNombre.Size = new System.Drawing.Size(272, 95);
             this.lblNombre.TabIndex = 10;
             this.lblNombre.Text = "Nombre";
             // 
@@ -375,7 +375,7 @@
         private System.Windows.Forms.Label lblHola;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.ToolStripMenuItem tsCuenta;
-        private System.Windows.Forms.ToolStripMenuItem aperturarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsAgregarCuenta;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem tsCliente;
         private System.Windows.Forms.ToolStripMenuItem tsAltaCliente;

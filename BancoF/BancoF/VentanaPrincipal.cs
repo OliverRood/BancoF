@@ -101,5 +101,12 @@ namespace BancoF
             FrmCuentasBanco frmCuentasBanco = new FrmCuentasBanco(manejaCatalogo);
             frmCuentasBanco.ShowDialog();
         }
+
+        private void tsAgregarCuenta_Click(object sender, EventArgs e)
+        {
+            int claveCliente = manejaCli.KeyCliente(nombre);
+            frmAgregarCuenta añadirCuenta = new frmAgregarCuenta(claveCliente, manejaCuentas, manejaCatalogo);
+            añadirCuenta.ShowDialog();
+        }
     }
 }
