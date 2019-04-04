@@ -12,14 +12,32 @@ namespace BancoF
 {
     public partial class FrmMovimiento : Form
     {
-        public FrmMovimiento()
+
+        ManejaMovimiento manejaMovimiento;
+        ManejaCuentas manejaCuentas;
+        ManejaCliente manejaCliente;
+        string nombre;
+
+        public FrmMovimiento(ManejaMovimiento manejaMovimiento, ManejaCuentas manejaCuentas, ManejaCliente manejaCliente, string nombre)
         {
+            this.manejaMovimiento = manejaMovimiento;
+            this.manejaCuentas = manejaCuentas;
+            this.manejaCliente = manejaCliente;
+            this.nombre = nombre;
             InitializeComponent();
         }
 
         private void FrmMovimiento_Load(object sender, EventArgs e)
         {
-
+            rdRetiro.Enabled = false;
+            txtNombre.ReadOnly = false;
+            txtNombre.Clear();
+            if (!string.IsNullOrEmpty(nombre))
+            {
+                txtNombre.ReadOnly = true;
+                txtNombre.Text = nombre;
+                rdRetiro.Enabled = true;
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -66,6 +84,16 @@ namespace BancoF
             {
                 epMovimiento.SetError(txtNombre, "");
             }
+        }
+
+        private void rdRetiro_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void rdDeposito_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

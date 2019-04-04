@@ -75,5 +75,12 @@ namespace BancoF
         {
             Application.Exit();
         }
+
+        private void btnInvitado_Click(object sender, EventArgs e)
+        {
+            frnVentanaPrincipal frnVentanaPrincipal = new frnVentanaPrincipal(true, null, manejaCli, manejaCuentas, manejaCatalogo, manejaMovi);
+            txtNombre.Clear();
+            frnVentanaPrincipal.ShowDialog();
+        }
     }
 }

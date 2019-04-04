@@ -36,6 +36,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.panelDiv = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnInvitado = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnUsuario
@@ -45,7 +46,7 @@
             this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.btnUsuario.Location = new System.Drawing.Point(121, 336);
+            this.btnUsuario.Location = new System.Drawing.Point(47, 336);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(197, 63);
             this.btnUsuario.TabIndex = 2;
@@ -71,7 +72,7 @@
             this.btnAdministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdministrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdministrador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.btnAdministrador.Location = new System.Drawing.Point(410, 336);
+            this.btnAdministrador.Location = new System.Drawing.Point(502, 336);
             this.btnAdministrador.Name = "btnAdministrador";
             this.btnAdministrador.Size = new System.Drawing.Size(197, 63);
             this.btnAdministrador.TabIndex = 7;
@@ -104,9 +105,9 @@
             // panelDiv
             // 
             this.panelDiv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(203)))), ((int)(((byte)(218)))));
-            this.panelDiv.Location = new System.Drawing.Point(-5, 369);
+            this.panelDiv.Location = new System.Drawing.Point(-8, 371);
             this.panelDiv.Name = "panelDiv";
-            this.panelDiv.Size = new System.Drawing.Size(766, 140);
+            this.panelDiv.Size = new System.Drawing.Size(786, 140);
             this.panelDiv.TabIndex = 10;
             // 
             // btnSalir
@@ -122,12 +123,28 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnInvitado
+            // 
+            this.btnInvitado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
+            this.btnInvitado.FlatAppearance.BorderSize = 0;
+            this.btnInvitado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInvitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvitado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.btnInvitado.Location = new System.Drawing.Point(270, 336);
+            this.btnInvitado.Name = "btnInvitado";
+            this.btnInvitado.Size = new System.Drawing.Size(197, 63);
+            this.btnInvitado.TabIndex = 18;
+            this.btnInvitado.Text = "Ingresar como invitado";
+            this.btnInvitado.UseVisualStyleBackColor = false;
+            this.btnInvitado.Click += new System.EventHandler(this.btnInvitado_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(750, 500);
+            this.Controls.Add(this.btnInvitado);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtNombre);
@@ -154,5 +171,6 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Panel panelDiv;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnInvitado;
     }
 }

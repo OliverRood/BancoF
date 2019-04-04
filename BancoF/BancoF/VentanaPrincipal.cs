@@ -14,7 +14,7 @@ namespace BancoF
     {
 
         private bool flagUsuario = true;
-        private string nombre = "¡";
+        private string nombre;
         private ManejaCliente manejaCli;
         private ManejaCuentas manejaCuentas;
         private ManejaCatalogoCuenta manejaCatalogo;
@@ -29,20 +29,25 @@ namespace BancoF
 
             InitializeComponent();
             this.flagUsuario = FlagUsuario;
-            this.nombre += Nombre;
+            this.nombre = Nombre;
         }
 
         private void frnVentanaPrincipal_Load(object sender, EventArgs e)
         {
             DateTime fecha = DateTime.Now;
             lblFecha.Text = Convert.ToString(fecha);
-            lblNombre.Text = nombre + " !";
+            lblNombre.Text = "¡" + (nombre!=null ? nombre:"Bienvenido") + " !";
             if (flagUsuario)
             {
                 tsMovimiento.Visible = true;
                 tsCuenta.Visible = true;
                 tsCliente.Visible = false;
                 tsBanco.Visible = false;
+                if (string.IsNullOrEmpty(nombre))
+                {
+                    tsCuenta.Enabled = false;
+                    consultarToolStripMenuItem.Enabled = false;
+                }
             }
             else
             {
@@ -65,7 +70,7 @@ namespace BancoF
 
         private void realizarMovimientoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmMovimiento frmMovimiento = new FrmMovimiento();
+            FrmMovimiento frmMovimiento = new FrmMovimiento(manejaMovi, manejaCuentas, manejaCli, nombre);
             frmMovimiento.ShowDialog();
         }
 

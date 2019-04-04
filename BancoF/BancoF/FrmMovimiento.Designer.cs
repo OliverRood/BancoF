@@ -79,6 +79,7 @@
             this.rdDeposito.TabStop = true;
             this.rdDeposito.Text = "Deposito";
             this.rdDeposito.UseVisualStyleBackColor = true;
+            this.rdDeposito.CheckedChanged += new System.EventHandler(this.rdDeposito_CheckedChanged);
             // 
             // rdRetiro
             // 
@@ -94,6 +95,7 @@
             this.rdRetiro.TabStop = true;
             this.rdRetiro.Text = "Retiro";
             this.rdRetiro.UseVisualStyleBackColor = true;
+            this.rdRetiro.CheckedChanged += new System.EventHandler(this.rdRetiro_CheckedChanged);
             // 
             // grpTipoMovimiento
             // 
