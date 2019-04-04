@@ -235,7 +235,7 @@
             this.creaToolStripMenuItem,
             this.consultaToolStripMenuItem});
             this.crearTipoCuentaToolStripMenuItem.Name = "crearTipoCuentaToolStripMenuItem";
-            this.crearTipoCuentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.crearTipoCuentaToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.crearTipoCuentaToolStripMenuItem.Text = "Cuentas banco";
             // 
             // creaToolStripMenuItem
@@ -255,12 +255,12 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(162, 6);
             // 
             // movimientosToolStripMenuItem
             // 
             this.movimientosToolStripMenuItem.Name = "movimientosToolStripMenuItem";
-            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.movimientosToolStripMenuItem.Text = "Movimientos";
             // 
             // lblFecha

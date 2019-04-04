@@ -54,9 +54,6 @@ namespace BancoF
                     limpiar();
                 }
             }
-
-            
-
         }
 
         public bool ValidaDatos()
@@ -139,7 +136,17 @@ namespace BancoF
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (!VentanaVacia())
+            {
+                DialogResult res = MessageBox.Show("¿Seguro que desea salir?, hay cambios sin guardar y podría perderlos permanentemente.",
+                    "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (res == DialogResult.Yes)
+                    this.Close();
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         private void txtNombreCliente_KeyPress(object sender, KeyPressEventArgs e)
@@ -151,9 +158,8 @@ namespace BancoF
                 e.Handled = true;
             }
             else
-            {
                 errorP.SetError(txtNombreCliente, "");
-            }
+            
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -170,7 +176,7 @@ namespace BancoF
             errorP.Clear();
         }
 
-        public bool VentanaVacia()
+        private bool VentanaVacia()
         {
             bool flag = false;
 
@@ -192,9 +198,7 @@ namespace BancoF
                 errorP.SetError(cmbCiudad, "Es necesario que seleccione una ciudad.");
             }
             else
-            {
                 errorP.SetError(cmbCiudad, "");
-            }
         }
 
         private void ValidaTélefono(object sender, EventArgs e)

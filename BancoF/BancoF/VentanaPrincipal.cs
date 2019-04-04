@@ -108,5 +108,6 @@ namespace BancoF
             frmAgregarCuenta añadirCuenta = new frmAgregarCuenta(claveCliente, manejaCuentas, manejaCatalogo);
             añadirCuenta.ShowDialog();
         }
+
     }
 }

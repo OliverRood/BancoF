@@ -14,10 +14,14 @@ namespace BancoF
     {
         private ManejaCliente manejaCli;
         private ManejaCuentas manejaCuentas;
+        string nombreCliente;
+        private bool flagCliente;
 
-        public frmConsultaClientes(ManejaCliente mClientes, ManejaCuentas mCuentas)
+        public frmConsultaClientes(bool cliente,string nomCliente,ManejaCliente mClientes, ManejaCuentas mCuentas)
         {
             InitializeComponent();
+            flagCliente = cliente;
+            this.nombreCliente = nomCliente;
             this.manejaCli = mClientes;
             this.manejaCuentas = mCuentas;
         }
@@ -29,18 +33,25 @@ namespace BancoF
 
         private void frmConsultaClientes_Load(object sender, EventArgs e)
         {
-            Cliente[] temp = manejaCli.ObtenerClientes();
+            if (flagCliente)
+            {
+                lblClienteConsulta.Visible = false;
+                cmbNombreCliente.Visible = false;
+            }
+            else
+            {
+                Cliente[] temp = manejaCli.ObtenerClientes();
 
-            foreach (Cliente item in temp)
-              cmbNombreCliente.Items.Add(item.pNombre);
-            
-            cmbNombreCliente.SelectedIndex = 0;
+                foreach (Cliente item in temp)
+                    cmbNombreCliente.Items.Add(item.pNombre);
 
+                cmbNombreCliente.SelectedIndex = 0;
+            }
         }
 
         public void AgregarDatosCliente()
         {
-            string nomCliente = cmbNombreCliente.Text;
+            string nomCliente = flagCliente? nombreCliente:cmbNombreCliente.Text;
             int claveCliente = manejaCli.KeyCliente(nomCliente);
             Cliente tempCli = manejaCli.ObtenerCliente(claveCliente);
 
@@ -77,7 +88,7 @@ namespace BancoF
             }
             else
             {
-
+                Limpiar();
             }
         }
 
