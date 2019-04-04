@@ -187,13 +187,13 @@
             // aperturarToolStripMenuItem
             // 
             this.aperturarToolStripMenuItem.Name = "aperturarToolStripMenuItem";
-            this.aperturarToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.aperturarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aperturarToolStripMenuItem.Text = "Aperturar cuenta";
             // 
             // consultarToolStripMenuItem2
             // 
             this.consultarToolStripMenuItem2.Name = "consultarToolStripMenuItem2";
-            this.consultarToolStripMenuItem2.Size = new System.Drawing.Size(179, 22);
+            this.consultarToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.consultarToolStripMenuItem2.Text = "Consultar";
             // 
             // tsCliente
@@ -234,30 +234,32 @@
             this.creaToolStripMenuItem,
             this.consultaToolStripMenuItem});
             this.crearTipoCuentaToolStripMenuItem.Name = "crearTipoCuentaToolStripMenuItem";
-            this.crearTipoCuentaToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.crearTipoCuentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.crearTipoCuentaToolStripMenuItem.Text = "Cuentas banco";
             // 
             // creaToolStripMenuItem
             // 
             this.creaToolStripMenuItem.Name = "creaToolStripMenuItem";
-            this.creaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.creaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.creaToolStripMenuItem.Text = "Crear tipo";
+            this.creaToolStripMenuItem.Click += new System.EventHandler(this.creaToolStripMenuItem_Click);
             // 
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultaToolStripMenuItem.Text = "Consulta";
+            this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(162, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // movimientosToolStripMenuItem
             // 
             this.movimientosToolStripMenuItem.Name = "movimientosToolStripMenuItem";
-            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.movimientosToolStripMenuItem.Text = "Movimientos";
             // 
             // lblFecha
@@ -303,7 +305,7 @@
             this.lblHola.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
             this.lblHola.Location = new System.Drawing.Point(435, 199);
             this.lblHola.Name = "lblHola";
-            this.lblHola.Size = new System.Drawing.Size(128, 75);
+            this.lblHola.Size = new System.Drawing.Size(123, 62);
             this.lblHola.TabIndex = 9;
             this.lblHola.Text = "Hola";
             // 
@@ -315,7 +317,7 @@
             this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
             this.lblNombre.Location = new System.Drawing.Point(432, 261);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(272, 95);
+            this.lblNombre.Size = new System.Drawing.Size(267, 81);
             this.lblNombre.TabIndex = 10;
             this.lblNombre.Text = "Nombre";
             // 

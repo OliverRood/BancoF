@@ -90,5 +90,16 @@ namespace BancoF
 
         }
 
+        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultaCuentasBanco frmConsultaCuentasBanco = new FrmConsultaCuentasBanco(manejaCatalogo);
+            frmConsultaCuentasBanco.ShowDialog();
+        }
+
+        private void creaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCuentasBanco frmCuentasBanco = new FrmCuentasBanco(manejaCatalogo);
+            frmCuentasBanco.ShowDialog();
+        }
     }
 }

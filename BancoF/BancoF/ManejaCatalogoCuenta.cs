@@ -49,6 +49,19 @@ namespace BancoF
             return cuenta;
         }
 
+        public String[] obtieneNombres()
+        {
+            String[] nombres = new String[catalogo.Length];
+            for (int i = 0; i < catalogo.Length; i++)
+            {
+                if (catalogo[i] != null)
+                {
+                    nombres[i] = catalogo[i].pNombre;
+                }
+            }
+            return nombres;
+        }
+
         /*
 
             CONSULTAR SI ES NECESARIO

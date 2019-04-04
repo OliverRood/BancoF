@@ -65,7 +65,7 @@ namespace BancoF
                         string nombre = txtNombre.Text;
                         if (manejaMovimiento.Deposito(fecha, monto, claveCuenta, nombre))
                         {
-                            MessageBox.Show("Deposito realizado con exito", "Realizar movimiento", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show("Deposito realizado con exito", "Realizar movimiento", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         }
                         else
                         {
@@ -83,7 +83,7 @@ namespace BancoF
                         string nombre = txtNombre.Text;
                         if (manejaMovimiento.Retiro(fecha, monto, claveCuenta, nombre))
                         {
-                            MessageBox.Show("Retiro realizado con exito", "Realizar movimiento", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show("Retiro realizado con exito", "Realizar movimiento", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         }
                         else
                         {
@@ -286,7 +286,7 @@ namespace BancoF
                 epMovimiento.SetError(txtNombre, "Nombre no capturado");
             }
             
-            if (Rutinas.ValidaCaracteres(datos))
+            if (ValidaNombre(datos))
             {
                 epMovimiento.SetError(txtNombre, "");
             }
