@@ -38,6 +38,7 @@
             this.lblMontoMInimoSelected = new System.Windows.Forms.Label();
             this.lblDescripcionSelected = new System.Windows.Forms.Label();
             this.lblDivisor = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbCuentasBanco
@@ -129,11 +130,24 @@
             this.lblDivisor.TabIndex = 20;
             this.lblDivisor.Text = "____________________________________________________________________________";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(685, -2);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(25, 28);
+            this.btnSalir.TabIndex = 21;
+            this.btnSalir.Text = "x";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            // 
             // FrmConsultaCuentasBanco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 428);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblDivisor);
             this.Controls.Add(this.lblDescripcionSelected);
             this.Controls.Add(this.lblMontoMInimoSelected);
@@ -143,6 +157,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.cmbNombre);
             this.Controls.Add(this.lbCuentasBanco);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsultaCuentasBanco";
             this.Text = "FrmConsultaCuentasBanco";
@@ -162,5 +177,6 @@
         private System.Windows.Forms.Label lblMontoMInimoSelected;
         private System.Windows.Forms.Label lblDescripcionSelected;
         private System.Windows.Forms.Label lblDivisor;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

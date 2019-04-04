@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMovimiento));
             this.lbMovimientos = new System.Windows.Forms.Label();
             this.rdDeposito = new System.Windows.Forms.RadioButton();
@@ -39,18 +40,25 @@
             this.lblMonto = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.btnRealizarMovimiento = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.msMovimiento = new System.Windows.Forms.MenuStrip();
+            this.movimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.realizarMovimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.epMovimiento = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpTipoMovimiento.SuspendLayout();
+            this.msMovimiento.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epMovimiento)).BeginInit();
             this.SuspendLayout();
             // 
             // lbMovimientos
             // 
             this.lbMovimientos.AutoSize = true;
             this.lbMovimientos.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMovimientos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(203)))), ((int)(((byte)(218)))));
-            this.lbMovimientos.Location = new System.Drawing.Point(46, 41);
+            this.lbMovimientos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(197)))), ((int)(((byte)(214)))));
+            this.lbMovimientos.Location = new System.Drawing.Point(48, 71);
             this.lbMovimientos.Name = "lbMovimientos";
             this.lbMovimientos.Size = new System.Drawing.Size(206, 40);
             this.lbMovimientos.TabIndex = 5;
@@ -121,6 +129,7 @@
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(412, 19);
             this.txtClave.TabIndex = 8;
+            this.txtClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClave_KeyPress);
             // 
             // txtMonto
             // 
@@ -132,6 +141,7 @@
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(412, 19);
             this.txtMonto.TabIndex = 10;
+            this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
             // 
             // lblMonto
             // 
@@ -154,6 +164,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(412, 19);
             this.txtNombre.TabIndex = 12;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // lblNombre
             // 
@@ -165,21 +176,6 @@
             this.lblNombre.Size = new System.Drawing.Size(317, 20);
             this.lblNombre.TabIndex = 11;
             this.lblNombre.Text = "Nombre de quien realiza el movimiento";
-            // 
-            // btnRealizarMovimiento
-            // 
-            this.btnRealizarMovimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnRealizarMovimiento.FlatAppearance.BorderSize = 0;
-            this.btnRealizarMovimiento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(203)))), ((int)(((byte)(218)))));
-            this.btnRealizarMovimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRealizarMovimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRealizarMovimiento.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRealizarMovimiento.Location = new System.Drawing.Point(104, 450);
-            this.btnRealizarMovimiento.Name = "btnRealizarMovimiento";
-            this.btnRealizarMovimiento.Size = new System.Drawing.Size(189, 59);
-            this.btnRealizarMovimiento.TabIndex = 13;
-            this.btnRealizarMovimiento.Text = "Realizar movimiento";
-            this.btnRealizarMovimiento.UseVisualStyleBackColor = false;
             // 
             // btnLimpiar
             // 
@@ -207,6 +203,50 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // msMovimiento
+            // 
+            this.msMovimiento.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.movimientoToolStripMenuItem});
+            this.msMovimiento.Location = new System.Drawing.Point(0, 0);
+            this.msMovimiento.Name = "msMovimiento";
+            this.msMovimiento.Size = new System.Drawing.Size(1000, 24);
+            this.msMovimiento.TabIndex = 17;
+            this.msMovimiento.Text = "menuStrip1";
+            // 
+            // movimientoToolStripMenuItem
+            // 
+            this.movimientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.realizarMovimientoToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.salirToolStripMenuItem});
+            this.movimientoToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
+            this.movimientoToolStripMenuItem.Name = "movimientoToolStripMenuItem";
+            this.movimientoToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.movimientoToolStripMenuItem.Text = "Movimiento";
+            // 
+            // realizarMovimientoToolStripMenuItem
+            // 
+            this.realizarMovimientoToolStripMenuItem.Name = "realizarMovimientoToolStripMenuItem";
+            this.realizarMovimientoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.realizarMovimientoToolStripMenuItem.Text = "Realizar movimiento";
+            this.realizarMovimientoToolStripMenuItem.Click += new System.EventHandler(this.realizarMovimientoToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(179, 6);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // epMovimiento
+            // 
+            this.epMovimiento.ContainerControl = this;
+            // 
             // FrmMovimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,7 +255,6 @@
             this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.btnRealizarMovimiento);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtMonto);
@@ -224,14 +263,19 @@
             this.Controls.Add(this.lblClaveCuenta);
             this.Controls.Add(this.grpTipoMovimiento);
             this.Controls.Add(this.lbMovimientos);
+            this.Controls.Add(this.msMovimiento);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.msMovimiento;
             this.Name = "FrmMovimiento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TecBank";
             this.Load += new System.EventHandler(this.FrmMovimiento_Load);
             this.grpTipoMovimiento.ResumeLayout(false);
             this.grpTipoMovimiento.PerformLayout();
+            this.msMovimiento.ResumeLayout(false);
+            this.msMovimiento.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epMovimiento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,8 +293,13 @@
         private System.Windows.Forms.Label lblMonto;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Button btnRealizarMovimiento;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.MenuStrip msMovimiento;
+        private System.Windows.Forms.ToolStripMenuItem movimientoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem realizarMovimientoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ErrorProvider epMovimiento;
     }
 }

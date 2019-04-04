@@ -42,6 +42,7 @@
             // 
             // dgvMovimientos
             // 
+            this.dgvMovimientos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMovimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Numero,
