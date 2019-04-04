@@ -37,6 +37,8 @@ namespace BancoF
             {
                 lblClienteConsulta.Visible = false;
                 cmbNombreCliente.Visible = false;
+                AgregarDatosCliente();
+                AgregarCuentas();
             }
             else
             {
@@ -64,7 +66,7 @@ namespace BancoF
 
         public void AgregarCuentas()
         {
-            string nomCliente = cmbNombreCliente.Text;
+            string nomCliente = flagCliente ? nombreCliente : cmbNombreCliente.Text;
             int claveCliente = manejaCli.KeyCliente(nomCliente);
 
             KeyValuePair<int, Cuenta>[] temp = manejaCuentas.ObtenerPorCliente(claveCliente);
@@ -99,6 +101,11 @@ namespace BancoF
             txtCiudad.Text = "";
             txtTelefono.Text = "";
             dgvCuentasCliente.Rows.Clear();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
