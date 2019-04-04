@@ -84,5 +84,11 @@ namespace BancoF
             frmAgregarCliente altaCliente = new frmAgregarCliente(manejaCli);
             altaCliente.ShowDialog();
         }
+
+        private void tsCuenta_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

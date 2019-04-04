@@ -116,7 +116,18 @@ namespace BancoF
 
         private void tsSalirVentana_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (!VentanaVacia())
+            {
+                DialogResult res = MessageBox.Show("¿Seguro que desea salir?, hay cambios sin guardar y podría perderlos permanentemente.",
+                    "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(res==DialogResult.Yes)
+                    this.Close();
+            }
+            else
+            {
+                this.Close();
+            }
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -152,6 +163,21 @@ namespace BancoF
             errorP.Clear();
         }
 
+        public bool VentanaVacia()
+        {
+            bool flag = false;
+
+            string nomCliente = txtNombreCliente.Text;
+            string dom = txtDomicilio.Text;
+            string tel = txtTelefono.Text;
+            int datoCi = cmbCiudad.SelectedIndex;
+
+            if (Rutinas.ValidaBlancos(nomCliente + dom + tel) && datoCi == 0)
+                flag = true;
+
+            return flag;
+        }
+
         private void cmbCiudad_Validated(object sender, EventArgs e)
         {
             if (cmbCiudad.SelectedIndex == 0)
@@ -177,5 +203,6 @@ namespace BancoF
                 errorP.SetError(txtTelefono, "");
             }
         }
+
     }
 }
