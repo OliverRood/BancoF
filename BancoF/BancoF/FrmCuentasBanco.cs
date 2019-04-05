@@ -28,7 +28,9 @@ namespace BancoF
 
         private void FrmCuentasBanco_Load(object sender, EventArgs e)
         {
-
+            toolTipCB.SetToolTip(txtNombre, "Ingresa, con letras, el nombre del tipo de cuenta ");
+            toolTipCB.SetToolTip(txtMontoMinimo, "Indicada, en digito, el monto minimo de la cuenta");
+            toolTipCB.SetToolTip(txtDescripcion, "Ingresa, con letras, la descripcion del tipo de cuenta ");
         }
 
         // KEYPRESS

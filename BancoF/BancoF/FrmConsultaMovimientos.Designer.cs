@@ -152,6 +152,7 @@
             this.tsSalir.Font = new System.Drawing.Font("Ebrima", 10F);
             this.tsSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.tsSalir.Name = "tsSalir";
+            this.tsSalir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Q)));
             this.tsSalir.Size = new System.Drawing.Size(200, 24);
             this.tsSalir.Text = "Salir";
             this.tsSalir.Click += new System.EventHandler(this.tsSalir_Click);

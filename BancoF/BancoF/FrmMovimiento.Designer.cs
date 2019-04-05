@@ -51,6 +51,7 @@
             this.tsCerrarRealizarMovimiento = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTipM = new System.Windows.Forms.ToolTip(this.components);
             this.grpTipoMovimiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epMovimiento)).BeginInit();
             this.msMovimiento.SuspendLayout();
@@ -294,7 +295,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1000, 600);
-            this.Controls.Add(this.msMovimiento);
             this.Controls.Add(this.lbMovimiento);
             this.Controls.Add(this.lblDateTimeNow);
             this.Controls.Add(this.lblFecha);
@@ -308,6 +308,7 @@
             this.Controls.Add(this.lblClaveCuenta);
             this.Controls.Add(this.grpTipoMovimiento);
             this.Controls.Add(this.panelDiv);
+            this.Controls.Add(this.msMovimiento);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMovimiento";
@@ -346,5 +347,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsCerrarRealizarMovimiento;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolTip toolTipM;
     }
 }

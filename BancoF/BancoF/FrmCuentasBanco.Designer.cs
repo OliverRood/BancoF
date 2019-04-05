@@ -43,9 +43,10 @@
             this.panelDiv = new System.Windows.Forms.Panel();
             this.msCuentasBanco = new System.Windows.Forms.MenuStrip();
             this.tsTecBank = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarCuentasBancoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTipCB = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.epCuentasBanco)).BeginInit();
             this.msCuentasBanco.SuspendLayout();
             this.SuspendLayout();
@@ -192,15 +193,6 @@
             this.tsTecBank.Size = new System.Drawing.Size(77, 23);
             this.tsTecBank.Text = "TecBank";
             // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
-            this.salirToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click_1);
-            // 
             // cerrarCuentasBancoToolStripMenuItem
             // 
             this.cerrarCuentasBancoToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
@@ -214,12 +206,20 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(208, 6);
             // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
+            this.salirToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click_1);
+            // 
             // FrmCuentasBanco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
-            this.Controls.Add(this.msCuentasBanco);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtDescripcion);
@@ -230,6 +230,7 @@
             this.Controls.Add(this.lbCuentasBanco);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.panelDiv);
+            this.Controls.Add(this.msCuentasBanco);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCuentasBanco";
@@ -261,5 +262,6 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarCuentasBancoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolTip toolTipCB;
     }
 }

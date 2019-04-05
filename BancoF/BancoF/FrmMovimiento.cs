@@ -35,14 +35,18 @@ namespace BancoF
             rdRetiro.Enabled = false;
             txtNombre.ReadOnly = false;
             txtNombre.Clear();
+            toolTipM.SetToolTip(txtNombre, "Ingresa el nombre de quien realiza el deposito, solo se admiten letras");
             if (!string.IsNullOrEmpty(nombre))
             {
                 txtNombre.ReadOnly = true;
                 txtNombre.Text = nombre;
                 rdRetiro.Enabled = true;
+                toolTipM.SetToolTip(txtNombre, "Usuario que realiza el movimiento");
             }
             DateTime date = DateTime.Now;
             lblDateTimeNow.Text = date.ToString();
+            toolTipM.SetToolTip(txtClave, "Ingresa la clave de la cuenta para el movimiento, solo se admiten digitos");
+            toolTipM.SetToolTip(txtMonto, "Indica el monto del movimiento, solo se admiten digitos");
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
