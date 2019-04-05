@@ -175,25 +175,6 @@ namespace BancoF
             this.Close();
         }
 
-        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DialogResult guardar = MessageBox.Show("Desea guardar?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (guardar == DialogResult.Yes)
-            {
-                if (Valida())
-                {
-                    string nombre = txtNombre.Text;
-                    double montoMinimo = Convert.ToDouble(txtMontoMinimo.Text);
-                    string descripcion = txtDescripcion.Text;
-                    manejaCatalogoCuenta.agrega(nombre, montoMinimo, descripcion);
-                    MessageBox.Show("","", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    txtNombre.Clear();
-                    txtMontoMinimo.Clear();
-                    txtDescripcion.Clear();
-                }
-            }
-        }
-
         // VALIDA
 
         public bool Valida()
@@ -253,6 +234,25 @@ namespace BancoF
         private void cerrarCuentasBancoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void guardarTipoCuentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult guardar = MessageBox.Show("Desea guardar?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (guardar == DialogResult.Yes)
+            {
+                if (Valida())
+                {
+                    string nombre = txtNombre.Text;
+                    double montoMinimo = Convert.ToDouble(txtMontoMinimo.Text);
+                    string descripcion = txtDescripcion.Text;
+                    manejaCatalogoCuenta.agrega(nombre, montoMinimo, descripcion);
+                    MessageBox.Show("", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    txtNombre.Clear();
+                    txtMontoMinimo.Clear();
+                    txtDescripcion.Clear();
+                }
+            }
         }
     }
 }

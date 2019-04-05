@@ -54,51 +54,6 @@ namespace BancoF
             this.Close();
         }
 
-        private void realizarMovimientoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DialogResult guardar = MessageBox.Show("Desea realizar movimiento?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (guardar == DialogResult.Yes)
-            {
-                if (rdDeposito.Checked)
-                {
-                    if (ValidaDeposito())
-                    {
-                        string fecha = lblDateTimeNow.Text;
-                        int claveCuenta = Convert.ToInt32(txtClave.Text);
-                        double monto = Convert.ToDouble(txtMonto.Text);
-                        string nombre = txtNombre.Text;
-                        if (manejaMovimiento.Deposito(fecha, monto, claveCuenta, nombre))
-                        {
-                            MessageBox.Show("Deposito realizado con exito", "Realizar movimiento", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error al realizar deposito", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }
-                else
-                {
-                    if (ValidaRetiro())
-                    {
-                        string fecha = lblDateTimeNow.Text;
-                        int claveCuenta = Convert.ToInt32(txtClave.Text);
-                        double monto = Convert.ToDouble(txtMonto.Text);
-                        string nombre = txtNombre.Text;
-                        if (manejaMovimiento.Retiro(fecha, monto, claveCuenta, nombre))
-                        {
-                            MessageBox.Show("Retiro realizado con exito", "Realizar movimiento", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error al realizar retiro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }
-            }
-        }
-
         public void LimpiarAux()
         {
             txtClave.Clear();
@@ -360,6 +315,52 @@ namespace BancoF
             if (salir == DialogResult.Yes)
             {
                 Application.Exit();
+            }
+        }
+
+        private void realizarMovimientoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            DialogResult guardar = MessageBox.Show("Desea realizar movimiento?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (guardar == DialogResult.Yes)
+            {
+                if (rdDeposito.Checked)
+                {
+                    if (ValidaDeposito())
+                    {
+                        string fecha = lblDateTimeNow.Text;
+                        int claveCuenta = Convert.ToInt32(txtClave.Text);
+                        double monto = Convert.ToDouble(txtMonto.Text);
+                        string nombre = txtNombre.Text;
+                        if (manejaMovimiento.Deposito(fecha, monto, claveCuenta, nombre))
+                        {
+                            MessageBox.Show("Deposito realizado con exito", "Realizar movimiento", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            LimpiarAux();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al realizar deposito", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else
+                {
+                    if (ValidaRetiro())
+                    {
+                        string fecha = lblDateTimeNow.Text;
+                        int claveCuenta = Convert.ToInt32(txtClave.Text);
+                        double monto = Convert.ToDouble(txtMonto.Text);
+                        string nombre = txtNombre.Text;
+                        if (manejaMovimiento.Retiro(fecha, monto, claveCuenta, nombre))
+                        {
+                            MessageBox.Show("Retiro realizado con exito", "Realizar movimiento", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            LimpiarAux();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al realizar retiro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
             }
         }
     }

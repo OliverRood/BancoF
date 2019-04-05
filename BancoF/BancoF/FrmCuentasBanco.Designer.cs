@@ -47,6 +47,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTipCB = new System.Windows.Forms.ToolTip(this.components);
+            this.guardarTipoCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.epCuentasBanco)).BeginInit();
             this.msCuentasBanco.SuspendLayout();
             this.SuspendLayout();
@@ -185,6 +186,7 @@
             // tsTecBank
             // 
             this.tsTecBank.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.guardarTipoCuentaToolStripMenuItem,
             this.cerrarCuentasBancoToolStripMenuItem,
             this.toolStripSeparator1,
             this.salirToolStripMenuItem});
@@ -197,23 +199,33 @@
             // 
             this.cerrarCuentasBancoToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
             this.cerrarCuentasBancoToolStripMenuItem.Name = "cerrarCuentasBancoToolStripMenuItem";
-            this.cerrarCuentasBancoToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
+            this.cerrarCuentasBancoToolStripMenuItem.Size = new System.Drawing.Size(244, 24);
             this.cerrarCuentasBancoToolStripMenuItem.Text = "Cerrar Cuentas Banco";
             this.cerrarCuentasBancoToolStripMenuItem.Click += new System.EventHandler(this.cerrarCuentasBancoToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(208, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(241, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
             this.salirToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
+            this.salirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Q)));
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(244, 24);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click_1);
+            // 
+            // guardarTipoCuentaToolStripMenuItem
+            // 
+            this.guardarTipoCuentaToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
+            this.guardarTipoCuentaToolStripMenuItem.Name = "guardarTipoCuentaToolStripMenuItem";
+            this.guardarTipoCuentaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
+            this.guardarTipoCuentaToolStripMenuItem.Size = new System.Drawing.Size(244, 24);
+            this.guardarTipoCuentaToolStripMenuItem.Text = "Guardar tipo cuenta";
+            this.guardarTipoCuentaToolStripMenuItem.Click += new System.EventHandler(this.guardarTipoCuentaToolStripMenuItem_Click);
             // 
             // FrmCuentasBanco
             // 
@@ -263,5 +275,6 @@
         private System.Windows.Forms.ToolStripMenuItem cerrarCuentasBancoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolTip toolTipCB;
+        private System.Windows.Forms.ToolStripMenuItem guardarTipoCuentaToolStripMenuItem;
     }
 }

@@ -52,6 +52,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTipM = new System.Windows.Forms.ToolTip(this.components);
+            this.realizarMovimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpTipoMovimiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epMovimiento)).BeginInit();
             this.msMovimiento.SuspendLayout();
@@ -259,6 +260,7 @@
             // tsTecBank
             // 
             this.tsTecBank.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.realizarMovimientoToolStripMenuItem,
             this.tsCerrarRealizarMovimiento,
             this.toolStripSeparator1,
             this.salirToolStripMenuItem});
@@ -271,23 +273,33 @@
             // 
             this.tsCerrarRealizarMovimiento.Font = new System.Drawing.Font("Ebrima", 10F);
             this.tsCerrarRealizarMovimiento.Name = "tsCerrarRealizarMovimiento";
-            this.tsCerrarRealizarMovimiento.Size = new System.Drawing.Size(244, 24);
+            this.tsCerrarRealizarMovimiento.Size = new System.Drawing.Size(245, 24);
             this.tsCerrarRealizarMovimiento.Text = "Cerrar Realizar Movimiento";
             this.tsCerrarRealizarMovimiento.Click += new System.EventHandler(this.tsCerrarRealizarMovimiento_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(241, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(242, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
             this.salirToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(244, 24);
+            this.salirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Q)));
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(245, 24);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click_1);
+            // 
+            // realizarMovimientoToolStripMenuItem
+            // 
+            this.realizarMovimientoToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
+            this.realizarMovimientoToolStripMenuItem.Name = "realizarMovimientoToolStripMenuItem";
+            this.realizarMovimientoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
+            this.realizarMovimientoToolStripMenuItem.Size = new System.Drawing.Size(245, 24);
+            this.realizarMovimientoToolStripMenuItem.Text = "Realizar Movimiento";
+            this.realizarMovimientoToolStripMenuItem.Click += new System.EventHandler(this.realizarMovimientoToolStripMenuItem_Click_1);
             // 
             // FrmMovimiento
             // 
@@ -348,5 +360,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTipM;
+        private System.Windows.Forms.ToolStripMenuItem realizarMovimientoToolStripMenuItem;
     }
 }
