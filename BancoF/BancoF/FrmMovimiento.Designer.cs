@@ -48,11 +48,11 @@
             this.panelDiv = new System.Windows.Forms.Panel();
             this.msMovimiento = new System.Windows.Forms.MenuStrip();
             this.tsTecBank = new System.Windows.Forms.ToolStripMenuItem();
+            this.realizarMovimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsCerrarRealizarMovimiento = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTipM = new System.Windows.Forms.ToolTip(this.components);
-            this.realizarMovimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpTipoMovimiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epMovimiento)).BeginInit();
             this.msMovimiento.SuspendLayout();
@@ -118,7 +118,7 @@
             this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtClave.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(203)))), ((int)(((byte)(218)))));
+            this.txtClave.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtClave.Location = new System.Drawing.Point(424, 204);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(412, 19);
@@ -131,7 +131,7 @@
             this.txtMonto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMonto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(203)))), ((int)(((byte)(218)))));
+            this.txtMonto.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtMonto.Location = new System.Drawing.Point(424, 310);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(412, 19);
@@ -155,7 +155,7 @@
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(203)))), ((int)(((byte)(218)))));
+            this.txtNombre.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtNombre.Location = new System.Drawing.Point(424, 424);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(412, 19);
@@ -269,6 +269,15 @@
             this.tsTecBank.Size = new System.Drawing.Size(77, 23);
             this.tsTecBank.Text = "TecBank";
             // 
+            // realizarMovimientoToolStripMenuItem
+            // 
+            this.realizarMovimientoToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
+            this.realizarMovimientoToolStripMenuItem.Name = "realizarMovimientoToolStripMenuItem";
+            this.realizarMovimientoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
+            this.realizarMovimientoToolStripMenuItem.Size = new System.Drawing.Size(245, 24);
+            this.realizarMovimientoToolStripMenuItem.Text = "Realizar Movimiento";
+            this.realizarMovimientoToolStripMenuItem.Click += new System.EventHandler(this.realizarMovimientoToolStripMenuItem_Click_1);
+            // 
             // tsCerrarRealizarMovimiento
             // 
             this.tsCerrarRealizarMovimiento.Font = new System.Drawing.Font("Ebrima", 10F);
@@ -291,15 +300,6 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(245, 24);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click_1);
-            // 
-            // realizarMovimientoToolStripMenuItem
-            // 
-            this.realizarMovimientoToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
-            this.realizarMovimientoToolStripMenuItem.Name = "realizarMovimientoToolStripMenuItem";
-            this.realizarMovimientoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
-            this.realizarMovimientoToolStripMenuItem.Size = new System.Drawing.Size(245, 24);
-            this.realizarMovimientoToolStripMenuItem.Text = "Realizar Movimiento";
-            this.realizarMovimientoToolStripMenuItem.Click += new System.EventHandler(this.realizarMovimientoToolStripMenuItem_Click_1);
             // 
             // FrmMovimiento
             // 

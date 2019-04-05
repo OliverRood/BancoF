@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAcercaDe));
             this.btnSalir = new System.Windows.Forms.Button();
             this.lbAcercaDe = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picOliver = new System.Windows.Forms.PictureBox();
+            this.picJorge = new System.Windows.Forms.PictureBox();
             this.lbTecNM = new System.Windows.Forms.Label();
             this.lblCreador2 = new System.Windows.Forms.Label();
             this.lblCreador1 = new System.Windows.Forms.Label();
@@ -43,13 +46,11 @@
             this.tsCerrar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsSalir = new System.Windows.Forms.ToolStripMenuItem();
-            this.picJorge = new System.Windows.Forms.PictureBox();
-            this.picOliver = new System.Windows.Forms.PictureBox();
             this.toolTipAD = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
-            this.msAcercaDe.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picJorge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOliver)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picJorge)).BeginInit();
+            this.msAcercaDe.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSalir
@@ -93,6 +94,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(681, 448);
             this.panel1.TabIndex = 23;
+            // 
+            // picOliver
+            // 
+            this.picOliver.Image = global::BancoF.Properties.Resources.IMG_7550;
+            this.picOliver.Location = new System.Drawing.Point(378, 239);
+            this.picOliver.Name = "picOliver";
+            this.picOliver.Size = new System.Drawing.Size(130, 148);
+            this.picOliver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picOliver.TabIndex = 24;
+            this.picOliver.TabStop = false;
+            // 
+            // picJorge
+            // 
+            this.picJorge.Image = global::BancoF.Properties.Resources.IMG_7551;
+            this.picJorge.Location = new System.Drawing.Point(171, 239);
+            this.picJorge.Name = "picJorge";
+            this.picJorge.Size = new System.Drawing.Size(130, 148);
+            this.picJorge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picJorge.TabIndex = 23;
+            this.picJorge.TabStop = false;
             // 
             // lbTecNM
             // 
@@ -203,26 +224,6 @@
             this.tsSalir.Text = "Salir";
             this.tsSalir.Click += new System.EventHandler(this.tsSalir_Click);
             // 
-            // picJorge
-            // 
-            this.picJorge.Image = global::BancoF.Properties.Resources.IMG_7551;
-            this.picJorge.Location = new System.Drawing.Point(171, 239);
-            this.picJorge.Name = "picJorge";
-            this.picJorge.Size = new System.Drawing.Size(130, 148);
-            this.picJorge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picJorge.TabIndex = 23;
-            this.picJorge.TabStop = false;
-            // 
-            // picOliver
-            // 
-            this.picOliver.Image = global::BancoF.Properties.Resources.IMG_7550;
-            this.picOliver.Location = new System.Drawing.Point(378, 239);
-            this.picOliver.Name = "picOliver";
-            this.picOliver.Size = new System.Drawing.Size(130, 148);
-            this.picOliver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picOliver.TabIndex = 24;
-            this.picOliver.TabStop = false;
-            // 
             // FrmAcercaDe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,16 +235,17 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.msAcercaDe);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAcercaDe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAcercaDe";
             this.Load += new System.EventHandler(this.FrmAcercaDe_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picOliver)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picJorge)).EndInit();
             this.msAcercaDe.ResumeLayout(false);
             this.msAcercaDe.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picJorge)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picOliver)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

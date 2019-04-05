@@ -58,12 +58,6 @@
     <Compile Include="FrmAcercaDe.Designer.cs">
       <DependentUpon>FrmAcercaDe.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmClientesAcceso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmClientesAcceso.Designer.cs">
-      <DependentUpon>frmClientesAcceso.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAgregarCuenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,12 +106,6 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMenuClientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMenuClientes.Designer.cs">
-      <DependentUpon>frmMenuClientes.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmMovimiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,9 +133,6 @@
     <EmbeddedResource Include="frmAñadirCliente.resx">
       <DependentUpon>frmAñadirCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmClientesAcceso.resx">
-      <DependentUpon>frmClientesAcceso.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmConsultaClientes.resx">
       <DependentUpon>frmConsultaClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,9 +153,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMenuClientes.resx">
-      <DependentUpon>frmMenuClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMovimiento.resx">
       <DependentUpon>FrmMovimiento.cs</DependentUpon>

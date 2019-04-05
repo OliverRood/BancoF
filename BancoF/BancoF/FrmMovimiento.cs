@@ -189,7 +189,7 @@ namespace BancoF
 
         private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != '.'))
             {
                 epMovimiento.SetError(txtMonto, "SOLO SE PERMITEN NUMEROS");
                 e.Handled = true;

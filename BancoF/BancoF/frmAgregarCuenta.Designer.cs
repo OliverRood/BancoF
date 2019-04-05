@@ -163,14 +163,14 @@
             // tsGuardarCuenta
             // 
             this.tsGuardarCuenta.Name = "tsGuardarCuenta";
-            this.tsGuardarCuenta.Size = new System.Drawing.Size(180, 22);
+            this.tsGuardarCuenta.Size = new System.Drawing.Size(116, 22);
             this.tsGuardarCuenta.Text = "Guardar";
             this.tsGuardarCuenta.Click += new System.EventHandler(this.tsGuardarCuenta_Click);
             // 
             // tsSalir
             // 
             this.tsSalir.Name = "tsSalir";
-            this.tsSalir.Size = new System.Drawing.Size(180, 22);
+            this.tsSalir.Size = new System.Drawing.Size(116, 22);
             this.tsSalir.Text = "Salir";
             this.tsSalir.Click += new System.EventHandler(this.tsSalir_Click);
             // 

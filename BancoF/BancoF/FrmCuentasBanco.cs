@@ -50,7 +50,7 @@ namespace BancoF
 
         private void txtMontoMinimo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar)) && e.KeyChar != (char)Keys.Back)
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != '.'))
             {
                 epCuentasBanco.SetError(txtMontoMinimo, "SOLO SE PERMITEN NUMEROS");
                 e.Handled = true;
