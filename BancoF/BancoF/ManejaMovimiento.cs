@@ -53,19 +53,7 @@ namespace BancoF
 
             return flag;
         }
-
-        public Movimiento[] obtieneMovimientosPorCliente(int ClaveCliente)
-        {
-            Movimiento[] movimientosClientes = new Movimiento[movimientos.Count];
-            for (int i = 0; i < movimientos.Count; i++)
-            {
-                if (movimientos[i].pClaveCuenta == ClaveCliente)
-                {
-                    movimientosClientes[i] = movimientos[i];
-                }
-            }
-            return movimientosClientes;
-        }
+        
         public Movimiento[] obtieneMovimientos()
         {
             Movimiento[] movimientosAux = new Movimiento[movimientos.Count];

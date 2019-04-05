@@ -47,11 +47,11 @@
             this.btnUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.btnUsuario.FlatAppearance.BorderSize = 0;
             this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuario.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.btnUsuario.Location = new System.Drawing.Point(267, 274);
             this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(193, 49);
+            this.btnUsuario.Size = new System.Drawing.Size(193, 53);
             this.btnUsuario.TabIndex = 2;
             this.btnUsuario.Text = "Ingresar como usuario";
             this.btnUsuario.UseVisualStyleBackColor = false;
@@ -62,11 +62,11 @@
             this.lbLogin.AutoSize = true;
             this.lbLogin.BackColor = System.Drawing.Color.Transparent;
             this.lbLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbLogin.Font = new System.Drawing.Font("Franklin Gothic Medium", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLogin.Font = new System.Drawing.Font("Ebrima", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(48)))), ((int)(((byte)(36)))));
-            this.lbLogin.Location = new System.Drawing.Point(31, 23);
+            this.lbLogin.Location = new System.Drawing.Point(31, 25);
             this.lbLogin.Name = "lbLogin";
-            this.lbLogin.Size = new System.Drawing.Size(261, 47);
+            this.lbLogin.Size = new System.Drawing.Size(267, 54);
             this.lbLogin.TabIndex = 6;
             this.lbLogin.Text = "Iniciar sesion";
             // 
@@ -75,11 +75,11 @@
             this.btnAdministrador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.btnAdministrador.FlatAppearance.BorderSize = 0;
             this.btnAdministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdministrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdministrador.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdministrador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.btnAdministrador.Location = new System.Drawing.Point(291, 399);
+            this.btnAdministrador.Location = new System.Drawing.Point(267, 417);
             this.btnAdministrador.Name = "btnAdministrador";
-            this.btnAdministrador.Size = new System.Drawing.Size(197, 56);
+            this.btnAdministrador.Size = new System.Drawing.Size(235, 44);
             this.btnAdministrador.TabIndex = 7;
             this.btnAdministrador.Text = "Ingresar como administrador";
             this.btnAdministrador.UseVisualStyleBackColor = false;
@@ -92,27 +92,27 @@
             this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(48)))), ((int)(((byte)(36)))));
+            this.txtNombre.Font = new System.Drawing.Font("Ebrima", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(32)))), ((int)(((byte)(18)))));
             this.txtNombre.Location = new System.Drawing.Point(132, 216);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(298, 22);
+            this.txtNombre.Size = new System.Drawing.Size(298, 26);
             this.txtNombre.TabIndex = 8;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.Color.Transparent;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Font = new System.Drawing.Font("Ebrima", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(88, 177);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(85, 24);
+            this.lblNombre.Size = new System.Drawing.Size(86, 25);
             this.lblNombre.TabIndex = 9;
             this.lblNombre.Text = "Nombre";
             // 
             // panelDiv
             // 
-            this.panelDiv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(48)))), ((int)(((byte)(36)))));
+            this.panelDiv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(36)))), ((int)(((byte)(20)))));
             this.panelDiv.Location = new System.Drawing.Point(-8, 455);
             this.panelDiv.Name = "panelDiv";
             this.panelDiv.Size = new System.Drawing.Size(638, 164);
@@ -121,7 +121,7 @@
             // btnSalir
             // 
             this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
+            this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Location = new System.Drawing.Point(577, -1);
@@ -137,11 +137,11 @@
             this.btnInvitado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.btnInvitado.FlatAppearance.BorderSize = 0;
             this.btnInvitado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInvitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvitado.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInvitado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.btnInvitado.Location = new System.Drawing.Point(50, 399);
+            this.btnInvitado.Location = new System.Drawing.Point(18, 417);
             this.btnInvitado.Name = "btnInvitado";
-            this.btnInvitado.Size = new System.Drawing.Size(197, 56);
+            this.btnInvitado.Size = new System.Drawing.Size(199, 44);
             this.btnInvitado.TabIndex = 18;
             this.btnInvitado.Text = "Ingresar como invitado";
             this.btnInvitado.UseVisualStyleBackColor = false;
@@ -167,7 +167,7 @@
             this.lblBienvenida.BackColor = System.Drawing.Color.Transparent;
             this.lblBienvenida.Font = new System.Drawing.Font("Ebrima", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBienvenida.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(123)))), ((int)(((byte)(123)))));
-            this.lblBienvenida.Location = new System.Drawing.Point(27, 63);
+            this.lblBienvenida.Location = new System.Drawing.Point(25, 45);
             this.lblBienvenida.Name = "lblBienvenida";
             this.lblBienvenida.Size = new System.Drawing.Size(344, 46);
             this.lblBienvenida.TabIndex = 19;
@@ -187,7 +187,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmLogin";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

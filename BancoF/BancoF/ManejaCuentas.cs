@@ -77,5 +77,17 @@ namespace BancoF
             
             return temp;         
         }
+
+        public double obtenerSaldoTotalPorCliente(int claveCliente)
+        {
+            double saldoTotal = 0;
+            foreach (KeyValuePair<int, Cuenta> item in cuentas) {
+                if (item.Value.pClaveCliente == claveCliente)
+                {
+                    saldoTotal += item.Value.pSaldo;
+                }
+            }
+            return saldoTotal;
+        }
     }
 }

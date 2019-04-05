@@ -94,6 +94,12 @@
     <Compile Include="FrmConsultaMovimientos.Designer.cs">
       <DependentUpon>FrmConsultaMovimientos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConsultaMovimientosClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultaMovimientosClientes.Designer.cs">
+      <DependentUpon>FrmConsultaMovimientosClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCuentasBanco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarCuenta.resx">
       <DependentUpon>frmAgregarCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsultaMovimientosClientes.resx">
+      <DependentUpon>FrmConsultaMovimientosClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCuentasBanco.resx">
       <DependentUpon>FrmCuentasBanco.cs</DependentUpon>

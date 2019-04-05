@@ -26,10 +26,31 @@ namespace BancoF
             this.manejaCuentas = mCue;
             this.manejaCatalogo = mCat;
             this.manejaMovi = mMov;
-
             InitializeComponent();
             this.flagUsuario = FlagUsuario;
             this.nombre = Nombre;
+            menuStrip1.Renderer = new MyRenderer();
+        }
+
+        private class MyRenderer : ToolStripProfessionalRenderer
+        {
+            public MyRenderer() : base(new MyColors()) { }
+        }
+
+        private class MyColors : ProfessionalColorTable
+        {
+            public override Color MenuItemSelected
+            {
+                get { return ColorTranslator.FromHtml("#d9d9d9"); }
+            }
+            public override Color MenuItemSelectedGradientBegin
+            {
+                get { return ColorTranslator.FromHtml("#d9d9d9"); }
+            }
+            public override Color MenuItemSelectedGradientEnd
+            {
+                get { return ColorTranslator.FromHtml("#d9d9d9"); }
+            }
         }
 
         private void frnVentanaPrincipal_Load(object sender, EventArgs e)
@@ -123,20 +144,26 @@ namespace BancoF
 
         private void porCuentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmConsultaMovimientos frmConsultaMovimientos = new FrmConsultaMovimientos(manejaMovi, manejaCli, manejaCuentas, nombre, 1);
-            frmConsultaMovimientos.ShowDialog();
+            FrmConsultaMovimientosClientes frmConsultaMovimientosClientes = new FrmConsultaMovimientosClientes(manejaMovi, manejaCli, manejaCuentas, nombre, true);
+            frmConsultaMovimientosClientes.ShowDialog();
         }
 
         private void todoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmConsultaMovimientos frmConsultaMovimientos = new FrmConsultaMovimientos(manejaMovi, manejaCli, manejaCuentas, nombre, 2);
-            frmConsultaMovimientos.ShowDialog();
+            FrmConsultaMovimientosClientes frmConsultaMovimientosClientes = new FrmConsultaMovimientosClientes(manejaMovi, manejaCli, manejaCuentas, nombre, false);
+            frmConsultaMovimientosClientes.ShowDialog();
         }
         
         private void movimientosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmConsultaMovimientos frmConsultaMovimientos = new FrmConsultaMovimientos(manejaMovi, manejaCli, manejaCuentas, nombre, 3);
+            FrmConsultaMovimientos frmConsultaMovimientos = new FrmConsultaMovimientos(manejaMovi, manejaCli, manejaCuentas, nombre);
             frmConsultaMovimientos.ShowDialog();
+        }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAcercaDe frmAcercaDe = new FrmAcercaDe();
+            frmAcercaDe.ShowDialog();
         }
     }
 }
