@@ -37,13 +37,15 @@
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbMovimientos = new System.Windows.Forms.Label();
-            this.msCuentasBanco = new System.Windows.Forms.MenuStrip();
+            this.msMovimientos = new System.Windows.Forms.MenuStrip();
             this.tsTecBank = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsCerrarMovimientos = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.panelDiv = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
-            this.msCuentasBanco.SuspendLayout();
+            this.msMovimientos.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvMovimientos
@@ -110,34 +112,49 @@
             this.lbMovimientos.TabIndex = 6;
             this.lbMovimientos.Text = "Movimientos";
             // 
-            // msCuentasBanco
+            // msMovimientos
             // 
-            this.msCuentasBanco.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold);
-            this.msCuentasBanco.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.msMovimientos.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold);
+            this.msMovimientos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsTecBank});
-            this.msCuentasBanco.Location = new System.Drawing.Point(0, 0);
-            this.msCuentasBanco.Name = "msCuentasBanco";
-            this.msCuentasBanco.Size = new System.Drawing.Size(1000, 27);
-            this.msCuentasBanco.TabIndex = 23;
-            this.msCuentasBanco.Text = "menuStrip1";
+            this.msMovimientos.Location = new System.Drawing.Point(0, 0);
+            this.msMovimientos.Name = "msMovimientos";
+            this.msMovimientos.Size = new System.Drawing.Size(1000, 27);
+            this.msMovimientos.TabIndex = 23;
+            this.msMovimientos.Text = "menuStrip1";
             // 
             // tsTecBank
             // 
             this.tsTecBank.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salirToolStripMenuItem});
+            this.tsCerrarMovimientos,
+            this.toolStripSeparator1,
+            this.tsSalir});
             this.tsTecBank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.tsTecBank.Name = "tsTecBank";
             this.tsTecBank.Size = new System.Drawing.Size(77, 23);
             this.tsTecBank.Text = "TecBank";
             // 
-            // salirToolStripMenuItem
+            // tsCerrarMovimientos
             // 
-            this.salirToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
-            this.salirToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            this.tsCerrarMovimientos.Font = new System.Drawing.Font("Ebrima", 10F);
+            this.tsCerrarMovimientos.Name = "tsCerrarMovimientos";
+            this.tsCerrarMovimientos.Size = new System.Drawing.Size(200, 24);
+            this.tsCerrarMovimientos.Text = "Cerrar Movimientos";
+            this.tsCerrarMovimientos.Click += new System.EventHandler(this.tsCerrarMovimientos_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(197, 6);
+            // 
+            // tsSalir
+            // 
+            this.tsSalir.Font = new System.Drawing.Font("Ebrima", 10F);
+            this.tsSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.tsSalir.Name = "tsSalir";
+            this.tsSalir.Size = new System.Drawing.Size(200, 24);
+            this.tsSalir.Text = "Salir";
+            this.tsSalir.Click += new System.EventHandler(this.tsSalir_Click);
             // 
             // panelDiv
             // 
@@ -159,7 +176,7 @@
             this.btnSalir.TabIndex = 26;
             this.btnSalir.Text = "x";
             this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FrmConsultaMovimientos
             // 
@@ -170,7 +187,7 @@
             this.Controls.Add(this.lbMovimientos);
             this.Controls.Add(this.dgvMovimientos);
             this.Controls.Add(this.panelDiv);
-            this.Controls.Add(this.msCuentasBanco);
+            this.Controls.Add(this.msMovimientos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsultaMovimientos";
@@ -178,8 +195,8 @@
             this.Text = "FrmConsultaMovimientos";
             this.Load += new System.EventHandler(this.FrmConsultaMovimientos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).EndInit();
-            this.msCuentasBanco.ResumeLayout(false);
-            this.msCuentasBanco.PerformLayout();
+            this.msMovimientos.ResumeLayout(false);
+            this.msMovimientos.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,9 +206,9 @@
 
         private System.Windows.Forms.DataGridView dgvMovimientos;
         private System.Windows.Forms.Label lbMovimientos;
-        private System.Windows.Forms.MenuStrip msCuentasBanco;
+        private System.Windows.Forms.MenuStrip msMovimientos;
         private System.Windows.Forms.ToolStripMenuItem tsTecBank;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsSalir;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClaveDeCuenta;
@@ -199,5 +216,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.Panel panelDiv;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.ToolStripMenuItem tsCerrarMovimientos;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

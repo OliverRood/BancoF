@@ -39,7 +39,9 @@
             this.panelDiv = new System.Windows.Forms.Panel();
             this.msAcercaDe = new System.Windows.Forms.MenuStrip();
             this.tsTecBank = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsCerrar = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.msAcercaDe.SuspendLayout();
             this.SuspendLayout();
@@ -163,19 +165,35 @@
             // tsTecBank
             // 
             this.tsTecBank.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salirToolStripMenuItem});
+            this.tsCerrar,
+            this.toolStripSeparator1,
+            this.tsSalir});
             this.tsTecBank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.tsTecBank.Name = "tsTecBank";
             this.tsTecBank.Size = new System.Drawing.Size(77, 23);
             this.tsTecBank.Text = "TecBank";
             // 
-            // salirToolStripMenuItem
+            // tsCerrar
             // 
-            this.salirToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
-            this.salirToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.salirToolStripMenuItem.Text = "Salir";
+            this.tsCerrar.Font = new System.Drawing.Font("Ebrima", 10F);
+            this.tsCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.tsCerrar.Name = "tsCerrar";
+            this.tsCerrar.Size = new System.Drawing.Size(180, 24);
+            this.tsCerrar.Text = "Cerrar acerca de";
+            this.tsCerrar.Click += new System.EventHandler(this.tsCerrar_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // tsSalir
+            // 
+            this.tsSalir.Font = new System.Drawing.Font("Ebrima", 10F);
+            this.tsSalir.Name = "tsSalir";
+            this.tsSalir.Size = new System.Drawing.Size(180, 24);
+            this.tsSalir.Text = "Salir";
+            this.tsSalir.Click += new System.EventHandler(this.tsSalir_Click);
             // 
             // FrmAcercaDe
             // 
@@ -212,6 +230,8 @@
         private System.Windows.Forms.Panel panelDiv;
         private System.Windows.Forms.MenuStrip msAcercaDe;
         private System.Windows.Forms.ToolStripMenuItem tsTecBank;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsCerrar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem tsSalir;
     }
 }

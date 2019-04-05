@@ -47,14 +47,18 @@ namespace BancoF
             this.Close();
         }
 
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void tsSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tsCerrarCuentasBanco_Click(object sender, EventArgs e)
+        {
+            DialogResult salir = MessageBox.Show("Desea salir de TecBank?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (salir == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

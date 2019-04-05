@@ -345,6 +345,18 @@ namespace BancoF
             }
         }
 
+        private void tsCerrarRealizarMovimiento_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void salirToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            DialogResult salir = MessageBox.Show("Desea salir de TecBank?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (salir == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

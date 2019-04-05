@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmbCuentas = new System.Windows.Forms.ComboBox();
             this.lblNombreCMC = new System.Windows.Forms.Label();
             this.dgvMovimientos = new System.Windows.Forms.DataGridView();
@@ -39,16 +39,18 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelDiv = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.msConsultaMovimientosCliente = new System.Windows.Forms.MenuStrip();
-            this.tsTecBank = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblSaldoCuenta = new System.Windows.Forms.Label();
             this.lblSaldo = new System.Windows.Forms.Label();
             this.lblDatosCliente = new System.Windows.Forms.Label();
             this.lblDatosClientes2 = new System.Windows.Forms.Label();
             this.lblMovimientos = new System.Windows.Forms.Label();
+            this.msConsultaMovimientosClientes = new System.Windows.Forms.MenuStrip();
+            this.tsTecBank = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsCerrarMovimientos = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsSalir = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
-            this.msConsultaMovimientosCliente.SuspendLayout();
+            this.msConsultaMovimientosClientes.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbCuentas
@@ -77,14 +79,14 @@
             // 
             this.dgvMovimientos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.dgvMovimientos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightCoral;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMovimientos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightCoral;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMovimientos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMovimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Fecha,
@@ -148,34 +150,6 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // msConsultaMovimientosCliente
-            // 
-            this.msConsultaMovimientosCliente.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold);
-            this.msConsultaMovimientosCliente.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsTecBank});
-            this.msConsultaMovimientosCliente.Location = new System.Drawing.Point(0, 0);
-            this.msConsultaMovimientosCliente.Name = "msConsultaMovimientosCliente";
-            this.msConsultaMovimientosCliente.Size = new System.Drawing.Size(1000, 27);
-            this.msConsultaMovimientosCliente.TabIndex = 31;
-            this.msConsultaMovimientosCliente.Text = "menuStrip1";
-            // 
-            // tsTecBank
-            // 
-            this.tsTecBank.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salirToolStripMenuItem});
-            this.tsTecBank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.tsTecBank.Name = "tsTecBank";
-            this.tsTecBank.Size = new System.Drawing.Size(77, 23);
-            this.tsTecBank.Text = "TecBank";
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
-            this.salirToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.salirToolStripMenuItem.Text = "Salir";
-            // 
             // lblSaldoCuenta
             // 
             this.lblSaldoCuenta.AutoSize = true;
@@ -233,11 +207,56 @@
             this.lblMovimientos.TabIndex = 36;
             this.lblMovimientos.Text = "Movimientos";
             // 
+            // msConsultaMovimientosClientes
+            // 
+            this.msConsultaMovimientosClientes.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold);
+            this.msConsultaMovimientosClientes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsTecBank});
+            this.msConsultaMovimientosClientes.Location = new System.Drawing.Point(0, 0);
+            this.msConsultaMovimientosClientes.Name = "msConsultaMovimientosClientes";
+            this.msConsultaMovimientosClientes.Size = new System.Drawing.Size(1000, 27);
+            this.msConsultaMovimientosClientes.TabIndex = 37;
+            this.msConsultaMovimientosClientes.Text = "menuStrip1";
+            // 
+            // tsTecBank
+            // 
+            this.tsTecBank.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsCerrarMovimientos,
+            this.toolStripSeparator1,
+            this.tsSalir});
+            this.tsTecBank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.tsTecBank.Name = "tsTecBank";
+            this.tsTecBank.Size = new System.Drawing.Size(77, 23);
+            this.tsTecBank.Text = "TecBank";
+            // 
+            // tsCerrarMovimientos
+            // 
+            this.tsCerrarMovimientos.Font = new System.Drawing.Font("Ebrima", 10F);
+            this.tsCerrarMovimientos.Name = "tsCerrarMovimientos";
+            this.tsCerrarMovimientos.Size = new System.Drawing.Size(200, 24);
+            this.tsCerrarMovimientos.Text = "Cerrar Movimientos";
+            this.tsCerrarMovimientos.Click += new System.EventHandler(this.tsCerrarMovimientos_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(197, 6);
+            // 
+            // tsSalir
+            // 
+            this.tsSalir.Font = new System.Drawing.Font("Ebrima", 10F);
+            this.tsSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.tsSalir.Name = "tsSalir";
+            this.tsSalir.Size = new System.Drawing.Size(200, 24);
+            this.tsSalir.Text = "Salir";
+            this.tsSalir.Click += new System.EventHandler(this.tsSalir_Click);
+            // 
             // FrmConsultaMovimientosClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.msConsultaMovimientosClientes);
             this.Controls.Add(this.lblMovimientos);
             this.Controls.Add(this.lblDatosClientes2);
             this.Controls.Add(this.lblDatosCliente);
@@ -248,15 +267,14 @@
             this.Controls.Add(this.lblNombreCMC);
             this.Controls.Add(this.dgvMovimientos);
             this.Controls.Add(this.panelDiv);
-            this.Controls.Add(this.msConsultaMovimientosCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmConsultaMovimientosClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmConsultaMovimientosClientes";
             this.Load += new System.EventHandler(this.FrmConsultaMovimientosClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).EndInit();
-            this.msConsultaMovimientosCliente.ResumeLayout(false);
-            this.msConsultaMovimientosCliente.PerformLayout();
+            this.msConsultaMovimientosClientes.ResumeLayout(false);
+            this.msConsultaMovimientosClientes.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,13 +292,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.Panel panelDiv;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.MenuStrip msConsultaMovimientosCliente;
-        private System.Windows.Forms.ToolStripMenuItem tsTecBank;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.Label lblSaldoCuenta;
         private System.Windows.Forms.Label lblSaldo;
         private System.Windows.Forms.Label lblDatosCliente;
         private System.Windows.Forms.Label lblDatosClientes2;
         private System.Windows.Forms.Label lblMovimientos;
+        private System.Windows.Forms.MenuStrip msConsultaMovimientosClientes;
+        private System.Windows.Forms.ToolStripMenuItem tsTecBank;
+        private System.Windows.Forms.ToolStripMenuItem tsCerrarMovimientos;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem tsSalir;
     }
 }

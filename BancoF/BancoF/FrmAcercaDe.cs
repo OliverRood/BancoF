@@ -21,5 +21,15 @@ namespace BancoF
         {
             this.Close();
         }
+
+        private void tsCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tsSalir_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
