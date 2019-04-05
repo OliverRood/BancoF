@@ -30,6 +30,10 @@ namespace BancoF
         {
             cmbTipoCuenta.SelectedIndex = 0;
             agregarTiposCuentas();
+            tlpCuentas.SetToolTip(txtNumCuenta,
+                "El número de cuenta es un número entero de 7 digitos que utilizamos para identificar su cuenta de forma unica y confidencial.");
+            tlpCuentas.SetToolTip(txtMontoMin,"El monto de apertura debe de ser mayor o igual al monto minimo del tipo de cuenta que seleccione.\n" +
+                "En algunos casos no se necesita de ningún monto minimo para aperturar la cuenta.");
         }
 
         private void agregarTiposCuentas()

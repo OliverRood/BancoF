@@ -49,6 +49,8 @@
             this.rchDesc = new System.Windows.Forms.RichTextBox();
             this.lblMontoMin = new System.Windows.Forms.Label();
             this.txtMontoMin = new System.Windows.Forms.TextBox();
+            this.panelDiv = new System.Windows.Forms.Panel();
+            this.tlpCuentas = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorP)).BeginInit();
             this.SuspendLayout();
@@ -127,11 +129,11 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.button1.CausesValidation = false;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(203)))), ((int)(((byte)(218)))));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(250)))));
             this.button1.Location = new System.Drawing.Point(610, 434);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.button1.Name = "button1";
@@ -266,11 +268,24 @@
             this.txtMontoMin.TabIndex = 27;
             this.txtMontoMin.Visible = false;
             // 
+            // panelDiv
+            // 
+            this.panelDiv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(36)))), ((int)(((byte)(20)))));
+            this.panelDiv.Location = new System.Drawing.Point(0, 546);
+            this.panelDiv.Name = "panelDiv";
+            this.panelDiv.Size = new System.Drawing.Size(1000, 55);
+            this.panelDiv.TabIndex = 29;
+            // 
+            // tlpCuentas
+            // 
+            this.tlpCuentas.ToolTipTitle = "Información de la cuenta";
+            // 
             // frmAgregarCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.panelDiv);
             this.Controls.Add(this.txtMontoMin);
             this.Controls.Add(this.lblMontoMin);
             this.Controls.Add(this.rchDesc);
@@ -322,5 +337,7 @@
         private System.Windows.Forms.RichTextBox rchDesc;
         private System.Windows.Forms.Label lblMontoMin;
         private System.Windows.Forms.TextBox txtMontoMin;
+        private System.Windows.Forms.Panel panelDiv;
+        private System.Windows.Forms.ToolTip tlpCuentas;
     }
 }
