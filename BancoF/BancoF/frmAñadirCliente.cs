@@ -30,6 +30,7 @@ namespace BancoF
             string datosTel = String.Format("Solo se aceptan números celulares. {0} {1} {2} {3}",
                 "Algunos formatos aceptables para el número de télefono son:\n","+52(***)-***-**-**\n","(***) *** *** ** **\n","**********");
             tlpClientes.SetToolTip(txtTelefono,datosTel);
+            tlpClientes.SetToolTip(txtDomicilio,"Es importante ubicar correctamente la dirección del cliente.");
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

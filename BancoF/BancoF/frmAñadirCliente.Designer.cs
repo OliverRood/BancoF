@@ -47,6 +47,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.errorP = new System.Windows.Forms.ErrorProvider(this.components);
             this.tlpClientes = new System.Windows.Forms.ToolTip(this.components);
+            this.panelDiv = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorP)).BeginInit();
             this.SuspendLayout();
@@ -135,11 +136,11 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.White;
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.btnLimpiar.CausesValidation = false;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(203)))), ((int)(((byte)(218)))));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(250)))));
             this.btnLimpiar.Location = new System.Drawing.Point(594, 447);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnLimpiar.Name = "btnLimpiar";
@@ -229,13 +230,23 @@
             this.tlpClientes.IsBalloon = true;
             this.tlpClientes.ReshowDelay = 100;
             this.tlpClientes.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.tlpClientes.ToolTipTitle = "Télefono del cliente";
+            this.tlpClientes.ToolTipTitle = "Información del cliente";
+            // 
+            // panelDiv
+            // 
+            this.panelDiv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(36)))), ((int)(((byte)(20)))));
+            this.panelDiv.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.panelDiv.Location = new System.Drawing.Point(0, 524);
+            this.panelDiv.Name = "panelDiv";
+            this.panelDiv.Size = new System.Drawing.Size(1000, 64);
+            this.panelDiv.TabIndex = 30;
             // 
             // frmAgregarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.panelDiv);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.lblTelefono);
@@ -283,5 +294,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.ErrorProvider errorP;
         private System.Windows.Forms.ToolTip tlpClientes;
+        private System.Windows.Forms.Panel panelDiv;
     }
 }

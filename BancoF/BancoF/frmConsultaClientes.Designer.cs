@@ -50,6 +50,7 @@
             this.lblCuentasCliente = new System.Windows.Forms.Label();
             this.lblDatosCli = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.panelDiv = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuentasCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -247,6 +248,14 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // panelDiv
+            // 
+            this.panelDiv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(36)))), ((int)(((byte)(20)))));
+            this.panelDiv.Location = new System.Drawing.Point(-1, 507);
+            this.panelDiv.Name = "panelDiv";
+            this.panelDiv.Size = new System.Drawing.Size(984, 57);
+            this.panelDiv.TabIndex = 30;
+            // 
             // frmConsultaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,6 +276,7 @@
             this.Controls.Add(this.lblClaveCliente);
             this.Controls.Add(this.lblClienteConsulta);
             this.Controls.Add(this.lblClientes);
+            this.Controls.Add(this.panelDiv);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmConsultaClientes";
@@ -299,5 +309,6 @@
         private System.Windows.Forms.Label lblCuentasCliente;
         private System.Windows.Forms.Label lblDatosCli;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Panel panelDiv;
     }
 }
