@@ -156,7 +156,7 @@ namespace BancoF
         
         private void movimientosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmConsultaMovimientos frmConsultaMovimientos = new FrmConsultaMovimientos(manejaMovi, manejaCli, manejaCuentas, nombre);
+            FrmConsultaMovimientos frmConsultaMovimientos = new FrmConsultaMovimientos(manejaMovi);
             frmConsultaMovimientos.ShowDialog();
         }
 
