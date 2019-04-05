@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSalir = new System.Windows.Forms.Button();
             this.lbAcercaDe = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -42,8 +43,13 @@
             this.tsCerrar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.picJorge = new System.Windows.Forms.PictureBox();
+            this.picOliver = new System.Windows.Forms.PictureBox();
+            this.toolTipAD = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.msAcercaDe.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picJorge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picOliver)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalir
@@ -76,6 +82,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.panel1.Controls.Add(this.picOliver);
+            this.panel1.Controls.Add(this.picJorge);
             this.panel1.Controls.Add(this.lbTecNM);
             this.panel1.Controls.Add(this.lblCreador2);
             this.panel1.Controls.Add(this.lblCreador1);
@@ -92,7 +100,7 @@
             this.lbTecNM.BackColor = System.Drawing.Color.Transparent;
             this.lbTecNM.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTecNM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(123)))), ((int)(((byte)(123)))));
-            this.lbTecNM.Location = new System.Drawing.Point(216, 440);
+            this.lbTecNM.Location = new System.Drawing.Point(216, 423);
             this.lbTecNM.Name = "lbTecNM";
             this.lbTecNM.Size = new System.Drawing.Size(259, 19);
             this.lbTecNM.TabIndex = 22;
@@ -178,41 +186,64 @@
             this.tsCerrar.Font = new System.Drawing.Font("Ebrima", 10F);
             this.tsCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.tsCerrar.Name = "tsCerrar";
-            this.tsCerrar.Size = new System.Drawing.Size(180, 24);
+            this.tsCerrar.Size = new System.Drawing.Size(177, 24);
             this.tsCerrar.Text = "Cerrar acerca de";
             this.tsCerrar.Click += new System.EventHandler(this.tsCerrar_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(174, 6);
             // 
             // tsSalir
             // 
             this.tsSalir.Font = new System.Drawing.Font("Ebrima", 10F);
             this.tsSalir.Name = "tsSalir";
-            this.tsSalir.Size = new System.Drawing.Size(180, 24);
+            this.tsSalir.Size = new System.Drawing.Size(177, 24);
             this.tsSalir.Text = "Salir";
             this.tsSalir.Click += new System.EventHandler(this.tsSalir_Click);
+            // 
+            // picJorge
+            // 
+            this.picJorge.Image = global::BancoF.Properties.Resources.IMG_7551;
+            this.picJorge.Location = new System.Drawing.Point(171, 239);
+            this.picJorge.Name = "picJorge";
+            this.picJorge.Size = new System.Drawing.Size(130, 148);
+            this.picJorge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picJorge.TabIndex = 23;
+            this.picJorge.TabStop = false;
+            // 
+            // picOliver
+            // 
+            this.picOliver.Image = global::BancoF.Properties.Resources.IMG_7550;
+            this.picOliver.Location = new System.Drawing.Point(378, 239);
+            this.picOliver.Name = "picOliver";
+            this.picOliver.Size = new System.Drawing.Size(130, 148);
+            this.picOliver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picOliver.TabIndex = 24;
+            this.picOliver.TabStop = false;
             // 
             // FrmAcercaDe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 600);
-            this.Controls.Add(this.msAcercaDe);
             this.Controls.Add(this.lbAcercaDe);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelDiv);
             this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.msAcercaDe);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAcercaDe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAcercaDe";
+            this.Load += new System.EventHandler(this.FrmAcercaDe_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.msAcercaDe.ResumeLayout(false);
             this.msAcercaDe.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picJorge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picOliver)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,5 +264,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsCerrar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem tsSalir;
+        private System.Windows.Forms.PictureBox picJorge;
+        private System.Windows.Forms.PictureBox picOliver;
+        private System.Windows.Forms.ToolTip toolTipAD;
     }
 }

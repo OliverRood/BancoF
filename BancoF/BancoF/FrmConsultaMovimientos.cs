@@ -14,18 +14,10 @@ namespace BancoF
     {
 
         ManejaMovimiento manejaMovimiento;
-        ManejaCliente manejaCliente;
-        ManejaCuentas manejaCuentas;
-        KeyValuePair<int, Cuenta>[] cuentasCliente;
-        Movimiento[] movimientosPorCliente;
-        string nombreCliente;
 
-        public FrmConsultaMovimientos(ManejaMovimiento manejaMovimiento, ManejaCliente manejaCliente, ManejaCuentas manejaCuentas, string nombreCliente)
+        public FrmConsultaMovimientos(ManejaMovimiento manejaMovimiento)
         {
             this.manejaMovimiento = manejaMovimiento;
-            this.manejaCliente = manejaCliente;
-            this.manejaCuentas = manejaCuentas;
-            this.nombreCliente = nombreCliente;
             InitializeComponent();
         }
 

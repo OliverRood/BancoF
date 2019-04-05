@@ -35,5 +35,11 @@ namespace BancoF
                 Application.Exit();
             }
         }
+
+        private void FrmAcercaDe_Load(object sender, EventArgs e)
+        {
+            toolTipAD.SetToolTip(picJorge, "Osuna Quintana Jorge");
+            toolTipAD.SetToolTip(picOliver, "Rodriguez Gomez Oliver Eduardo");
+        }
     }
 }
