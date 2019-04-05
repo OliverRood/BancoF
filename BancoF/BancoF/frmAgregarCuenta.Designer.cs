@@ -86,7 +86,7 @@
             this.cmbTipoCuenta.Location = new System.Drawing.Point(543, 252);
             this.cmbTipoCuenta.Name = "cmbTipoCuenta";
             this.cmbTipoCuenta.Size = new System.Drawing.Size(262, 24);
-            this.cmbTipoCuenta.TabIndex = 9;
+            this.cmbTipoCuenta.TabIndex = 2;
             this.cmbTipoCuenta.SelectedIndexChanged += new System.EventHandler(this.cmbTipoCuenta_SelectedIndexChanged);
             this.cmbTipoCuenta.Validated += new System.EventHandler(this.ValidaTipoCuenta);
             // 
@@ -121,7 +121,7 @@
             this.txtNumCuenta.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumCuenta.Name = "txtNumCuenta";
             this.txtNumCuenta.Size = new System.Drawing.Size(288, 25);
-            this.txtNumCuenta.TabIndex = 14;
+            this.txtNumCuenta.TabIndex = 1;
             this.txtNumCuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumCuenta_KeyPress);
             this.txtNumCuenta.Validated += new System.EventHandler(this.ValidaNumCuenta);
             // 
@@ -136,7 +136,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(166, 47);
-            this.button1.TabIndex = 18;
+            this.button1.TabIndex = 4;
             this.button1.Text = "Limpiar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -163,14 +163,14 @@
             // tsGuardarCuenta
             // 
             this.tsGuardarCuenta.Name = "tsGuardarCuenta";
-            this.tsGuardarCuenta.Size = new System.Drawing.Size(116, 22);
+            this.tsGuardarCuenta.Size = new System.Drawing.Size(180, 22);
             this.tsGuardarCuenta.Text = "Guardar";
             this.tsGuardarCuenta.Click += new System.EventHandler(this.tsGuardarCuenta_Click);
             // 
             // tsSalir
             // 
             this.tsSalir.Name = "tsSalir";
-            this.tsSalir.Size = new System.Drawing.Size(116, 22);
+            this.tsSalir.Size = new System.Drawing.Size(180, 22);
             this.tsSalir.Text = "Salir";
             this.tsSalir.Click += new System.EventHandler(this.tsSalir_Click);
             // 
@@ -198,7 +198,7 @@
             this.txtMontoApertura.Margin = new System.Windows.Forms.Padding(4);
             this.txtMontoApertura.Name = "txtMontoApertura";
             this.txtMontoApertura.Size = new System.Drawing.Size(262, 25);
-            this.txtMontoApertura.TabIndex = 22;
+            this.txtMontoApertura.TabIndex = 3;
             this.txtMontoApertura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoApertura_KeyPress);
             this.txtMontoApertura.Validated += new System.EventHandler(this.ValidaMontoApertura);
             // 

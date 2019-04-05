@@ -270,6 +270,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmConsultaClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmConsultaClientes";
             this.Load += new System.EventHandler(this.frmConsultaClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuentasCliente)).EndInit();

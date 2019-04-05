@@ -127,7 +127,7 @@ namespace BancoF
             }
             else
             {
-                if (numCuenta.Length == 7)
+                if ((numCuenta+e.KeyChar.ToString()).Length>7 && e.KeyChar!= (char)Keys.Back)
                 {
                     e.Handled = true;
                     errorP.SetError(txtNumCuenta, "La longitud del número es de unicamente 7 digitos.");
@@ -185,6 +185,10 @@ namespace BancoF
         {
             if (cmbTipoCuenta.SelectedIndex == 0)
                 errorP.SetError(cmbTipoCuenta, "Seleccione un tipo de cuenta valido.");
+            else
+            {
+                errorP.SetError(cmbTipoCuenta, "");
+            }
         }
 
         private void limpiar()
