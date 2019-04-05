@@ -53,6 +53,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTipM = new System.Windows.Forms.ToolTip(this.components);
+            this.lblSaldo = new System.Windows.Forms.Label();
             this.grpTipoMovimiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epMovimiento)).BeginInit();
             this.msMovimiento.SuspendLayout();
@@ -123,6 +124,7 @@
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(412, 19);
             this.txtClave.TabIndex = 8;
+            this.txtClave.TextChanged += new System.EventHandler(this.txtClave_TextChanged);
             this.txtClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClave_KeyPress);
             this.txtClave.Validated += new System.EventHandler(this.txtClave_Validated);
             // 
@@ -301,12 +303,23 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click_1);
             // 
+            // lblSaldo
+            // 
+            this.lblSaldo.AutoSize = true;
+            this.lblSaldo.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(123)))), ((int)(((byte)(123)))));
+            this.lblSaldo.Location = new System.Drawing.Point(611, 238);
+            this.lblSaldo.Name = "lblSaldo";
+            this.lblSaldo.Size = new System.Drawing.Size(0, 19);
+            this.lblSaldo.TabIndex = 35;
+            // 
             // FrmMovimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.lblSaldo);
             this.Controls.Add(this.lbMovimiento);
             this.Controls.Add(this.lblDateTimeNow);
             this.Controls.Add(this.lblFecha);
@@ -361,5 +374,6 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTipM;
         private System.Windows.Forms.ToolStripMenuItem realizarMovimientoToolStripMenuItem;
+        private System.Windows.Forms.Label lblSaldo;
     }
 }
