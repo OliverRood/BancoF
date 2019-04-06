@@ -95,7 +95,8 @@
             "El Fuerte, Sin.",
             "Guadalajara, Jal.",
             "Guaymas, Son.",
-            "Mazatlán, Sin."});
+            "Mazatlán, Sin.",
+            "Cosalá, Sin."});
             this.cmbCiudad.Location = new System.Drawing.Point(553, 300);
             this.cmbCiudad.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cmbCiudad.Name = "cmbCiudad";

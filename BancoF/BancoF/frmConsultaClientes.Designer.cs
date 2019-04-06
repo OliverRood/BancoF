@@ -51,6 +51,7 @@
             this.lblDatosCli = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.panelDiv = new System.Windows.Forms.Panel();
+            this.txtNombreCliente = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuentasCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -239,7 +240,7 @@
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(958, 0);
+            this.btnSalir.Location = new System.Drawing.Point(975, 0);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(25, 29);
@@ -251,16 +252,29 @@
             // panelDiv
             // 
             this.panelDiv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(36)))), ((int)(((byte)(20)))));
-            this.panelDiv.Location = new System.Drawing.Point(-1, 507);
+            this.panelDiv.Location = new System.Drawing.Point(-1, 543);
             this.panelDiv.Name = "panelDiv";
             this.panelDiv.Size = new System.Drawing.Size(984, 57);
             this.panelDiv.TabIndex = 30;
+            // 
+            // txtNombreCliente
+            // 
+            this.txtNombreCliente.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtNombreCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNombreCliente.Enabled = false;
+            this.txtNombreCliente.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCliente.Location = new System.Drawing.Point(55, 153);
+            this.txtNombreCliente.Name = "txtNombreCliente";
+            this.txtNombreCliente.ReadOnly = true;
+            this.txtNombreCliente.Size = new System.Drawing.Size(239, 24);
+            this.txtNombreCliente.TabIndex = 32;
+            this.txtNombreCliente.Visible = false;
             // 
             // frmConsultaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 562);
+            this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblDatosCli);
             this.Controls.Add(this.lblCuentasCliente);
@@ -277,6 +291,7 @@
             this.Controls.Add(this.lblClienteConsulta);
             this.Controls.Add(this.lblClientes);
             this.Controls.Add(this.panelDiv);
+            this.Controls.Add(this.txtNombreCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmConsultaClientes";
@@ -310,5 +325,6 @@
         private System.Windows.Forms.Label lblDatosCli;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Panel panelDiv;
+        private System.Windows.Forms.TextBox txtNombreCliente;
     }
 }

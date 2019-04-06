@@ -35,8 +35,9 @@ namespace BancoF
         {
             if (flagCliente)
             {
-                lblClienteConsulta.Visible = false;
+                lblClienteConsulta.Text = "Nombre del cliente:";
                 cmbNombreCliente.Visible = false;
+                txtNombreCliente.Visible = true;
                 AgregarDatosCliente();
                 AgregarCuentas();
             }
@@ -61,6 +62,7 @@ namespace BancoF
             txtDomicilio.Text = tempCli.pDomicilio;
             txtCiudad.Text = tempCli.pCiudad;
             txtTelefono.Text = tempCli.pTelefono;
+            txtNombreCliente.Text = nomCliente;
 
         }
 
@@ -70,6 +72,7 @@ namespace BancoF
             int claveCliente = manejaCli.KeyCliente(nomCliente);
 
             KeyValuePair<int, Cuenta>[] temp = manejaCuentas.ObtenerPorCliente(claveCliente);
+            dgvCuentasCliente.Rows.Clear();
 
             foreach (KeyValuePair<int, Cuenta> item in temp)
             {
