@@ -367,7 +367,8 @@ namespace BancoF
         private void txtClave_TextChanged(object sender, EventArgs e)
         {
             lblSaldo.Text = "";
-            int claveCuenta = Convert.ToInt32(txtClave.Text);
+            string clave = txtClave.Text;
+            int claveCuenta = Convert.ToInt32(clave);
             Cuenta temp = manejaCuentas.BuscarCuenta(claveCuenta);
             if (temp != null && !(string.IsNullOrEmpty(nombre))) lblSaldo.Text = "Saldo: $"+temp.pSaldo+" MXN";
         }
