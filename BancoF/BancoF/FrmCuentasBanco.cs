@@ -209,11 +209,6 @@ namespace BancoF
                 DialogResult error = MessageBox.Show("Monto minimo con caracteres invalidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 flag = false;
             }
-            if (!ValidaTexto(descripcion))
-            {
-                DialogResult error = MessageBox.Show("Nombre con caracteres invalidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                flag = false;
-            }
             if (manejaCatalogoCuenta.consulta(nombre)!=null)
             {
                 DialogResult error = MessageBox.Show("Cuenta ya existente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -247,7 +242,7 @@ namespace BancoF
                     double montoMinimo = Convert.ToDouble(txtMontoMinimo.Text);
                     string descripcion = txtDescripcion.Text;
                     manejaCatalogoCuenta.agrega(nombre, montoMinimo, descripcion);
-                    MessageBox.Show("", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Tipo de cuenta creada", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     txtNombre.Clear();
                     txtMontoMinimo.Clear();
                     txtDescripcion.Clear();
