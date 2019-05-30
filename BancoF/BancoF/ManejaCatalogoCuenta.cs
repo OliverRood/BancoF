@@ -1,17 +1,15 @@
-﻿using System;
+﻿using RutinasDLL;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace BancoF
 {
     public class ManejaCatalogoCuenta
     {
 
-        private TipoCuenta[] catalogo;
-        private static int pos=0;
-
         public ManejaCatalogoCuenta()
         {
-            catalogo = new TipoCuenta[10];
             agregaBase();
         }
 
@@ -22,78 +20,95 @@ namespace BancoF
             agrega("NOMINA",0,"DEPOSITOS DE NOMINA");
         }
 
-        public void agrega(string Nombre, double MontoMinimo, string Descripcion)
+        public string agrega(string Nombre, double MontoMinimo, string Descripcion)
         {
-            catalogo[pos] = new TipoCuenta(Nombre, MontoMinimo, Descripcion);
-            pos++;
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string insert = "insert into Tipo_Cuenta (Nombre, MontoMinimo, Descripcion) " +
+                "values (@Nombre, @MontoMinimo, @Descripcion)";
+
+            SqlCommand cmd = new SqlCommand(insert, conexion);
+
+            cmd.Parameters.Add("@Nombre", Nombre);
+            cmd.Parameters.Add("@MontoMinimo", MontoMinimo);
+            cmd.Parameters.Add("@Descripcion", Descripcion);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                conexion.Close();
+                return ex.Message;
+            }
+            conexion.Close();
+
+            return "Tipo de cuenta agregada exitosamente";
         }
 
         public int Count()
         {
-            return pos;
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select count(ID) from Tipo_Cuenta";
+            SqlDataReader lector = Rutinas.ObtenerLector(consulta, conexion);
+
+            int cont = 0;
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                    cont = lector.GetInt32(0);
+            }
+            conexion.Close();
+            return cont;
         }
 
         public TipoCuenta consulta(string Nombre)
         {
+
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select * from Tipo_Cuenta where Nombre = '" + Nombre + "'";
+            SqlDataReader lector = Rutinas.ObtenerLector(consulta, conexion);
+
             TipoCuenta cuenta = null;
-            for (int i = 0; i < pos; i++)
+
+            if (lector.HasRows)
             {
-                if (catalogo[i]!=null)
+                while (lector.Read())
                 {
-                    if (catalogo[i].pNombre.Equals(Nombre))
-                    {
-                        cuenta = catalogo[i];
-                    }
+                    int ID = lector.GetInt32(0);
+                    string NombreTC = lector.GetString(1);
+                    double MontoMinimo = lector.GetDouble(2);
+                    string Descripcion = lector.GetString(3);
+                    cuenta = new TipoCuenta(NombreTC, MontoMinimo, Descripcion);
                 }
             }
+            conexion.Close();
+
             return cuenta;
         }
 
         public String[] obtieneNombres()
         {
-            String[] nombres = new String[catalogo.Length];
-            for (int i = 0; i < catalogo.Length; i++)
+            String[] nombres = new String[this.Count()];
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select Nombre from Tipo_Cuenta";
+            SqlDataReader lector = Rutinas.ObtenerLector(consulta, conexion);
+
+            if (lector.HasRows)
             {
-                if (catalogo[i] != null)
+                int cont = 0;
+                while (lector.Read())
                 {
-                    nombres[i] = catalogo[i].pNombre;
+                    nombres[cont] = lector.GetString(0);
+                    cont++;
                 }
             }
+            conexion.Close();
             return nombres;
-        }
-
-        /*
-
-            CONSULTAR SI ES NECESARIO
-
-        public void elimina(string Nombre)
-        {
-            for (int i = 0; i < pos; i++)
-            {
-                if (catalogo[i] != null)
-                {
-                    if (catalogo[i].pNombre.Equals(Nombre.ToUpper()))
-                    {
-                        catalogo[i] = null;
-                    }
-                }
-            }
-        }
-        */
-
-        public override string ToString()
-        {
-            string str;
-            var sb = new System.Text.StringBuilder();
-            foreach (TipoCuenta item in catalogo)
-            {
-                if (item!=null)
-                {
-                    sb.AppendLine(item.ToString());
-                }
-            }
-            str = sb.ToString();
-            return str;
         }
     }
 }

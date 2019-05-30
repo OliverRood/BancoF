@@ -5,18 +5,18 @@ namespace BancoF
     {
 
         private string Fecha;
-        private string Tipo;
+        private char Tipo;
         private double Importe;
         private int ClaveCuenta;
-        private string NombreDepositador;
+        //private string NombreDepositador;
 
-        public Movimiento(string Fecha, string Tipo, int ClaveCuenta, double Importe, string NombreDepositador)
+        public Movimiento(double Importe, char Tipo, string Fecha, int ClaveCuenta) //, string NombreDepositador)
         {
             this.Fecha = Fecha;
             this.Tipo = Tipo;
             this.ClaveCuenta = ClaveCuenta;
             this.Importe = Importe;
-            this.NombreDepositador = NombreDepositador;
+            //this.NombreDepositador = NombreDepositador;
         }
 
         public string pFecha
@@ -37,7 +37,7 @@ namespace BancoF
             }
         }
 
-        public string pTipo
+        public char pTipo
         {
             get
             {
@@ -61,6 +61,7 @@ namespace BancoF
             }
         }
 
+        /*
         public string pNombreDepositador
         {
             get
@@ -72,11 +73,13 @@ namespace BancoF
                 NombreDepositador = value;
             }
         }
+        
 
         public override string ToString()
         {
             string str = string.Format("\nCLAVE DE LA CUENTA: {3,-3:D4}\nTIPO: {0}\nIMPORTE: {1}\nREALIZADOR: {2}", Tipo, Importe, NombreDepositador,ClaveCuenta);
             return str;
         }
+        */
     }
 }

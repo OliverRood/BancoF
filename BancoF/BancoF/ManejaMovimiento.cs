@@ -1,81 +1,76 @@
-﻿using System;
+﻿using RutinasDLL;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace BancoF
 {
     public class ManejaMovimiento
     {
-
-       private List<Movimiento> movimientos;
-       private ManejaCuentas manejaC;
-
-        public ManejaMovimiento(ManejaCuentas manejadora)
+        public ManejaMovimiento()
         {
-            this.movimientos = new List<Movimiento>();
-            this.manejaC = manejadora;
         }
 
-        private bool Agrega(string Fecha, string Tipo, int ClaveCuenta, double Importe, string NombreDepositador)
+        private string Agrega(double Monto, char Tipo, string Fecha, string Hora, int Folio_Movimiento, int Clave_Cuenta)
         {
-            bool flag = false;
-            movimientos.Add(new Movimiento(Fecha, Tipo, ClaveCuenta, Importe, NombreDepositador));
-            flag = true;
 
-            return flag;
-        }
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string insertA = "insert into Movimiento (Monto, Tipo, Fecha, Hora) " +
+                "values (@Monto, @Tipo, @Fecha, @Hora)";
+            string insertB = "insert into Movimiento_Cuenta (Folio_Movimiento, Clave_Cuenta) " +
+                "values (@Folio_Movimiento, @Clave_Cuenta)";
 
-        public bool Deposito(string Fecha, double cant, int claveC,string nombreDepositante)
-        {
-            bool flag = false;
-            Cuenta temp = manejaC.BuscarCuenta(claveC);
+            SqlCommand cmdA = new SqlCommand(insertA, conexion);
+            SqlCommand cmdB = new SqlCommand(insertB, conexion);
 
-            if (temp!=null && cant>0)
+            cmdA.Parameters.Add("@Monto", Monto);
+            cmdA.Parameters.Add("@Tipo", Tipo);
+            cmdA.Parameters.Add("@Fecha", Fecha);
+            cmdA.Parameters.Add("@Hora", Hora);
+
+            cmdB.Parameters.Add("@Folio_Movimiento", Folio_Movimiento);
+            cmdB.Parameters.Add("@Clave_Cuenta", Clave_Cuenta);
+
+            try
             {
-                temp.pSaldo += cant;
-                Agrega(Fecha, "DEPOSITO",claveC,cant,nombreDepositante);
-                flag = true;
+                cmdA.ExecuteNonQuery();
+                cmdB.ExecuteNonQuery();
             }
+            catch (SqlException ex)
+            {
+                conexion.Close();
+                return ex.Message;
+            }
+            conexion.Close();
 
-            return flag;
+            return "Movimiento realizado exitosamente";
         }
 
-        public bool Retiro(string Fecha, double cant, int claveC, string nombreDepositante)
+        public Movimiento ObtenerMovimiento(int Folio)
         {
-            bool flag = false;
-            Cuenta temp = manejaC.BuscarCuenta(claveC);
-
-            if (temp!=null && temp.pSaldo-cant>=0)
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select m.Monto, m.Tipo, m.Fecha, mc.Clave_Cuenta from Movimiento m " +
+                "inner join Movimiento_Cuenta mc on mc.Folio_Movimiento = m.Folio where m.Folio = @Folio";
+            SqlCommand cmd = new SqlCommand(consulta, conexion);
+            cmd.Parameters.Add("@Folio", Folio);
+            SqlDataReader lector = Rutinas.ObtenerLector(consulta, conexion);
+            Movimiento temp = null;
+            if (lector.HasRows)
             {
-                temp.pSaldo -= cant;
-                Agrega(Fecha, "RETIRO", claveC, cant, nombreDepositante);
-                flag = true;
+                while (lector.Read())
+                {
+                    double Monto = lector.GetDouble(0);
+                    char Tipo = Convert.ToChar(lector.GetValue(1));
+                    string Fecha = lector.GetString(2);
+                    int ClaveCuenta = lector.GetInt32(3);
+                    temp = new Movimiento(Monto, Tipo, Fecha, ClaveCuenta);
+                }
             }
+            conexion.Close();
 
-            return flag;
-        }
-        
-        public Movimiento[] obtieneMovimientos()
-        {
-            Movimiento[] movimientosAux = new Movimiento[movimientos.Count];
-            for (int i = 0; i < movimientos.Count; i++)
-            {
-                movimientosAux[i] = movimientos[i];
-            }
-            return movimientosAux;
-        }
-
-
-        public String ImprimirPorCuenta(int claveC)
-        {
-            string res = "";
-
-            foreach (Movimiento data in movimientos)
-            {
-                if (data.pClaveCuenta == claveC)
-                    res += data.ToString()+"\n";
-            }
-
-            return res;
+            return temp;
         }
 
     }
