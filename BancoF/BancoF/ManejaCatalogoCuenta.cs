@@ -1,6 +1,6 @@
-﻿using System;
+﻿using RutinasDLL;
+using System;
 using System.Collections.Generic;
-using RutinasDLL;
 using System.Data.SqlClient;
 
 namespace BancoF
@@ -8,12 +8,8 @@ namespace BancoF
     public class ManejaCatalogoCuenta
     {
 
-        private TipoCuenta[] catalogo;
-        private static int pos=0;
-
         public ManejaCatalogoCuenta()
         {
-            catalogo = new TipoCuenta[10];
             agregaBase();
         }
 
@@ -24,59 +20,88 @@ namespace BancoF
             agrega("NOMINA",0,"DEPOSITOS DE NOMINA");
         }
 
-        public void agrega(string Nombre, double MontoMinimo, string Descripcion)
+        public string agrega(string Nombre, double MontoMinimo, string Descripcion)
         {
-            catalogo[pos] = new TipoCuenta(Nombre, MontoMinimo, Descripcion);
-            pos++;
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string insert = "insert into Tipo_Cuenta (Nombre, MontoMinimo, Descripcion) " +
+                "values (@Nombre, @MontoMinimo, @Descripcion)";
+
+            SqlCommand cmd = new SqlCommand(insert, conexion);
+
+            cmd.Parameters.Add("@Nombre", Nombre);
+            cmd.Parameters.Add("@MontoMinimo", MontoMinimo);
+            cmd.Parameters.Add("@Descripcion", Descripcion);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                conexion.Close();
+                return ex.Message;
+            }
+            conexion.Close();
+
+            return "Tipo de cuenta agregada exitosamente";
         }
 
         public int Count()
         {
-            return pos;
-        }
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select count(ID) from Tipo_Cuenta";
+            SqlDataReader lector = Rutinas.ObtenerLector(consulta, conexion);
 
-        public TipoCuenta consulta(string Nombre)
-        {
-            TipoCuenta cuenta = null;
-            for (int i = 0; i < pos; i++)
+            int cont = 0;
+            if (lector.HasRows)
             {
-                if (catalogo[i]!=null)
-                {
-                    if (catalogo[i].pNombre.Equals(Nombre))
-                    {
-                        cuenta = catalogo[i];
-                    }
-                }
+                while (lector.Read())
+                    cont = lector.GetInt32(0);
             }
-            return cuenta;
+            conexion.Close();
+            return cont;
         }
 
-        public String[] obtieneNombres()
+        /*
+
+            CONSULTAR SI ES NECESARIO
+
+        public void elimina(string Nombre)
         {
-            String[] nombres = new String[catalogo.Length];
-            for (int i = 0; i < catalogo.Length; i++)
+            for (int i = 0; i < pos; i++)
             {
                 if (catalogo[i] != null)
                 {
-                    nombres[i] = catalogo[i].pNombre;
+                    if (catalogo[i].pNombre.Equals(Nombre.ToUpper()))
+                    {
+                        catalogo[i] = null;
+                    }
                 }
             }
-            return nombres;
         }
+        */
 
         public override string ToString()
         {
-            string str;
-            var sb = new System.Text.StringBuilder();
-            foreach (TipoCuenta item in catalogo)
+            String[] nombres = new String[this.Count()];
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select Nombre from Tipo_Cuenta";
+            SqlDataReader lector = Rutinas.ObtenerLector(consulta, conexion);
+
+            if (lector.HasRows)
             {
-                if (item!=null)
+                int cont = 0;
+                while (lector.Read())
                 {
-                    sb.AppendLine(item.ToString());
+                    nombres[cont] = lector.GetString(0);
+                    cont++;
                 }
             }
-            str = sb.ToString();
-            return str;
+            conexion.Close();
+            return nombres;
         }
 
         public int BuscarIDTipo(string nombre)
