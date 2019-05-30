@@ -35,6 +35,9 @@
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="RutinasDLL">
+      <HintPath>.\RutinasDLL.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xaml" />
@@ -117,7 +120,6 @@
     <Compile Include="ManejaCuentas.cs" />
     <Compile Include="ManejaMovimiento.cs" />
     <Compile Include="Movimiento.cs" />
-    <Compile Include="Rutinas.cs" />
     <Compile Include="TipoCuenta.cs" />
     <Compile Include="VentanaPrincipal.cs">
       <SubType>Form</SubType>

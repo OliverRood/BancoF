@@ -164,7 +164,7 @@ namespace BancoF
 
         public bool ValidaNombre(string nombre)
         {
-            bool resultado = Regex.IsMatch(nombre, @"^[a-zA-Z]+$");
+            bool resultado = Regex.IsMatch(nombre, @"^([a-zA-Z]\s?)+$");
             return resultado;
         }
 

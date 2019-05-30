@@ -102,6 +102,7 @@
             this.cmbCiudad.Name = "cmbCiudad";
             this.cmbCiudad.Size = new System.Drawing.Size(285, 25);
             this.cmbCiudad.TabIndex = 3;
+            this.cmbCiudad.SelectedIndexChanged += new System.EventHandler(this.cmbCiudad_SelectedIndexChanged);
             this.cmbCiudad.Validated += new System.EventHandler(this.cmbCiudad_Validated);
             // 
             // txtNombreCliente

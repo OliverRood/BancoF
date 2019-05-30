@@ -1,14 +1,65 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Configuration;
 using System.Threading.Tasks;
 
-namespace BancoF
+namespace RutinasDLL
 {
     public class Rutinas
     {
+        public static SqlException ESalida;
+        public static SqlConnection ConectaBD(String strConec)
+        {
+
+            SqlConnection conn = new SqlConnection(strConec);
+            try
+            {
+                conn.Open();
+            }
+            catch (SqlException ex)
+            {
+
+                ESalida = ex;
+                return null;
+            }
+
+            return conn;
+        }
+
+        public static SqlDataReader ObtenerLector(String instrSelect, SqlConnection conn)
+        {
+            SqlDataReader lector = null;
+
+            SqlCommand cmd = new SqlCommand(instrSelect, conn);
+            try
+            {
+                lector = cmd.ExecuteReader();
+            }
+            catch (SqlException ex)
+            {
+
+                ESalida = ex;
+                conn.Close();
+                return null;
+            }
+            return lector;
+        }
+
+        public static string ObtenerStringConexion()
+        {
+            string strCadena = "";
+            int nItems = ConfigurationManager.ConnectionStrings.Count;
+            if (nItems > 0)
+            { 
+                strCadena = ConfigurationManager.ConnectionStrings[nItems - 1].ConnectionString;
+            }
+            return strCadena;
+        }
+
         public static bool ValidaCaracteres(string st)
         {
             bool flag = false;
@@ -32,7 +83,7 @@ namespace BancoF
             if (match.Success)
                 return true;
 
-                return false;
+            return false;
         }
 
         public static bool ValidaDomicilio(string value)
@@ -64,6 +115,5 @@ namespace BancoF
 
             return false;
         }
-
     }
 }

@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.539
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancoF", "BancoF\BancoF.csproj", "{BD20C613-206C-480E-86EC-37EDD784B6EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RutinasDLL", "RutinasDLL\RutinasDLL.csproj", "{724F61A4-57AD-415D-A43F-1E8FD765FA48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BD20C613-206C-480E-86EC-37EDD784B6EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD20C613-206C-480E-86EC-37EDD784B6EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD20C613-206C-480E-86EC-37EDD784B6EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{724F61A4-57AD-415D-A43F-1E8FD765FA48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{724F61A4-57AD-415D-A43F-1E8FD765FA48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{724F61A4-57AD-415D-A43F-1E8FD765FA48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{724F61A4-57AD-415D-A43F-1E8FD765FA48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
