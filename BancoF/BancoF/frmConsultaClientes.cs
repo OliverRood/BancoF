@@ -70,14 +70,16 @@ namespace BancoF
         {
             string nomCliente = flagCliente ? nombreCliente : cmbNombreCliente.Text;
             int claveCliente = manejaCli.KeyCliente(nomCliente);
+            MessageBox.Show(claveCliente.ToString());
 
-            KeyValuePair<int, Cuenta>[] temp = manejaCuentas.ObtenerPorCliente(claveCliente);
+            List<Cuenta> temp = manejaCuentas.ObtenerPorCliente(claveCliente);
+            MessageBox.Show("Entra?");
             dgvCuentasCliente.Rows.Clear();
 
-            foreach (KeyValuePair<int, Cuenta> item in temp)
+            foreach (Cuenta item in temp)
             {
-                string saldo = String.Format("{0:c}",item.Value.pSaldo);
-                dgvCuentasCliente.Rows.Add(item.Key, item.Value.pNombre,saldo);
+                string saldo = String.Format("{0:c}",item.pSaldo);
+                dgvCuentasCliente.Rows.Add(item.Clave, item.pNombre,saldo);
             }
 
         }
