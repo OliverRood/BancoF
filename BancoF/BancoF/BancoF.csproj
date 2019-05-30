@@ -81,6 +81,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetCuentasClientes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetMovimientos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMovimientos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetTiposCuenta.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -192,6 +197,7 @@
       <DependentUpon>FrmMovimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportCuentas.rdlc" />
+    <EmbeddedResource Include="ReportMovimientos.rdlc" />
     <EmbeddedResource Include="ReportTiposCuenta.rdlc" />
     <EmbeddedResource Include="VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
@@ -216,6 +222,17 @@
     </None>
     <None Include="DataSetCuentasClientes.xss">
       <DependentUpon>DataSetCuentasClientes.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMovimientos.xsc">
+      <DependentUpon>DataSetMovimientos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMovimientos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMovimientos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetMovimientos.xss">
+      <DependentUpon>DataSetMovimientos.xsd</DependentUpon>
     </None>
     <None Include="DataSetTiposCuenta.xsc">
       <DependentUpon>DataSetTiposCuenta.xsd</DependentUpon>
