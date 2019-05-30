@@ -15,7 +15,7 @@ namespace BancoF
         ManejaMovimiento manejaMovimiento;
         ManejaCliente manejaCliente;
         ManejaCuentas manejaCuentas;
-        KeyValuePair<int, Cuenta>[] cuentasCliente;
+        List <Cuenta> cuentasCliente;
         Movimiento[] movimientosPorCliente;
         string nombreCliente;
         bool DisplayIndicator; // True: Cmb Visible
@@ -35,11 +35,11 @@ namespace BancoF
         {
             int claveCliente = manejaCliente.KeyCliente(nombreCliente);
             cuentasCliente = manejaCuentas.ObtenerPorCliente(claveCliente);
-            foreach (KeyValuePair<int, Cuenta> item in cuentasCliente)
+            foreach (Cuenta item in cuentasCliente)
             {
-                if (item.Value.pClaveCliente == claveCliente)
+                if (item.pClaveCliente == claveCliente)
                 {
-                    cmbCuentas.Items.Add(item.Key);
+                    cmbCuentas.Items.Add(item.Clave);
                 }
             }
             movimientosPorCliente = manejaMovimiento.obtieneMovimientos();
@@ -49,9 +49,9 @@ namespace BancoF
                 {
                     if (item != null)
                     {
-                        for (int i = 0; i < cuentasCliente.Length; i++)
+                        for (int i = 0; i < cuentasCliente.Count; i++)
                         {
-                            if (item.pClaveCuenta == cuentasCliente[i].Key)
+                            if (item.pClaveCuenta == cuentasCliente[i].Clave)
                             {
                                 dgvMovimientos.Rows.Add(item.pFecha, item.pTipo, item.pClaveCuenta, item.pImporte, item.pNombreDepositador);
                             }

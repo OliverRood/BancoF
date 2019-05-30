@@ -188,6 +188,7 @@
             this.txtSaldoActual});
             this.dgvCuentasCliente.Location = new System.Drawing.Point(419, 139);
             this.dgvCuentasCliente.Name = "dgvCuentasCliente";
+            this.dgvCuentasCliente.ReadOnly = true;
             this.dgvCuentasCliente.Size = new System.Drawing.Size(474, 381);
             this.dgvCuentasCliente.TabIndex = 15;
             // 
@@ -197,6 +198,7 @@
             this.txtClaveCuenta.DefaultCellStyle = dataGridViewCellStyle1;
             this.txtClaveCuenta.HeaderText = "Clave";
             this.txtClaveCuenta.Name = "txtClaveCuenta";
+            this.txtClaveCuenta.ReadOnly = true;
             this.txtClaveCuenta.Width = 130;
             // 
             // txtTipoCuenta
@@ -205,6 +207,7 @@
             this.txtTipoCuenta.DefaultCellStyle = dataGridViewCellStyle2;
             this.txtTipoCuenta.HeaderText = "Tipo de cuenta";
             this.txtTipoCuenta.Name = "txtTipoCuenta";
+            this.txtTipoCuenta.ReadOnly = true;
             this.txtTipoCuenta.Width = 160;
             // 
             // txtSaldoActual
@@ -213,6 +216,7 @@
             this.txtSaldoActual.DefaultCellStyle = dataGridViewCellStyle3;
             this.txtSaldoActual.HeaderText = "Saldo Actual ";
             this.txtSaldoActual.Name = "txtSaldoActual";
+            this.txtSaldoActual.ReadOnly = true;
             this.txtSaldoActual.Width = 140;
             // 
             // lblCuentasCliente

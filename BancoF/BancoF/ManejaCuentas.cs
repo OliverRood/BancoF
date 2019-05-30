@@ -1,92 +1,175 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using RutinasDLL;
+using System.Data.SqlClient;
 
 namespace BancoF
 {
     public class ManejaCuentas
     {
-
-        private Dictionary<int, Cuenta> cuentas;
-
-        public ManejaCuentas()
+        private ManejaCatalogoCuenta manejaCatalogo;
+        public ManejaCuentas(ManejaCatalogoCuenta manejaTipo)
         {
-            this.cuentas = new Dictionary<int, Cuenta>();
+            this.manejaCatalogo = manejaTipo;
         }
 
-        public bool Agrega(int claveCuenta, int claveCliente,double saldoInicial,string tipoCuenta)
+        public string Agrega(int claveCuenta, int claveCliente, double saldoInicial, string tipoCuenta)
         {
-            bool flag = false;
-            cuentas.Add(claveCuenta, new Cuenta(saldoInicial, tipoCuenta, claveCliente));
-            flag=true;
-            return flag;
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string insercionA = "insert into Cuenta(Clave,Saldo,ID_TipoCuenta)";
+            insercionA += "values(@claveCu,@saldo,@idTipo)";
+
+            string insercionB = "insert into Cuenta_Cliente(Clave_Cuenta,ID_Cliente)";
+            insercionB += "values(@claveCuenta,@idCliente)";
+
+            SqlCommand cmdA = new SqlCommand(insercionA, conexion);
+            SqlCommand cmdB = new SqlCommand(insercionB, conexion);
+
+            int idTipo = manejaCatalogo.BuscarIDTipo(tipoCuenta);
+
+            //Inserción en Cuentas:
+            cmdA.Parameters.Add("@claveCu",claveCuenta);
+            cmdA.Parameters.Add("@saldo", saldoInicial);
+            cmdA.Parameters.Add("@idTipo",idTipo);
+
+            //Inserción en Cuentas_Clientes:
+            cmdB.Parameters.Add("@claveCuenta",claveCuenta);
+            cmdB.Parameters.Add("@idCliente",claveCliente);
+
+            try
+            {
+                cmdA.ExecuteNonQuery();
+                cmdB.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                conexion.Close();
+                return ex.Message;
+            }
+
+            return "Cuenta agregada exitosamente.";
         }
        
         public Cuenta BuscarCuenta(int claveC)
         {
             Cuenta temp = null;
 
-                if(cuentas.ContainsKey(claveC)) 
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select c.Saldo, t.Nombre, cl.ID_Cliente from Cuenta c inner join Tipo_Cuenta t on t.ID = c.ID_TipoCuenta  ";
+            consulta += "inner join Cuenta_Cliente cl on cl.Clave_Cuenta = c.Clave where c.Clave =@clave";
+            SqlCommand cmd = new SqlCommand(consulta, conexion);
+            cmd.Parameters.Add("@clave", claveC);
+
+            SqlDataReader lector = cmd.ExecuteReader();
+            if (lector.HasRows)
+            {
+                while (lector.Read())
                 {
-                
-                    temp = cuentas[claveC];
+                    double saldo = Convert.ToDouble(lector.GetValue(0));
+                    string tipo = lector.GetString(1);
+                    int idCli = lector.GetInt32(2);
+                    temp = new Cuenta(claveC,saldo,tipo,idCli);
                 }
+            }
+            conexion.Close();
 
             return temp;
         }
 
-        public bool EliminarCuenta(int claveC)
+        //Not yet :D
+        /*public bool EliminarCuenta(int claveC)
         {
-            bool flag = false;
-
-            if(cuentas.ContainsKey(claveC))
-            cuentas.Remove(claveC);
-
-            flag = true;
-
-            return flag;
-        }
+          
+        }*/
 
         public int Size()
         {
-            return cuentas.Count;
+
+            int count = 0;
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select count(Clave) from Cuenta";
+            SqlDataReader lector = Rutinas.ObtenerLector(consulta, conexion);
+
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                    count = lector.GetInt32(0);
+            }
+            conexion.Close();
+            return count;
         }
 
         public int NumCuentasCliente(int claveCliente)
         {
-            int numCuentas = 0;
+            int count = 0;
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select count(Clave) from Cuenta c ";
+            consulta += "inner join Cuenta_Cliente cl on cl.Clave_Cuenta = c.Clave where cl.ID_Cliente = @idCliente";
+            SqlCommand cmd = new SqlCommand(consulta,conexion);
+            cmd.Parameters.Add("@idCliente",claveCliente);
+            SqlDataReader lector = cmd.ExecuteReader();
 
-            foreach (Cuenta item in cuentas.Values)
-                if (item.pClaveCliente == claveCliente)
-                    numCuentas++;
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                    count = lector.GetInt32(0);
+            }
+            conexion.Close();
 
-            return numCuentas;
+            return count;
         }
 
-        public KeyValuePair<int, Cuenta>[] ObtenerPorCliente(int claveCliente)
+        public List<Cuenta> ObtenerPorCliente(int claveCliente)
         {
-            KeyValuePair<int, Cuenta>[] temp = new KeyValuePair<int, Cuenta>[NumCuentasCliente(claveCliente)];
-            int count = 0;
+            List<Cuenta> temp = new List<Cuenta>();
 
-            foreach(KeyValuePair<int, Cuenta> item in cuentas)
-                if (item.Value.pClaveCliente == claveCliente)
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select c.Clave from Cuenta c ";
+            consulta += "inner join Cuenta_Cliente cl on cl.Clave_Cuenta = c.Clave where cl.ID_Cliente = @idCliente";
+            SqlCommand cmd = new SqlCommand(consulta, conexion);
+            cmd.Parameters.Add("@idCliente", claveCliente);
+            SqlDataReader lector = cmd.ExecuteReader();
+
+            if (lector.HasRows)
+            {
+                while (lector.Read())
                 {
-                    temp[count] = item;
-                    count++;
+                    int claveCuenta = lector.GetInt32(0);
+                    temp.Add(BuscarCuenta(claveCuenta));
                 }
-            
+            }
+            conexion.Close();
+
+
             return temp;         
         }
 
         public double obtenerSaldoTotalPorCliente(int claveCliente)
         {
             double saldoTotal = 0;
-            foreach (KeyValuePair<int, Cuenta> item in cuentas) {
-                if (item.Value.pClaveCliente == claveCliente)
+
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select  case when sum(c.Saldo) is null then 0 else sum(c.Saldo) end as [Saldo Actual] from Cuenta c ";
+            consulta += "inner join Cuenta_Cliente cl on cl.Clave_Cuenta = c.Clave where cl.ID_Cliente = @idCliente";
+            SqlCommand cmd = new SqlCommand(consulta, conexion);
+            cmd.Parameters.Add("@idCliente", claveCliente);
+            SqlDataReader lector = cmd.ExecuteReader();
+
+            if (lector.HasRows)
+            {
+                while (lector.Read())
                 {
-                    saldoTotal += item.Value.pSaldo;
+                    saldoTotal = Convert.ToDouble(lector.GetValue(0));
                 }
             }
+
             return saldoTotal;
         }
     }

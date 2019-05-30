@@ -21,8 +21,8 @@ namespace BancoF
         public FrmLogin()
         {
             this.manejaCli = new ManejaCliente();
-            this.manejaCuentas = new ManejaCuentas();
             this.manejaCatalogo = new ManejaCatalogoCuenta();
+            this.manejaCuentas = new ManejaCuentas(manejaCatalogo);
             this.manejaMovi = new ManejaMovimiento(manejaCuentas);
 
             InitializeComponent();

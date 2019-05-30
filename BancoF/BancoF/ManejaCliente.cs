@@ -17,7 +17,7 @@ namespace BancoF
             string cadenaConexion = Rutinas.ObtenerStringConexion();
             SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
             string insercion = "insert into Cliente(Nombre,Domicilio,Ciudad,Telefono)";
-                   insercion += "values(@nom,@dom,@ciudad@tel)";
+                   insercion += "values(@nom,@dom,@ciudad,@tel)";
             SqlCommand cmd = new SqlCommand(insercion, conexion);
 
             cmd.Parameters.Add("@nom",Nombre);
@@ -85,49 +85,67 @@ namespace BancoF
 
         public bool Existe(int key)
         {
-           return clientes.ContainsKey(key);
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select ID from Cliente where @ID=ID";
+            SqlCommand cmd = new SqlCommand(consulta,conexion);
+            cmd.Parameters.Add("@ID",key);
+
+            SqlDataReader lector = cmd.ExecuteReader();
+            if (lector.HasRows)
+            {
+                conexion.Close();
+                return true;
+            }
+            conexion.Close();
+
+            return false;
         }
 
         public int KeyCliente(string Nombre)
         {
             int keyC = -1;
-            for (int i = 0; i < clientes.Count; i++)
-            {
-                var dato = clientes.ElementAt(i);
-                Cliente c = dato.Value;
-                int keyA = dato.Key;
-                if (c.pNombre.Equals(Nombre))
-                {
-                    keyC = keyA;
-                }
-            }
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select ID from Cliente where @nombre=Nombre";
+            SqlCommand cmd = new SqlCommand(consulta, conexion);
+            cmd.Parameters.Add("@nombre", Nombre);
+            SqlDataReader lector = cmd.ExecuteReader();
+
+            if (lector.HasRows)
+                while (lector.Read())
+                    keyC = lector.GetInt32(0);
+
+            conexion.Close();
             return keyC;
         }
 
         public Cliente ObtenerCliente(int key)
         {
             Cliente temp = null;
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select Nombre, Domicilio, Ciudad, Telefono from Cliente where @ID=ID";
+            SqlCommand cmd = new SqlCommand(consulta, conexion);
+            cmd.Parameters.Add("@ID", key);
 
-            foreach (KeyValuePair<int, Cliente> item in clientes)
-                if (item.Key == key)
-                    temp = item.Value;
+            SqlDataReader lector = cmd.ExecuteReader();
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    string nom = lector.GetString(0);
+                    string dom = lector.GetString(1);
+                    string ciudad = lector.GetString(2);
+                    string tel = lector.GetString(3);
+                    temp = new Cliente(key,nom,dom,ciudad,tel);
+                }
+            }
+            conexion.Close();
+
 
             return temp;
         }
 
-        public override string ToString()
-        {
-            string str;
-            var sb = new System.Text.StringBuilder();
-            for (int i = 0; i < clientes.Count; i++)
-            {
-                var dato = clientes.ElementAt(i);
-                Cliente c = dato.Value;
-                int keyA = dato.Key;
-                sb.AppendLine("\nCLAVE: " + keyA + "\n" + c);
-            }
-            str = sb.ToString();
-            return str;
-        }
     }
 }

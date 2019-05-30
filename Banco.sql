@@ -161,3 +161,19 @@ values ('NOMINA',0,'DEPOSITOS DE NOMINA')
 
 
 select ID, Nombre, Domicilio, Ciudad, Telefono from Cliente
+select count(ID)from Cliente
+
+select c.Clave from Cuenta c inner join Cuenta_Cliente cl on cl.Clave_Cuenta = c.Clave where cl.ID_Cliente = '1000'
+
+select c.Saldo, t.Nombre, cl.ID_Cliente from Cuenta c inner join Tipo_Cuenta t on t.ID = c.ID_TipoCuenta
+inner join Cuenta_Cliente cl on cl.Clave_Cuenta = c.Clave where c.Clave ='3232322'
+
+select*from Cuenta
+
+select  case 
+when sum(c.Saldo) is null then 0
+else sum(c.Saldo)
+end as [Saldo Actual]
+from Cuenta c 
+inner join Cuenta_Cliente cl
+on cl.Clave_Cuenta=c.Clave where cl.ID_Cliente= '1000'

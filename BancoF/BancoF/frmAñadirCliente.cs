@@ -51,8 +51,8 @@ namespace BancoF
 
                 if (ValidaDatos())
                 {
-                    manejaCli.Agrega(nombreCliente, domicilio, ciudad, tel);
-                    MessageBox.Show("Cliente agregado exitosamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   string men= manejaCli.Agrega(nombreCliente, domicilio, ciudad, tel);
+                    MessageBox.Show(men, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     limpiar();
                 }
             }

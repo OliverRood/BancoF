@@ -9,12 +9,19 @@ namespace BancoF
         private double saldo;
         private string nombreCuenta;
         private int claveCliente;
+        private int clave;
 
-        public Cuenta(double saldoInicial,string tipoCuenta,int claveCliente)
+        public Cuenta(int claveCuenta,double saldoInicial,string tipoCuenta,int claveCliente)
         {
+            this.clave = claveCuenta;
             this.claveCliente = claveCliente;
             this.nombreCuenta = tipoCuenta;
             this.saldo = saldoInicial;
+        }
+
+        public int Clave
+        {
+            get => clave;
         }
 
         public double pSaldo

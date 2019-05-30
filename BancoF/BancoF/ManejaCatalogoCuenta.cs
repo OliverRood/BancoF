@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using RutinasDLL;
+using System.Data.SqlClient;
 
 namespace BancoF
 {
@@ -62,25 +64,6 @@ namespace BancoF
             return nombres;
         }
 
-        /*
-
-            CONSULTAR SI ES NECESARIO
-
-        public void elimina(string Nombre)
-        {
-            for (int i = 0; i < pos; i++)
-            {
-                if (catalogo[i] != null)
-                {
-                    if (catalogo[i].pNombre.Equals(Nombre.ToUpper()))
-                    {
-                        catalogo[i] = null;
-                    }
-                }
-            }
-        }
-        */
-
         public override string ToString()
         {
             string str;
@@ -94,6 +77,24 @@ namespace BancoF
             }
             str = sb.ToString();
             return str;
+        }
+
+        public int BuscarIDTipo(string nombre)
+        {
+            int keyC = -1;
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select ID from Tipo_Cuenta where @nombre=Nombre";
+            SqlCommand cmd = new SqlCommand(consulta, conexion);
+            cmd.Parameters.Add("@nombre", nombre);
+            SqlDataReader lector = cmd.ExecuteReader();
+
+            if (lector.HasRows)
+                while (lector.Read())
+                    keyC = lector.GetInt32(0);
+
+            conexion.Close();
+            return keyC;
         }
     }
 }
