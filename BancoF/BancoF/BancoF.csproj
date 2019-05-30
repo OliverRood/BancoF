@@ -81,6 +81,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetCuentasClientes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetTiposCuenta.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTiposCuenta.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmAcercaDe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +192,7 @@
       <DependentUpon>FrmMovimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportCuentas.rdlc" />
+    <EmbeddedResource Include="ReportTiposCuenta.rdlc" />
     <EmbeddedResource Include="VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +216,17 @@
     </None>
     <None Include="DataSetCuentasClientes.xss">
       <DependentUpon>DataSetCuentasClientes.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTiposCuenta.xsc">
+      <DependentUpon>DataSetTiposCuenta.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTiposCuenta.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTiposCuenta.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetTiposCuenta.xss">
+      <DependentUpon>DataSetTiposCuenta.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

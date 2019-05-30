@@ -53,7 +53,7 @@ namespace BancoF
                         {
                             if (item.pClaveCuenta == cuentasCliente[i].Clave)
                             {
-                                dgvMovimientos.Rows.Add(item.pFecha, item.pTipo, item.pClaveCuenta, item.pImporte, item.pNombreDepositador);
+                                dgvMovimientos.Rows.Add(item.pFecha, item.pTipo, item.pClaveCuenta, item.pImporte); //, item.pNombreDepositador);
                             }
                         }
                     }
@@ -78,7 +78,7 @@ namespace BancoF
                 {
                     if (item.pClaveCuenta == cuentaCmb)
                     {
-                        dgvMovimientos.Rows.Add(item.pFecha, item.pTipo, item.pClaveCuenta, item.pImporte, item.pNombreDepositador);
+                        dgvMovimientos.Rows.Add(item.pFecha, item.pTipo, item.pClaveCuenta, item.pImporte); //, item.pNombreDepositador);
                     }
                 }
             }

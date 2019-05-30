@@ -64,6 +64,33 @@ namespace BancoF
             return cont;
         }
 
+
+        public TipoCuenta consulta(string Nombre)
+        {
+
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select * from Tipo_Cuenta where Nombre = '" + Nombre + "'";
+            SqlDataReader lector = Rutinas.ObtenerLector(consulta, conexion);
+
+            TipoCuenta cuenta = null;
+
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    int ID = lector.GetInt32(0);
+                    string NombreTC = lector.GetString(1);
+                    double MontoMinimo = lector.GetDouble(2);
+                    string Descripcion = lector.GetString(3);
+                    cuenta = new TipoCuenta(NombreTC, MontoMinimo, Descripcion);
+                }
+            }
+            conexion.Close();
+
+            return cuenta;
+        }
+
         /*
 
             CONSULTAR SI ES NECESARIO
@@ -83,7 +110,7 @@ namespace BancoF
         }
         */
 
-        public override string ToString()
+        public string[] obtieneNombres()
         {
             String[] nombres = new String[this.Count()];
             string cadenaConexion = Rutinas.ObtenerStringConexion();

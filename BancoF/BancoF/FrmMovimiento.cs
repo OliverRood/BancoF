@@ -331,15 +331,7 @@ namespace BancoF
                         int claveCuenta = Convert.ToInt32(txtClave.Text);
                         double monto = Convert.ToDouble(txtMonto.Text);
                         string nombre = txtNombre.Text;
-                        if (manejaMovimiento.Deposito(fecha, monto, claveCuenta, nombre))
-                        {
-                            MessageBox.Show("Deposito realizado con exito", "Realizar movimiento", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                            LimpiarAux();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error al realizar deposito", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        // manejaMovimiento.Agrega(monto, Tipo, fecha, Hora, Folio_Movimiento, claveCuenta);
                     }
                 }
                 else
@@ -350,15 +342,6 @@ namespace BancoF
                         int claveCuenta = Convert.ToInt32(txtClave.Text);
                         double monto = Convert.ToDouble(txtMonto.Text);
                         string nombre = txtNombre.Text;
-                        if (manejaMovimiento.Retiro(fecha, monto, claveCuenta, nombre))
-                        {
-                            MessageBox.Show("Retiro realizado con exito", "Realizar movimiento", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                            LimpiarAux();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error al realizar retiro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
                     }
                 }
             }

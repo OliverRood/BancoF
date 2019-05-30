@@ -7,11 +7,14 @@ namespace BancoF
 {
     public class ManejaMovimiento
     {
-        public ManejaMovimiento()
+        ManejaCuentas manejaCuentas;
+
+        public ManejaMovimiento(ManejaCuentas manejaCuentas)
         {
+            this.manejaCuentas = manejaCuentas;
         }
 
-        private string Agrega(double Monto, char Tipo, string Fecha, string Hora, int Folio_Movimiento, int Clave_Cuenta)
+        public string Agrega(double Monto, char Tipo, string Fecha, string Hora, int Folio_Movimiento, int Clave_Cuenta)
         {
 
             string cadenaConexion = Rutinas.ObtenerStringConexion();
@@ -71,6 +74,50 @@ namespace BancoF
             conexion.Close();
 
             return temp;
+        }
+
+        public int Count()
+        {
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select count(Folio) from Movimiento";
+            SqlDataReader lector = Rutinas.ObtenerLector(consulta, conexion);
+
+            int cont = 0;
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                    cont = lector.GetInt32(0);
+            }
+            conexion.Close();
+            return cont;
+        }
+
+        public Movimiento[] obtieneMovimientos()
+        {
+            Movimiento[] movimientos = new Movimiento[this.Count()];
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select m.Monto, m.Tipo, m.Fecha, mc.Clave_Cuenta from Movimiento m " +
+                "inner join Movimiento_Cuenta mc on mc.Folio_Movimiento = m.Folio";
+            SqlCommand cmd = new SqlCommand(consulta, conexion);
+            SqlDataReader lector = Rutinas.ObtenerLector(consulta, conexion);
+            int cont = 0; 
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    double Monto = lector.GetDouble(0);
+                    char Tipo = Convert.ToChar(lector.GetValue(1));
+                    string Fecha = lector.GetString(2);
+                    int ClaveCuenta = lector.GetInt32(3);
+                    movimientos[cont] = new Movimiento(Monto, Tipo, Fecha, ClaveCuenta);
+                    cont++;
+                }
+            }
+            conexion.Close();
+
+            return movimientos;
         }
 
     }
