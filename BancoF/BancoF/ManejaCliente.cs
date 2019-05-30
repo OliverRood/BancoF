@@ -1,43 +1,86 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Data.SqlClient;
+using RutinasDLL;
 namespace BancoF
 {
     public class ManejaCliente
     {
-
-        Dictionary<int, Cliente> clientes;
-        int countClave = 1;
-
         public ManejaCliente()
         {
-            clientes = new Dictionary<int, Cliente>();
+           
         }
 
-        public void Agrega(string Nombre, string Domicilio, string Ciudad, string Telefono)
+        public string Agrega(string Nombre, string Domicilio, string Ciudad, string Telefono)
         {
-            clientes.Add(countClave, new Cliente(Nombre, Domicilio, Ciudad, Telefono));
-            countClave++;
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string insercion = "insert into Cliente(Nombre,Domicilio,Ciudad,Telefono)";
+                   insercion += "values(@nom,@dom,@ciudad@tel)";
+            SqlCommand cmd = new SqlCommand(insercion, conexion);
+
+            cmd.Parameters.Add("@nom",Nombre);
+            cmd.Parameters.Add("@dom", Domicilio);
+            cmd.Parameters.Add("@ciudad", Ciudad);
+            cmd.Parameters.Add("@tel", Telefono);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                conexion.Close();
+                return ex.Message;
+            }
+
+            return "Cliente agregado exitosamente";
         }
 
         public Cliente[] ObtenerClientes()
         {
-            Cliente[] temp = new Cliente[clientes.Count()];
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select ID, Nombre, Domicilio, Ciudad, Telefono from Cliente";
+            SqlDataReader lector = Rutinas.ObtenerLector(consulta,conexion);
 
-            for(int i = 0; i < clientes.Count(); i++)
+            Cliente[] temp = new Cliente[this.Count()];
+
+            if (lector.HasRows)
             {
-                temp[i] = clientes.ElementAt(i).Value;
+                int con = 0;
+                while(lector.Read())
+                {
+                    int ID = lector.GetInt32(0);
+                    string nom = lector.GetString(1);
+                    string dom = lector.GetString(2);
+                    string ciudad = lector.GetString(3);
+                    string tel = lector.GetString(4);
+                    temp[con] = new Cliente(ID,nom,dom,ciudad,tel);
+                    con++;
+                }
             }
-
+            conexion.Close();
             return temp;
         }
 
-
-
         public int Count()
         {
-            return clientes.Count;
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string consulta = "select count(ID) from Cliente";
+            SqlDataReader lector = Rutinas.ObtenerLector(consulta, conexion);
+
+            int count = 0;
+
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                    count = lector.GetInt32(0);
+            }
+            conexion.Close();
+            return count;
         }
 
         public bool Existe(int key)

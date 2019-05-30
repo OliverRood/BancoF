@@ -1,3 +1,4 @@
+
 ---Paso 1.-Creación de la BD:
 Create database Proyecto_Banco
 Go
@@ -95,10 +96,10 @@ Foreign Key (Clave_Cuenta) References Cuenta(Clave)
 Go
 
 Alter Table Movimiento_Cuenta Add Constraint [FK_MovimientoCliente_Movimiento]
-Foreign Key (Folio_Movimiento) References Movimiento(Folio_Movimiento)
+Foreign Key (Folio_Movimiento) References Movimiento(Folio)
 Go
 
-Alter Table Movimiento_Cliente Add Constraint [FK_MovimientoCuenta_Cuenta]
+Alter Table Movimiento_Cuenta Add Constraint [FK_MovimientoCuenta_Cuenta]
 Foreign Key (Clave_Cuenta) References Cuenta(Clave)
 Go
 
@@ -158,3 +159,5 @@ values ('BASICA',4000,'REQUIERE SALDO MINIMO')
 insert into Tipo_Cuenta(Nombre,MontoMinimo,Descripcion)
 values ('NOMINA',0,'DEPOSITOS DE NOMINA')
 
+
+select ID, Nombre, Domicilio, Ciudad, Telefono from Cliente

@@ -11,14 +11,20 @@ namespace BancoF
         private string domicilio;
         private string ciudad;
         private string telefono;
+        private int id;
 
-        public Cliente(string nom, string dom, string ci, string tel)
+        public Cliente(int ID, string nom, string dom, string ci, string tel)
         {
+            this.id = ID;
             this.nombre = nom;
             this.domicilio = dom;
             this.ciudad = ci;
             this.telefono = tel;
         }
+
+        public int ID {
+            get => ID;
+            }
 
         public string pNombre {
             get => nombre;
@@ -36,6 +42,7 @@ namespace BancoF
             get => telefono;
             set => telefono = value;
         }
+        
 
         public override string ToString()
         {
