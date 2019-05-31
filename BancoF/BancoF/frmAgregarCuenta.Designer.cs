@@ -121,6 +121,7 @@
             this.txtNumCuenta.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumCuenta.Location = new System.Drawing.Point(543, 180);
             this.txtNumCuenta.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNumCuenta.MaxLength = 7;
             this.txtNumCuenta.Name = "txtNumCuenta";
             this.txtNumCuenta.Size = new System.Drawing.Size(288, 25);
             this.txtNumCuenta.TabIndex = 1;

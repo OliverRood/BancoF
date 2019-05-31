@@ -21,11 +21,7 @@ namespace BancoF
             string insercionA = "insert into Cuenta(Clave,Saldo,ID_TipoCuenta)";
             insercionA += "values(@claveCu,@saldo,@idTipo)";
 
-            string insercionB = "insert into Cuenta_Cliente(Clave_Cuenta,ID_Cliente)";
-            insercionB += "values(@claveCuenta,@idCliente)";
-
             SqlCommand cmdA = new SqlCommand(insercionA, conexion);
-            SqlCommand cmdB = new SqlCommand(insercionB, conexion);
 
             int idTipo = manejaCatalogo.BuscarIDTipo(tipoCuenta);
 
@@ -34,14 +30,9 @@ namespace BancoF
             cmdA.Parameters.Add("@saldo", saldoInicial);
             cmdA.Parameters.Add("@idTipo",idTipo);
 
-            //Inserción en Cuentas_Clientes:
-            cmdB.Parameters.Add("@claveCuenta",claveCuenta);
-            cmdB.Parameters.Add("@idCliente",claveCliente);
-
             try
             {
                 cmdA.ExecuteNonQuery();
-                cmdB.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {

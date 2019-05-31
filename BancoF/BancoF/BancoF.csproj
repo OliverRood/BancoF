@@ -73,14 +73,6 @@
   <ItemGroup>
     <Compile Include="Cliente.cs" />
     <Compile Include="Cuenta.cs" />
-    <Compile Include="DataSetCuentasClientes.cs">
-      <DependentUpon>DataSetCuentasClientes.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSetCuentasClientes.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetCuentasClientes.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DataSetMovimientos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -212,17 +204,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="DataSetCuentasClientes.xsc">
-      <DependentUpon>DataSetCuentasClientes.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetCuentasClientes.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetCuentasClientes.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSetCuentasClientes.xss">
-      <DependentUpon>DataSetCuentasClientes.xsd</DependentUpon>
-    </None>
     <None Include="DataSetMovimientos.xsc">
       <DependentUpon>DataSetMovimientos.xsd</DependentUpon>
     </None>

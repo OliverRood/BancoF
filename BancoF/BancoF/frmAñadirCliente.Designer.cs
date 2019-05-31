@@ -99,6 +99,7 @@
             "Cosalá, Sin."});
             this.cmbCiudad.Location = new System.Drawing.Point(553, 300);
             this.cmbCiudad.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.cmbCiudad.MaxLength = 60;
             this.cmbCiudad.Name = "cmbCiudad";
             this.cmbCiudad.Size = new System.Drawing.Size(285, 25);
             this.cmbCiudad.TabIndex = 3;
@@ -111,6 +112,7 @@
             this.txtNombreCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombreCliente.Location = new System.Drawing.Point(553, 148);
             this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtNombreCliente.MaxLength = 60;
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(285, 24);
             this.txtNombreCliente.TabIndex = 0;
@@ -132,6 +134,7 @@
             this.txtDomicilio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDomicilio.Location = new System.Drawing.Point(553, 224);
             this.txtDomicilio.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtDomicilio.MaxLength = 80;
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.Size = new System.Drawing.Size(285, 24);
             this.txtDomicilio.TabIndex = 2;
@@ -167,6 +170,7 @@
             this.txtTelefono.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtTelefono.Location = new System.Drawing.Point(553, 389);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtTelefono.MaxLength = 20;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(285, 24);
             this.txtTelefono.TabIndex = 4;

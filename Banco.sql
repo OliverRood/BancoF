@@ -29,7 +29,7 @@ Create Table Cliente
 [Nombre] varchar(60) not null,
 [Domicilio] varchar(80) not null,
 [Ciudad] varchar(60),
-[Telefono] varchar(60) not null
+[Telefono] varchar(20) not null
 )
 Go
 
@@ -132,33 +132,40 @@ Alter Table [Movimiento_Cuenta] add Constraint UQ_Folio_Movimiento
 unique([Folio_Movimiento])
 Go
 
----Paso 6.-Triggers:
+---Paso 6.-Procedimientos Almacenados
+Create Procedure SP_AñadirCuentaCliente
+(
+@idCliente int,
+@claveCuenta int
+)
+as
+begin 
 
-Create Trigger TG_Saldo_Cuenta
+insert into Cuenta_Cliente(ID_Cliente,Clave_Cuenta)
+values(@idCliente,@claveCuenta)
+
+end
+Go
+
+---Paso 7.-Triggers:
+Create Trigger TG_Cuenta
 on Cuenta after insert,update
 as
 begin
 declare @Saldo money
 declare @MontoMinimo money
-select @Saldo=i.Saldo,@MontoMinimo=t.MontoMinimo from inserted i inner join Tipo_Cuenta t on t.ID=i.ID_TipoCuenta
+
+select @Saldo=i.Saldo,@MontoMinimo=t.MontoMinimo from inserted i 
+inner join Tipo_Cuenta t on t.ID=i.ID_TipoCuenta
 
 if(@Saldo<@MontoMinimo)
 	begin
 		Throw 51000,'No se puede realizar la transacción debido a que el saldo de la cuenta debe de ser igual o mayor al monto minimo asociado',1
 		rollback;
 	end
+
 end
 Go
-
----Paso 7.-Inserciones:
-
-insert into Tipo_Cuenta(Nombre,MontoMinimo,Descripcion)
-values ('PREMIUM',20000,'PRIVILEGIOS BASICOS. NO INCLUYE TARJETA FISICA')
-insert into Tipo_Cuenta(Nombre,MontoMinimo,Descripcion)
-values ('BASICA',4000,'REQUIERE SALDO MINIMO')
-insert into Tipo_Cuenta(Nombre,MontoMinimo,Descripcion)
-values ('NOMINA',0,'DEPOSITOS DE NOMINA')
-
 
 select ID, Nombre, Domicilio, Ciudad, Telefono from Cliente
 select count(ID)from Cliente
