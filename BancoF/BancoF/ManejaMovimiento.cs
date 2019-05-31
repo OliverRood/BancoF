@@ -21,24 +21,17 @@ namespace BancoF
             SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
             string insertA = "insert into Movimiento (Monto, Tipo, Fecha, Hora) " +
                 "values (@Monto, @Tipo, @Fecha, @Hora)";
-            string insertB = "insert into Movimiento_Cuenta (Folio_Movimiento, Clave_Cuenta) " +
-                "values (@Folio_Movimiento, @Clave_Cuenta)";
 
             SqlCommand cmdA = new SqlCommand(insertA, conexion);
-            SqlCommand cmdB = new SqlCommand(insertB, conexion);
 
             cmdA.Parameters.Add("@Monto", Monto);
             cmdA.Parameters.Add("@Tipo", Tipo);
             cmdA.Parameters.Add("@Fecha", Fecha);
             cmdA.Parameters.Add("@Hora", Hora);
 
-            cmdB.Parameters.Add("@Folio_Movimiento", Folio_Movimiento);
-            cmdB.Parameters.Add("@Clave_Cuenta", Clave_Cuenta);
-
             try
             {
                 cmdA.ExecuteNonQuery();
-                cmdB.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {

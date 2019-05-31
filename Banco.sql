@@ -39,20 +39,15 @@ Create Table Movimiento
 [Monto] money not null,
 [Tipo] char(1) not null,
 [Fecha] date not null,
-[Hora] time not null
+[Hora] time not null,
+[Clave_Cuenta] int not null,---FK
+[NombreDepositante] varchar(60) not null
 )
 Go
 
 Create Table Cuenta_Cliente
 (
 [ID_Cliente] int not null,--Fk
-[Clave_Cuenta] int not null---FK
-)
-Go
-
-Create Table Movimiento_Cuenta
-(
-[Folio_Movimiento] int not null,---FK
 [Clave_Cuenta] int not null---FK
 )
 Go
@@ -78,10 +73,6 @@ Alter Table Cuenta_Cliente add Constraint [PK_Cuenta_Cliente]
 Primary Key([ID_Cliente],[Clave_Cuenta])
 Go
 
-Alter Table Movimiento_Cuenta add constraint [PK_Movimiento_Cuenta]
-Primary Key([Folio_Movimiento],[Clave_Cuenta])
-Go
-
 ---Paso 4.-Creación de FK
 Alter Table Cuenta Add Constraint [FK_Cuenta]
 Foreign Key (ID_TipoCuenta) References Tipo_Cuenta(ID)
@@ -95,11 +86,7 @@ Alter Table Cuenta_Cliente Add Constraint[FK_CuentaCliente_Cuenta]
 Foreign Key (Clave_Cuenta) References Cuenta(Clave)
 Go
 
-Alter Table Movimiento_Cuenta Add Constraint [FK_MovimientoCliente_Movimiento]
-Foreign Key (Folio_Movimiento) References Movimiento(Folio)
-Go
-
-Alter Table Movimiento_Cuenta Add Constraint [FK_MovimientoCuenta_Cuenta]
+Alter Table Movimiento Add Constraint [FK_MovimientoCuenta_Cuenta]
 Foreign Key (Clave_Cuenta) References Cuenta(Clave)
 Go
 
@@ -149,6 +136,34 @@ if(@Saldo<@MontoMinimo)
 	end
 end
 Go
+
+Create Trigger TG_ActualizaSaldo
+on Movimiento after insert
+as
+begin
+declare @Monto money
+declare @Tipo char
+declare @Clave_Cuenta int
+select @Monto = i.Monto, @Tipo = i.Tipo, @Clave_Cuenta = i.Clave_Cuenta from inserted i
+
+begin try
+	if(@Tipo = 'D')
+		begin
+			update Cuenta set Saldo+=@Monto
+		end
+	if(@Tipo = 'R')
+		begin
+			update Cuenta set Saldo-=@Monto
+		end
+end try
+begin catch
+	throw
+	rollback;
+end catch
+
+end 
+go
+
 
 ---Paso 7.-Inserciones:
 

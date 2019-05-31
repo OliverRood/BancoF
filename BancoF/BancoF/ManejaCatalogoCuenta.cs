@@ -81,7 +81,7 @@ namespace BancoF
                 {
                     int ID = lector.GetInt32(0);
                     string NombreTC = lector.GetString(1);
-                    double MontoMinimo = lector.GetDouble(2);
+                    double MontoMinimo =Convert.ToDouble(lector.GetValue(2));
                     string Descripcion = lector.GetString(3);
                     cuenta = new TipoCuenta(NombreTC, MontoMinimo, Descripcion);
                 }
