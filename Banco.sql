@@ -29,7 +29,7 @@ Create Table Cliente
 [Nombre] varchar(60) not null,
 [Domicilio] varchar(80) not null,
 [Ciudad] varchar(60),
-[Telefono] varchar(20) not null
+[Telefono] varchar(60) not null
 )
 Go
 
@@ -39,20 +39,15 @@ Create Table Movimiento
 [Monto] money not null,
 [Tipo] char(1) not null,
 [Fecha] date not null,
-[Hora] time not null
+[Hora] time not null,
+[Clave_Cuenta] int not null,---FK
+[NombreDepositante] varchar(60) not null
 )
 Go
 
 Create Table Cuenta_Cliente
 (
 [ID_Cliente] int not null,--Fk
-[Clave_Cuenta] int not null---FK
-)
-Go
-
-Create Table Movimiento_Cuenta
-(
-[Folio_Movimiento] int not null,---FK
 [Clave_Cuenta] int not null---FK
 )
 Go
@@ -78,10 +73,6 @@ Alter Table Cuenta_Cliente add Constraint [PK_Cuenta_Cliente]
 Primary Key([ID_Cliente],[Clave_Cuenta])
 Go
 
-Alter Table Movimiento_Cuenta add constraint [PK_Movimiento_Cuenta]
-Primary Key([Folio_Movimiento],[Clave_Cuenta])
-Go
-
 ---Paso 4.-Creación de FK
 Alter Table Cuenta Add Constraint [FK_Cuenta]
 Foreign Key (ID_TipoCuenta) References Tipo_Cuenta(ID)
@@ -95,11 +86,7 @@ Alter Table Cuenta_Cliente Add Constraint[FK_CuentaCliente_Cuenta]
 Foreign Key (Clave_Cuenta) References Cuenta(Clave)
 Go
 
-Alter Table Movimiento_Cuenta Add Constraint [FK_MovimientoCliente_Movimiento]
-Foreign Key (Folio_Movimiento) References Movimiento(Folio)
-Go
-
-Alter Table Movimiento_Cuenta Add Constraint [FK_MovimientoCuenta_Cuenta]
+Alter Table Movimiento Add Constraint [FK_MovimientoCuenta_Cuenta]
 Foreign Key (Clave_Cuenta) References Cuenta(Clave)
 Go
 
@@ -132,40 +119,61 @@ Alter Table [Movimiento_Cuenta] add Constraint UQ_Folio_Movimiento
 unique([Folio_Movimiento])
 Go
 
----Paso 6.-Procedimientos Almacenados
-Create Procedure SP_AñadirCuentaCliente
-(
-@idCliente int,
-@claveCuenta int
-)
-as
-begin 
+---Paso 6.-Triggers:
 
-insert into Cuenta_Cliente(ID_Cliente,Clave_Cuenta)
-values(@idCliente,@claveCuenta)
-
-end
-Go
-
----Paso 7.-Triggers:
-Create Trigger TG_Cuenta
+Create Trigger TG_Saldo_Cuenta
 on Cuenta after insert,update
 as
 begin
 declare @Saldo money
 declare @MontoMinimo money
-
-select @Saldo=i.Saldo,@MontoMinimo=t.MontoMinimo from inserted i 
-inner join Tipo_Cuenta t on t.ID=i.ID_TipoCuenta
+select @Saldo=i.Saldo,@MontoMinimo=t.MontoMinimo from inserted i inner join Tipo_Cuenta t on t.ID=i.ID_TipoCuenta
 
 if(@Saldo<@MontoMinimo)
 	begin
 		Throw 51000,'No se puede realizar la transacción debido a que el saldo de la cuenta debe de ser igual o mayor al monto minimo asociado',1
 		rollback;
 	end
-
 end
 Go
+
+Create Trigger TG_ActualizaSaldo
+on Movimiento after insert
+as
+begin
+declare @Monto money
+declare @Tipo char
+declare @Clave_Cuenta int
+select @Monto = i.Monto, @Tipo = i.Tipo, @Clave_Cuenta = i.Clave_Cuenta from inserted i
+
+begin try
+	if(@Tipo = 'D')
+		begin
+			update Cuenta set Saldo+=@Monto
+		end
+	if(@Tipo = 'R')
+		begin
+			update Cuenta set Saldo-=@Monto
+		end
+end try
+begin catch
+	throw
+	rollback;
+end catch
+
+end 
+go
+
+
+---Paso 7.-Inserciones:
+
+insert into Tipo_Cuenta(Nombre,MontoMinimo,Descripcion)
+values ('PREMIUM',20000,'PRIVILEGIOS BASICOS. NO INCLUYE TARJETA FISICA')
+insert into Tipo_Cuenta(Nombre,MontoMinimo,Descripcion)
+values ('BASICA',4000,'REQUIERE SALDO MINIMO')
+insert into Tipo_Cuenta(Nombre,MontoMinimo,Descripcion)
+values ('NOMINA',0,'DEPOSITOS DE NOMINA')
+
 
 select ID, Nombre, Domicilio, Ciudad, Telefono from Cliente
 select count(ID)from Cliente
