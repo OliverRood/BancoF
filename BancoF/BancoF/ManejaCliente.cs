@@ -65,6 +65,50 @@ namespace BancoF
             return temp;
         }
 
+        public string ActualizaDireccíon(string direccion, int idCliente)
+        {
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string actualizacion = "Update Cliente set Domicilio=@newDom where id=@idCliente";
+            SqlCommand cmd = new SqlCommand(actualizacion,conexion);
+
+            cmd.Parameters.Add("@newDom",direccion);
+            cmd.Parameters.Add("@idCliente",idCliente);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                conexion.Close();
+                return ex.Message;
+            }
+            return "Dirección del cliente actualizada exitosamente";
+        }
+
+        public string ActualizaTelefono(string tel, int idCliente)
+        {
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string actualizacion = "Update Cliente set telefono=@newTel where id=@idCliente";
+            SqlCommand cmd = new SqlCommand(actualizacion, conexion);
+
+            cmd.Parameters.Add("@newTel", tel);
+            cmd.Parameters.Add("@idCliente", idCliente);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                conexion.Close();
+                return ex.Message;
+            }
+            return "Teléfono del cliente actualizada exitosamente";
+        }
+
         public int Count()
         {
             string cadenaConexion = Rutinas.ObtenerStringConexion();
@@ -129,20 +173,27 @@ namespace BancoF
             SqlCommand cmd = new SqlCommand(consulta, conexion);
             cmd.Parameters.Add("@ID", key);
 
-            SqlDataReader lector = cmd.ExecuteReader();
-            if (lector.HasRows)
+            try
             {
-                while (lector.Read())
+                SqlDataReader lector = cmd.ExecuteReader();
+                if (lector.HasRows)
                 {
-                    string nom = lector.GetString(0);
-                    string dom = lector.GetString(1);
-                    string ciudad = lector.GetString(2);
-                    string tel = lector.GetString(3);
-                    temp = new Cliente(key,nom,dom,ciudad,tel);
+                    while (lector.Read())
+                    {
+                        string nom = lector.GetString(0);
+                        string dom = lector.GetString(1);
+                        string ciudad = lector.GetString(2);
+                        string tel = lector.GetString(3);
+                        temp = new Cliente(key, nom, dom, ciudad, tel);
+                    }
                 }
+                conexion.Close();
             }
-            conexion.Close();
-
+            catch (SqlException)
+            {
+                conexion.Close();
+                return null;
+            }
 
             return temp;
         }

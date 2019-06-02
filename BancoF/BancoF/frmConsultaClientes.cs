@@ -70,16 +70,24 @@ namespace BancoF
         {
             string nomCliente = flagCliente ? nombreCliente : cmbNombreCliente.Text;
             int claveCliente = manejaCli.KeyCliente(nomCliente);
-            MessageBox.Show(claveCliente.ToString());
 
             List<Cuenta> temp = manejaCuentas.ObtenerPorCliente(claveCliente);
-            MessageBox.Show("Entra?");
             dgvCuentasCliente.Rows.Clear();
 
             foreach (Cuenta item in temp)
             {
                 string saldo = String.Format("{0:c}",item.pSaldo);
-                dgvCuentasCliente.Rows.Add(item.Clave, item.pNombre,saldo);
+                if (flagCliente)
+                {
+                    dgvCuentasCliente.Rows.Add(item.Clave, item.pNombre, saldo);
+                }
+                else
+                {
+                    if(!manejaCuentas.ValidaMovimientos(item.Clave))
+                    dgvCuentasCliente.Rows.Add(item.Clave, item.pNombre, saldo,Editar.Text="Eliminar");
+                    else
+                        dgvCuentasCliente.Rows.Add(item.Clave, item.pNombre, saldo);
+                }
             }
 
         }
@@ -111,6 +119,11 @@ namespace BancoF
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvCuentasCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

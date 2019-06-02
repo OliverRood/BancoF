@@ -257,7 +257,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSetCuentasClientes</DataSetName>
         <Top>1.94854cm</Top>
-        <Left>1.13926cm</Left>
+        <Left>1.69489cm</Left>
         <Height>2.09958cm</Height>
         <Width>12.20958cm</Width>
         <Style>
@@ -312,12 +312,12 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>3.53125in</Height>
+    <Height>3.60417in</Height>
     <Style>
       <BackgroundColor>Snow</BackgroundColor>
     </Style>
   </Body>
-  <Width>5.85417in</Width>
+  <Width>6.20845in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

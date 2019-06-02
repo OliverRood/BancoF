@@ -78,16 +78,16 @@ Alter Table Cuenta Add Constraint [FK_Cuenta]
 Foreign Key (ID_TipoCuenta) References Tipo_Cuenta(ID)
 Go
 
-Alter Table Cuenta_Cliente Add Constraint [FK_CuentaCliente_Cliente]
-Foreign Key (ID_Cliente) References Cliente(ID)
-Go
+Alter Table Cuenta_Cliente Add Constraint [FK_CuentaCliente_Cliente] 
+Foreign Key (ID_Cliente) References Cliente(ID) on delete cascade
+Go 
 
 Alter Table Cuenta_Cliente Add Constraint[FK_CuentaCliente_Cuenta]
-Foreign Key (Clave_Cuenta) References Cuenta(Clave)
+Foreign Key (Clave_Cuenta) References Cuenta(Clave) on delete cascade
 Go
 
 Alter Table Movimiento Add Constraint [FK_MovimientoCuenta_Cuenta]
-Foreign Key (Clave_Cuenta) References Cuenta(Clave)
+Foreign Key (Clave_Cuenta) References Cuenta(Clave) on delete cascade
 Go
 
 ---Paso 5.-Creación de Restricciones:
@@ -138,6 +138,21 @@ end catch
 end
 Go
 
+Create Procedure SP_ValidaCuentaMovimientos
+(
+@claveCuenta int
+)
+as
+begin
+
+declare @result bit='false'
+
+if exists(select Clave_Cuenta from Movimiento where Clave_Cuenta=@claveCuenta)
+set @result='true';
+
+return @result
+end
+Go
 ---Paso 7.-Triggers:
 
 Create Trigger TG_Saldo_Cuenta
@@ -210,3 +225,6 @@ end as [Saldo Actual]
 from Cuenta c 
 inner join Cuenta_Cliente cl
 on cl.Clave_Cuenta=c.Clave where cl.ID_Cliente= '1000'
+
+update Cliente set Telefono='Worales' where id=1
+

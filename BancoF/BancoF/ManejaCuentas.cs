@@ -173,5 +173,31 @@ namespace BancoF
 
             return saldoTotal;
         }
+
+        public bool ValidaMovimientos(int claveCuenta)
+        {
+            bool flag = true;
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            SqlCommand cmd = new SqlCommand("SP_ValidaCuentaMovimientos",conexion);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@claveCuenta",claveCuenta);
+            cmd.Parameters.Add("@result",SqlDbType.Bit).Direction=ParameterDirection.ReturnValue;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                int resultTemp = Convert.ToInt32(cmd.Parameters["@result"].Value);
+                flag = resultTemp == 0 ? false : true;
+            }
+            catch (SqlException ex)
+            {
+                conexion.Close();
+                return false;
+            }
+            conexion.Close();
+            return flag;
+        }
     }
 }
