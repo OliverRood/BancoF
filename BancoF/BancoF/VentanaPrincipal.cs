@@ -132,13 +132,13 @@ namespace BancoF
 
         private void tsConsultaClientes_Click(object sender, EventArgs e)
         {
-            frmConsultaClientes consultaCli = new frmConsultaClientes(false, "", manejaCli, manejaCuentas);
+            FrmConsultaClientes consultaCli = new FrmConsultaClientes(false, "", manejaCli, manejaCuentas);
             consultaCli.ShowDialog();
         }
 
         private void consultarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            frmConsultaClientes consultaCli = new frmConsultaClientes(true,nombre, manejaCli, manejaCuentas);
+            FrmConsultaClientes consultaCli = new FrmConsultaClientes(true,nombre, manejaCli, manejaCuentas);
             consultaCli.ShowDialog();
         }
 

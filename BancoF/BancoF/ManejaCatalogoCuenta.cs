@@ -15,9 +15,10 @@ namespace BancoF
 
         private void agregaBase()
         {
-            agrega("PREMIUM",20000,"PRIVILEGIOS BASICOS. NO INCLUYE TARJETA FISICA");
+           /* agrega("PREMIUM",20000,"PRIVILEGIOS BASICOS. NO INCLUYE TARJETA FISICA");
             agrega("BASICA",4000,"REQUIERE SALDO MINIMO");
-            agrega("NOMINA",0,"DEPOSITOS DE NOMINA");
+            agrega("NOMINA",0,"DEPOSITOS DE NOMINA");*/ 
+            //Nop
         }
 
         public string agrega(string Nombre, double MontoMinimo, string Descripcion)

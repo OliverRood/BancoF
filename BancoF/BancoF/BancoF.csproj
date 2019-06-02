@@ -101,11 +101,11 @@
     <Compile Include="frmAñadirCliente.Designer.cs">
       <DependentUpon>frmAñadirCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaClientes.cs">
+    <Compile Include="FrmConsultaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConsultaClientes.Designer.cs">
-      <DependentUpon>frmConsultaClientes.cs</DependentUpon>
+    <Compile Include="FrmConsultaClientes.Designer.cs">
+      <DependentUpon>FrmConsultaClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmConsultaCuentasBanco.cs">
       <SubType>Form</SubType>
@@ -164,8 +164,8 @@
     <EmbeddedResource Include="frmAñadirCliente.resx">
       <DependentUpon>frmAñadirCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultaClientes.resx">
-      <DependentUpon>frmConsultaClientes.cs</DependentUpon>
+    <EmbeddedResource Include="FrmConsultaClientes.resx">
+      <DependentUpon>FrmConsultaClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsultaCuentasBanco.resx">
       <DependentUpon>FrmConsultaCuentasBanco.cs</DependentUpon>

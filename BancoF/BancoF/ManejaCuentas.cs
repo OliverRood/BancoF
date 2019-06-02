@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RutinasDLL;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace BancoF
 {
@@ -17,11 +18,13 @@ namespace BancoF
         public string Agrega(int claveCuenta, int claveCliente, double saldoInicial, string tipoCuenta)
         {
             string cadenaConexion = Rutinas.ObtenerStringConexion();
-            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            SqlConnection conexionA = Rutinas.ConectaBD(cadenaConexion);
+            SqlConnection conexionB = Rutinas.ConectaBD(cadenaConexion);
             string insercionA = "insert into Cuenta(Clave,Saldo,ID_TipoCuenta)";
             insercionA += "values(@claveCu,@saldo,@idTipo)";
 
-            SqlCommand cmdA = new SqlCommand(insercionA, conexion);
+            SqlCommand cmdA = new SqlCommand(insercionA, conexionA);
+            SqlCommand cmdB = new SqlCommand("SP_AñadirCuentaCliente", conexionB);
 
             int idTipo = manejaCatalogo.BuscarIDTipo(tipoCuenta);
 
@@ -30,13 +33,20 @@ namespace BancoF
             cmdA.Parameters.Add("@saldo", saldoInicial);
             cmdA.Parameters.Add("@idTipo",idTipo);
 
+            //Inserción en Cuentas-Clientes:
+            cmdB.CommandType = CommandType.StoredProcedure;
+            cmdB.Parameters.Add("@idCliente",claveCliente);
+            cmdB.Parameters.Add("@claveCuenta",claveCuenta);
+
             try
             {
                 cmdA.ExecuteNonQuery();
+                cmdB.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
-                conexion.Close();
+                conexionA.Close();
+                conexionB.Close();
                 return ex.Message;
             }
 

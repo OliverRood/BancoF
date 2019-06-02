@@ -115,11 +115,30 @@ Alter Table Cuenta_Cliente add constraint UQ_Cuenta_Cliente
 unique([Clave_Cuenta])
 Go
 
-Alter Table [Movimiento_Cuenta] add Constraint UQ_Folio_Movimiento
-unique([Folio_Movimiento])
+---Paso 6.-Procedimientos almacenados:
+
+Create Procedure SP_AñadirCuentaCliente
+(
+@idCliente int,
+@claveCuenta int
+)
+as
+begin 
+
+begin try
+insert into Cuenta_Cliente(ID_Cliente,Clave_Cuenta)
+values(@idCliente,@claveCuenta)
+end try
+
+begin catch
+throw;
+rollback;
+end catch
+
+end
 Go
 
----Paso 6.-Triggers:
+---Paso 7.-Triggers:
 
 Create Trigger TG_Saldo_Cuenta
 on Cuenta after insert,update
@@ -164,8 +183,7 @@ end catch
 end 
 go
 
-
----Paso 7.-Inserciones:
+---Paso 8.-Inserciones:
 
 insert into Tipo_Cuenta(Nombre,MontoMinimo,Descripcion)
 values ('PREMIUM',20000,'PRIVILEGIOS BASICOS. NO INCLUYE TARJETA FISICA')

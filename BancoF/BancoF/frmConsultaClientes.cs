@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace BancoF
 {
-    public partial class frmConsultaClientes : Form
+    public partial class FrmConsultaClientes : Form
     {
         private ManejaCliente manejaCli;
         private ManejaCuentas manejaCuentas;
         string nombreCliente;
         private bool flagCliente;
 
-        public frmConsultaClientes(bool cliente,string nomCliente,ManejaCliente mClientes, ManejaCuentas mCuentas)
+        public FrmConsultaClientes(bool cliente,string nomCliente,ManejaCliente mClientes, ManejaCuentas mCuentas)
         {
             InitializeComponent();
             flagCliente = cliente;
