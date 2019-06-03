@@ -102,6 +102,7 @@
             this.grpTipoMovimiento.TabIndex = 6;
             this.grpTipoMovimiento.TabStop = false;
             this.grpTipoMovimiento.Text = "Tipo de movimiento";
+            this.grpTipoMovimiento.Enter += new System.EventHandler(this.grpTipoMovimiento_Enter);
             // 
             // lblClaveCuenta
             // 

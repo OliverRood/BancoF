@@ -355,5 +355,10 @@ namespace BancoF
             Cuenta temp = manejaCuentas.BuscarCuenta(claveCuenta);
             if (temp != null && !(string.IsNullOrEmpty(nombre))) lblSaldo.Text = "Saldo: $"+temp.pSaldo+" MXN";
         }
+
+        private void grpTipoMovimiento_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
