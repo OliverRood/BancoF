@@ -285,13 +285,13 @@ namespace BancoF {
             
             private global::System.Data.DataColumn columnTipo;
             
-            private global::System.Data.DataColumn columnFecha;
-            
-            private global::System.Data.DataColumn columnHora;
-            
             private global::System.Data.DataColumn columnClave_Cuenta;
             
             private global::System.Data.DataColumn columnNombreDepositante;
+            
+            private global::System.Data.DataColumn columnFecha;
+            
+            private global::System.Data.DataColumn columnHora;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -352,22 +352,6 @@ namespace BancoF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn FechaColumn {
-                get {
-                    return this.columnFecha;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn HoraColumn {
-                get {
-                    return this.columnHora;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Clave_CuentaColumn {
                 get {
                     return this.columnClave_Cuenta;
@@ -379,6 +363,22 @@ namespace BancoF {
             public global::System.Data.DataColumn NombreDepositanteColumn {
                 get {
                     return this.columnNombreDepositante;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn FechaColumn {
+                get {
+                    return this.columnFecha;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn HoraColumn {
+                get {
+                    return this.columnHora;
                 }
             }
             
@@ -419,16 +419,16 @@ namespace BancoF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MovimientoRow AddMovimientoRow(decimal Monto, string Tipo, System.DateTime Fecha, System.TimeSpan Hora, int Clave_Cuenta, string NombreDepositante) {
+            public MovimientoRow AddMovimientoRow(decimal Monto, string Tipo, int Clave_Cuenta, string NombreDepositante, string Fecha, string Hora) {
                 MovimientoRow rowMovimientoRow = ((MovimientoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Monto,
                         Tipo,
-                        Fecha,
-                        Hora,
                         Clave_Cuenta,
-                        NombreDepositante};
+                        NombreDepositante,
+                        Fecha,
+                        Hora};
                 rowMovimientoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMovimientoRow);
                 return rowMovimientoRow;
@@ -461,10 +461,10 @@ namespace BancoF {
                 this.columnFolio = base.Columns["Folio"];
                 this.columnMonto = base.Columns["Monto"];
                 this.columnTipo = base.Columns["Tipo"];
-                this.columnFecha = base.Columns["Fecha"];
-                this.columnHora = base.Columns["Hora"];
                 this.columnClave_Cuenta = base.Columns["Clave_Cuenta"];
                 this.columnNombreDepositante = base.Columns["NombreDepositante"];
+                this.columnFecha = base.Columns["Fecha"];
+                this.columnHora = base.Columns["Hora"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -476,14 +476,14 @@ namespace BancoF {
                 base.Columns.Add(this.columnMonto);
                 this.columnTipo = new global::System.Data.DataColumn("Tipo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTipo);
-                this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFecha);
-                this.columnHora = new global::System.Data.DataColumn("Hora", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHora);
                 this.columnClave_Cuenta = new global::System.Data.DataColumn("Clave_Cuenta", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnClave_Cuenta);
                 this.columnNombreDepositante = new global::System.Data.DataColumn("NombreDepositante", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombreDepositante);
+                this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecha);
+                this.columnHora = new global::System.Data.DataColumn("Hora", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHora);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnFolio}, true));
                 this.columnFolio.AutoIncrement = true;
@@ -495,11 +495,15 @@ namespace BancoF {
                 this.columnMonto.AllowDBNull = false;
                 this.columnTipo.AllowDBNull = false;
                 this.columnTipo.MaxLength = 1;
-                this.columnFecha.AllowDBNull = false;
-                this.columnHora.AllowDBNull = false;
                 this.columnClave_Cuenta.AllowDBNull = false;
                 this.columnNombreDepositante.AllowDBNull = false;
                 this.columnNombreDepositante.MaxLength = 60;
+                this.columnFecha.ReadOnly = true;
+                this.columnFecha.Caption = "Column1";
+                this.columnFecha.MaxLength = 30;
+                this.columnHora.ReadOnly = true;
+                this.columnHora.Caption = "Column2";
+                this.columnHora.MaxLength = 30;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -675,28 +679,6 @@ namespace BancoF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime Fecha {
-                get {
-                    return ((global::System.DateTime)(this[this.tableMovimiento.FechaColumn]));
-                }
-                set {
-                    this[this.tableMovimiento.FechaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.TimeSpan Hora {
-                get {
-                    return ((global::System.TimeSpan)(this[this.tableMovimiento.HoraColumn]));
-                }
-                set {
-                    this[this.tableMovimiento.HoraColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int Clave_Cuenta {
                 get {
                     return ((int)(this[this.tableMovimiento.Clave_CuentaColumn]));
@@ -715,6 +697,62 @@ namespace BancoF {
                 set {
                     this[this.tableMovimiento.NombreDepositanteColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Fecha {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimiento.FechaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Fecha\' in table \'Movimiento\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimiento.FechaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Hora {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimiento.HoraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Hora\' in table \'Movimiento\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimiento.HoraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsFechaNull() {
+                return this.IsNull(this.tableMovimiento.FechaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetFechaNull() {
+                this[this.tableMovimiento.FechaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsHoraNull() {
+                return this.IsNull(this.tableMovimiento.HoraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetHoraNull() {
+                this[this.tableMovimiento.HoraColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -880,49 +918,34 @@ namespace BancoF.DataSetMovimientosTableAdapters {
             tableMapping.ColumnMappings.Add("Folio", "Folio");
             tableMapping.ColumnMappings.Add("Monto", "Monto");
             tableMapping.ColumnMappings.Add("Tipo", "Tipo");
-            tableMapping.ColumnMappings.Add("Fecha", "Fecha");
-            tableMapping.ColumnMappings.Add("Hora", "Hora");
             tableMapping.ColumnMappings.Add("Clave_Cuenta", "Clave_Cuenta");
             tableMapping.ColumnMappings.Add("NombreDepositante", "NombreDepositante");
+            tableMapping.ColumnMappings.Add("Column1", "Fecha");
+            tableMapping.ColumnMappings.Add("Column2", "Hora");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Movimiento] WHERE (([Folio] = @Original_Folio) AND ([Monto] = @Original_Monto) AND ([Tipo] = @Original_Tipo) AND ([Fecha] = @Original_Fecha) AND ([Hora] = @Original_Hora) AND ([Clave_Cuenta] = @Original_Clave_Cuenta) AND ([NombreDepositante] = @Original_NombreDepositante))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Movimiento] WHERE (([Folio] = @Original_Folio) AND ([Monto] = " +
+                "@Original_Monto) AND ([Tipo] = @Original_Tipo) AND ([Clave_Cuenta] = @Original_C" +
+                "lave_Cuenta) AND ([NombreDepositante] = @Original_NombreDepositante))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Folio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Folio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Monto", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Monto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tipo", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fecha", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hora", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hora", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Clave_Cuenta", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Clave_Cuenta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NombreDepositante", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreDepositante", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Movimiento] ([Monto], [Tipo], [Fecha], [Hora], [Clave_Cuenta], [NombreDepositante]) VALUES (@Monto, @Tipo, @Fecha, @Hora, @Clave_Cuenta, @NombreDepositante);
-SELECT Folio, Monto, Tipo, Fecha, Hora, Clave_Cuenta, NombreDepositante FROM Movimiento WHERE (Folio = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Monto", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Monto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tipo", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hora", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hora", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Clave_Cuenta", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Clave_Cuenta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreDepositante", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreDepositante", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Movimiento] SET [Monto] = @Monto, [Tipo] = @Tipo, [Fecha] = @Fecha, [Hora] = @Hora, [Clave_Cuenta] = @Clave_Cuenta, [NombreDepositante] = @NombreDepositante WHERE (([Folio] = @Original_Folio) AND ([Monto] = @Original_Monto) AND ([Tipo] = @Original_Tipo) AND ([Fecha] = @Original_Fecha) AND ([Hora] = @Original_Hora) AND ([Clave_Cuenta] = @Original_Clave_Cuenta) AND ([NombreDepositante] = @Original_NombreDepositante));
-SELECT Folio, Monto, Tipo, Fecha, Hora, Clave_Cuenta, NombreDepositante FROM Movimiento WHERE (Folio = @Folio)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Movimiento] SET [Monto] = @Monto, [Tipo] = @Tipo, [Clave_Cuenta] = @Clave_Cuenta, [NombreDepositante] = @NombreDepositante WHERE (([Folio] = @Original_Folio) AND ([Monto] = @Original_Monto) AND ([Tipo] = @Original_Tipo) AND ([Clave_Cuenta] = @Original_Clave_Cuenta) AND ([NombreDepositante] = @Original_NombreDepositante));
+SELECT Folio, Monto, Tipo, CONVERT (varchar, Fecha, 1) AS Expr1, CONVERT (varchar, Hora, 8) AS Expr2, Clave_Cuenta, NombreDepositante FROM Movimiento WHERE (Folio = @Folio)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Monto", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Monto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tipo", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hora", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hora", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Clave_Cuenta", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Clave_Cuenta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreDepositante", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreDepositante", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Folio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Folio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Monto", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Monto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tipo", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fecha", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hora", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hora", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Clave_Cuenta", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Clave_Cuenta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NombreDepositante", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreDepositante", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Folio", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Folio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -941,8 +964,8 @@ SELECT Folio, Monto, Tipo, Fecha, Hora, Clave_Cuenta, NombreDepositante FROM Mov
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Folio, Monto, Tipo, Fecha, Hora, Clave_Cuenta, NombreDepositante FROM dbo." +
-                "Movimiento";
+            this._commandCollection[0].CommandText = "SELECT Folio, Monto, Tipo,convert(varchar, Fecha, 1), convert(varchar, Hora, 8), " +
+                "Clave_Cuenta, NombreDepositante FROM dbo.Movimiento";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1003,7 +1026,7 @@ SELECT Folio, Monto, Tipo, Fecha, Hora, Clave_Cuenta, NombreDepositante FROM Mov
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Folio, decimal Original_Monto, string Original_Tipo, System.DateTime Original_Fecha, System.TimeSpan Original_Hora, int Original_Clave_Cuenta, string Original_NombreDepositante) {
+        public virtual int Delete(int Original_Folio, decimal Original_Monto, string Original_Tipo, int Original_Clave_Cuenta, string Original_NombreDepositante) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Folio));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_Monto));
             if ((Original_Tipo == null)) {
@@ -1012,14 +1035,12 @@ SELECT Folio, Monto, Tipo, Fecha, Hora, Clave_Cuenta, NombreDepositante FROM Mov
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Tipo));
             }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_Fecha));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((System.TimeSpan)(Original_Hora));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Clave_Cuenta));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_Clave_Cuenta));
             if ((Original_NombreDepositante == null)) {
                 throw new global::System.ArgumentNullException("Original_NombreDepositante");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_NombreDepositante));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_NombreDepositante));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1040,45 +1061,8 @@ SELECT Folio, Monto, Tipo, Fecha, Hora, Clave_Cuenta, NombreDepositante FROM Mov
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(decimal Monto, string Tipo, System.DateTime Fecha, System.TimeSpan Hora, int Clave_Cuenta, string NombreDepositante) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(Monto));
-            if ((Tipo == null)) {
-                throw new global::System.ArgumentNullException("Tipo");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Tipo));
-            }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Fecha));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.TimeSpan)(Hora));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Clave_Cuenta));
-            if ((NombreDepositante == null)) {
-                throw new global::System.ArgumentNullException("NombreDepositante");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(NombreDepositante));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal Monto, string Tipo, System.DateTime Fecha, System.TimeSpan Hora, int Clave_Cuenta, string NombreDepositante, int Original_Folio, decimal Original_Monto, string Original_Tipo, System.DateTime Original_Fecha, System.TimeSpan Original_Hora, int Original_Clave_Cuenta, string Original_NombreDepositante, int Folio) {
+        public virtual int Update(decimal Monto, string Tipo, int Clave_Cuenta, string NombreDepositante, int Original_Folio, decimal Original_Monto, string Original_Tipo, int Original_Clave_Cuenta, string Original_NombreDepositante, int Folio) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(Monto));
             if ((Tipo == null)) {
                 throw new global::System.ArgumentNullException("Tipo");
@@ -1086,33 +1070,29 @@ SELECT Folio, Monto, Tipo, Fecha, Hora, Clave_Cuenta, NombreDepositante FROM Mov
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Tipo));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Fecha));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.TimeSpan)(Hora));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Clave_Cuenta));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Clave_Cuenta));
             if ((NombreDepositante == null)) {
                 throw new global::System.ArgumentNullException("NombreDepositante");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(NombreDepositante));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(NombreDepositante));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Folio));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Original_Monto));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Folio));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(Original_Monto));
             if ((Original_Tipo == null)) {
                 throw new global::System.ArgumentNullException("Original_Tipo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Tipo));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Tipo));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_Fecha));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.TimeSpan)(Original_Hora));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Clave_Cuenta));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Clave_Cuenta));
             if ((Original_NombreDepositante == null)) {
                 throw new global::System.ArgumentNullException("Original_NombreDepositante");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_NombreDepositante));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_NombreDepositante));
             }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Folio));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Folio));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1133,8 +1113,8 @@ SELECT Folio, Monto, Tipo, Fecha, Hora, Clave_Cuenta, NombreDepositante FROM Mov
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal Monto, string Tipo, System.DateTime Fecha, System.TimeSpan Hora, int Clave_Cuenta, string NombreDepositante, int Original_Folio, decimal Original_Monto, string Original_Tipo, System.DateTime Original_Fecha, System.TimeSpan Original_Hora, int Original_Clave_Cuenta, string Original_NombreDepositante) {
-            return this.Update(Monto, Tipo, Fecha, Hora, Clave_Cuenta, NombreDepositante, Original_Folio, Original_Monto, Original_Tipo, Original_Fecha, Original_Hora, Original_Clave_Cuenta, Original_NombreDepositante, Original_Folio);
+        public virtual int Update(decimal Monto, string Tipo, int Clave_Cuenta, string NombreDepositante, int Original_Folio, decimal Original_Monto, string Original_Tipo, int Original_Clave_Cuenta, string Original_NombreDepositante) {
+            return this.Update(Monto, Tipo, Clave_Cuenta, NombreDepositante, Original_Folio, Original_Monto, Original_Tipo, Original_Clave_Cuenta, Original_NombreDepositante, Original_Folio);
         }
     }
     

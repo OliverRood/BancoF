@@ -49,7 +49,7 @@ namespace BancoF
         {
             string cadenaConexion = Rutinas.ObtenerStringConexion();
             SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
-            string consulta = "select Monto, Tipo, Fecha, Hora, Clave_Cuenta, NombreDepositante from Movimiento Where Folio = @Folio";
+            string consulta = "select Monto, Tipo, convert(varchar, Fecha, 1), convert(varchar, Hora, 8), Clave_Cuenta, NombreDepositante from Movimiento Where Folio = @Folio";
             SqlCommand cmd = new SqlCommand(consulta, conexion);
             cmd.Parameters.Add("@Folio", Folio);
             SqlDataReader lector = Rutinas.ObtenerLector(consulta, conexion);

@@ -6,25 +6,25 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.71875in</Width>
+              <Width>1.08631in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.375in</Width>
+              <Width>0.55506in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.10417in</Width>
+              <Width>1.54465in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.77083in</Width>
+              <Width>0.87797in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.64583in</Width>
+              <Width>0.86756in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.92708in</Width>
+              <Width>1.29464in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.125in</Width>
+              <Width>3.01339in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -513,7 +513,7 @@
         <Top>0.76958in</Top>
         <Left>0.41542in</Left>
         <Height>0.5in</Height>
-        <Width>6.66667in</Width>
+        <Width>9.23958in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -543,7 +543,7 @@
         <Top>0.29042in</Top>
         <Left>0.41542in</Left>
         <Height>0.25in</Height>
-        <Width>6.66667in</Width>
+        <Width>9.23958in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -559,7 +559,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>8in</Width>
+  <Width>10in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>

@@ -60,10 +60,10 @@
             this.tsMovimientosBanco = new System.Windows.Forms.ToolStripMenuItem();
             this.lblFecha = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblHola = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.panelDiv = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -76,7 +76,7 @@
             this.lblTecBank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(48)))), ((int)(((byte)(36)))));
             this.lblTecBank.Location = new System.Drawing.Point(90, 341);
             this.lblTecBank.Name = "lblTecBank";
-            this.lblTecBank.Size = new System.Drawing.Size(251, 85);
+            this.lblTecBank.Size = new System.Drawing.Size(244, 72);
             this.lblTecBank.TabIndex = 4;
             this.lblTecBank.Text = "TecBank";
             // 
@@ -93,7 +93,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 5, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1000, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1000, 30);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -107,7 +107,7 @@
             this.tsBank.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold);
             this.tsBank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.tsBank.Name = "tsBank";
-            this.tsBank.Size = new System.Drawing.Size(78, 26);
+            this.tsBank.Size = new System.Drawing.Size(77, 23);
             this.tsBank.Text = "TecBank";
             // 
             // acercaDeToolStripMenuItem
@@ -115,21 +115,21 @@
             this.acercaDeToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
             this.acercaDeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(157, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(155, 6);
             // 
             // cerrarCesionToolStripMenuItem
             // 
             this.cerrarCesionToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
             this.cerrarCesionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.cerrarCesionToolStripMenuItem.Name = "cerrarCesionToolStripMenuItem";
-            this.cerrarCesionToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
+            this.cerrarCesionToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
             this.cerrarCesionToolStripMenuItem.Text = "Cerrar sesion";
             this.cerrarCesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarCesionToolStripMenuItem_Click);
             // 
@@ -138,7 +138,7 @@
             this.salirToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
             this.salirToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -151,7 +151,7 @@
             this.tsMovimiento.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold);
             this.tsMovimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.tsMovimiento.Name = "tsMovimiento";
-            this.tsMovimiento.Size = new System.Drawing.Size(103, 26);
+            this.tsMovimiento.Size = new System.Drawing.Size(102, 23);
             this.tsMovimiento.Text = "Movimiento";
             // 
             // realizarMovimientoToolStripMenuItem
@@ -159,7 +159,7 @@
             this.realizarMovimientoToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
             this.realizarMovimientoToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.realizarMovimientoToolStripMenuItem.Name = "realizarMovimientoToolStripMenuItem";
-            this.realizarMovimientoToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+            this.realizarMovimientoToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
             this.realizarMovimientoToolStripMenuItem.Text = "Realizar movimiento";
             this.realizarMovimientoToolStripMenuItem.Click += new System.EventHandler(this.realizarMovimientoToolStripMenuItem_Click);
             // 
@@ -171,14 +171,14 @@
             this.consultarToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
             this.consultarToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
             this.consultarToolStripMenuItem.Text = "Consultar";
             // 
             // porCuentaToolStripMenuItem
             // 
             this.porCuentaToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.porCuentaToolStripMenuItem.Name = "porCuentaToolStripMenuItem";
-            this.porCuentaToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.porCuentaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.porCuentaToolStripMenuItem.Text = "Por cuenta";
             this.porCuentaToolStripMenuItem.Click += new System.EventHandler(this.porCuentaToolStripMenuItem_Click);
             // 
@@ -186,14 +186,14 @@
             // 
             this.todoToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.todoToolStripMenuItem.Name = "todoToolStripMenuItem";
-            this.todoToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.todoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.todoToolStripMenuItem.Text = "Todo";
             this.todoToolStripMenuItem.Click += new System.EventHandler(this.todoToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(200, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(198, 6);
             // 
             // tsCuenta
             // 
@@ -204,7 +204,7 @@
             this.tsCuenta.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold);
             this.tsCuenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.tsCuenta.Name = "tsCuenta";
-            this.tsCuenta.Size = new System.Drawing.Size(74, 26);
+            this.tsCuenta.Size = new System.Drawing.Size(73, 23);
             this.tsCuenta.Text = "Cuentas";
             // 
             // tsAgregarCuenta
@@ -212,7 +212,7 @@
             this.tsAgregarCuenta.Font = new System.Drawing.Font("Ebrima", 10F);
             this.tsAgregarCuenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.tsAgregarCuenta.Name = "tsAgregarCuenta";
-            this.tsAgregarCuenta.Size = new System.Drawing.Size(184, 26);
+            this.tsAgregarCuenta.Size = new System.Drawing.Size(182, 24);
             this.tsAgregarCuenta.Text = "Aperturar cuenta";
             this.tsAgregarCuenta.Click += new System.EventHandler(this.tsAgregarCuenta_Click);
             // 
@@ -220,7 +220,7 @@
             // 
             this.tsCerrarCuenta.Font = new System.Drawing.Font("Ebrima", 10F);
             this.tsCerrarCuenta.Name = "tsCerrarCuenta";
-            this.tsCerrarCuenta.Size = new System.Drawing.Size(184, 26);
+            this.tsCerrarCuenta.Size = new System.Drawing.Size(182, 24);
             this.tsCerrarCuenta.Text = "Cerrar cuenta";
             this.tsCerrarCuenta.Click += new System.EventHandler(this.tsCerrarCuenta_Click);
             // 
@@ -229,7 +229,7 @@
             this.tsConsultarCuenta.Font = new System.Drawing.Font("Ebrima", 10F);
             this.tsConsultarCuenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.tsConsultarCuenta.Name = "tsConsultarCuenta";
-            this.tsConsultarCuenta.Size = new System.Drawing.Size(184, 26);
+            this.tsConsultarCuenta.Size = new System.Drawing.Size(182, 24);
             this.tsConsultarCuenta.Text = "Consultar";
             this.tsConsultarCuenta.Click += new System.EventHandler(this.consultarToolStripMenuItem2_Click);
             // 
@@ -241,7 +241,7 @@
             this.tsCliente.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold);
             this.tsCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.tsCliente.Name = "tsCliente";
-            this.tsCliente.Size = new System.Drawing.Size(74, 26);
+            this.tsCliente.Size = new System.Drawing.Size(73, 23);
             this.tsCliente.Text = "Clientes";
             // 
             // tsAltaCliente
@@ -249,7 +249,7 @@
             this.tsAltaCliente.Font = new System.Drawing.Font("Ebrima", 10F);
             this.tsAltaCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.tsAltaCliente.Name = "tsAltaCliente";
-            this.tsAltaCliente.Size = new System.Drawing.Size(190, 26);
+            this.tsAltaCliente.Size = new System.Drawing.Size(188, 24);
             this.tsAltaCliente.Text = "Dar de alta cliente";
             this.tsAltaCliente.Click += new System.EventHandler(this.tsAltaCliente_Click);
             // 
@@ -258,7 +258,7 @@
             this.tsConsultaClientes.Font = new System.Drawing.Font("Ebrima", 10F);
             this.tsConsultaClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.tsConsultaClientes.Name = "tsConsultaClientes";
-            this.tsConsultaClientes.Size = new System.Drawing.Size(190, 26);
+            this.tsConsultaClientes.Size = new System.Drawing.Size(188, 24);
             this.tsConsultaClientes.Text = "Consultar";
             this.tsConsultaClientes.Click += new System.EventHandler(this.tsConsultaClientes_Click);
             // 
@@ -272,7 +272,7 @@
             this.tsBanco.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold);
             this.tsBanco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.tsBanco.Name = "tsBanco";
-            this.tsBanco.Size = new System.Drawing.Size(63, 26);
+            this.tsBanco.Size = new System.Drawing.Size(62, 23);
             this.tsBanco.Text = "Banco";
             // 
             // tsCrearTipoCuenta
@@ -283,14 +283,14 @@
             this.tsCrearTipoCuenta.Font = new System.Drawing.Font("Ebrima", 10F);
             this.tsCrearTipoCuenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.tsCrearTipoCuenta.Name = "tsCrearTipoCuenta";
-            this.tsCrearTipoCuenta.Size = new System.Drawing.Size(171, 26);
+            this.tsCrearTipoCuenta.Size = new System.Drawing.Size(180, 24);
             this.tsCrearTipoCuenta.Text = "Cuentas banco";
             // 
             // creaToolStripMenuItem
             // 
             this.creaToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.creaToolStripMenuItem.Name = "creaToolStripMenuItem";
-            this.creaToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.creaToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
             this.creaToolStripMenuItem.Text = "Crear tipo";
             this.creaToolStripMenuItem.Click += new System.EventHandler(this.creaToolStripMenuItem_Click);
             // 
@@ -298,7 +298,7 @@
             // 
             this.consultaToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
             this.consultaToolStripMenuItem.Text = "Consulta";
             this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
@@ -309,32 +309,33 @@
             this.tsReportesMovimientos});
             this.tsReportes.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsReportes.Name = "tsReportes";
-            this.tsReportes.Size = new System.Drawing.Size(171, 26);
+            this.tsReportes.Size = new System.Drawing.Size(180, 24);
             this.tsReportes.Text = "Reportes";
             // 
             // tsReportesCuentas
             // 
             this.tsReportesCuentas.Name = "tsReportesCuentas";
-            this.tsReportesCuentas.Size = new System.Drawing.Size(153, 24);
+            this.tsReportesCuentas.Size = new System.Drawing.Size(180, 22);
             this.tsReportesCuentas.Text = "Cuentas";
             // 
             // tsReportesMovimientos
             // 
             this.tsReportesMovimientos.Name = "tsReportesMovimientos";
-            this.tsReportesMovimientos.Size = new System.Drawing.Size(153, 24);
+            this.tsReportesMovimientos.Size = new System.Drawing.Size(180, 22);
             this.tsReportesMovimientos.Text = "Movimientos";
+            this.tsReportesMovimientos.Click += new System.EventHandler(this.tsReportesMovimientos_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(168, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // tsMovimientosBanco
             // 
             this.tsMovimientosBanco.Font = new System.Drawing.Font("Ebrima", 10F);
             this.tsMovimientosBanco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.tsMovimientosBanco.Name = "tsMovimientosBanco";
-            this.tsMovimientosBanco.Size = new System.Drawing.Size(171, 26);
+            this.tsMovimientosBanco.Size = new System.Drawing.Size(180, 24);
             this.tsMovimientosBanco.Text = "Movimientos";
             this.tsMovimientosBanco.Click += new System.EventHandler(this.movimientosToolStripMenuItem_Click);
             // 
@@ -364,16 +365,6 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::BancoF.Properties.Resources.shopping_store;
-            this.pictureBox1.Location = new System.Drawing.Point(160, 209);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(112, 114);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // lblHola
             // 
             this.lblHola.AutoSize = true;
@@ -382,7 +373,7 @@
             this.lblHola.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.lblHola.Location = new System.Drawing.Point(435, 199);
             this.lblHola.Name = "lblHola";
-            this.lblHola.Size = new System.Drawing.Size(128, 75);
+            this.lblHola.Size = new System.Drawing.Size(123, 62);
             this.lblHola.TabIndex = 9;
             this.lblHola.Text = "Hola";
             // 
@@ -394,7 +385,7 @@
             this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.lblNombre.Location = new System.Drawing.Point(432, 261);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(272, 95);
+            this.lblNombre.Size = new System.Drawing.Size(267, 81);
             this.lblNombre.TabIndex = 10;
             this.lblNombre.Text = "Nombre";
             // 
@@ -405,6 +396,16 @@
             this.panelDiv.Name = "panelDiv";
             this.panelDiv.Size = new System.Drawing.Size(1064, 164);
             this.panelDiv.TabIndex = 11;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BancoF.Properties.Resources.shopping_store;
+            this.pictureBox1.Location = new System.Drawing.Point(160, 209);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(112, 114);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // frnVentanaPrincipal
             // 

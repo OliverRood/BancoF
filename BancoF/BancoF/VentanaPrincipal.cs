@@ -184,5 +184,11 @@ namespace BancoF
             FrmConsultaClientes consultaCli = new FrmConsultaClientes('E', "", manejaCli, manejaCuentas);
             consultaCli.ShowDialog();
         }
+
+        private void tsReportesMovimientos_Click(object sender, EventArgs e)
+        {
+            frmReportMovimientos frmReportMovimientos = new frmReportMovimientos();
+            frmReportMovimientos.ShowDialog();
+        }
     }
 }
