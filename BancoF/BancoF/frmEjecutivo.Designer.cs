@@ -41,8 +41,8 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsCuenta = new System.Windows.Forms.ToolStripMenuItem();
             this.tsAgregarCuenta = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsBanco = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsBanco = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -124,7 +124,7 @@
             this.msEjecutivo.Location = new System.Drawing.Point(0, 0);
             this.msEjecutivo.Name = "msEjecutivo";
             this.msEjecutivo.Padding = new System.Windows.Forms.Padding(7, 5, 0, 2);
-            this.msEjecutivo.Size = new System.Drawing.Size(984, 30);
+            this.msEjecutivo.Size = new System.Drawing.Size(1000, 30);
             this.msEjecutivo.TabIndex = 16;
             this.msEjecutivo.Text = "menuStrip1";
             // 
@@ -189,6 +189,13 @@
             this.tsAgregarCuenta.Size = new System.Drawing.Size(182, 24);
             this.tsAgregarCuenta.Text = "Aperturar cuenta";
             // 
+            // cerrarCuentaToolStripMenuItem
+            // 
+            this.cerrarCuentaToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
+            this.cerrarCuentaToolStripMenuItem.Name = "cerrarCuentaToolStripMenuItem";
+            this.cerrarCuentaToolStripMenuItem.Size = new System.Drawing.Size(182, 24);
+            this.cerrarCuentaToolStripMenuItem.Text = "Cerrar cuenta";
+            // 
             // tsBanco
             // 
             this.tsBanco.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -199,13 +206,6 @@
             this.tsBanco.Size = new System.Drawing.Size(62, 23);
             this.tsBanco.Text = "Banco";
             // 
-            // cerrarCuentaToolStripMenuItem
-            // 
-            this.cerrarCuentaToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
-            this.cerrarCuentaToolStripMenuItem.Name = "cerrarCuentaToolStripMenuItem";
-            this.cerrarCuentaToolStripMenuItem.Size = new System.Drawing.Size(182, 24);
-            this.cerrarCuentaToolStripMenuItem.Text = "Cerrar cuenta";
-            // 
             // reporteToolStripMenuItem
             // 
             this.reporteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -213,28 +213,28 @@
             this.movimientosToolStripMenuItem});
             this.reporteToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
             this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
-            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(126, 24);
             this.reporteToolStripMenuItem.Text = "Reporte";
             // 
             // cuentasToolStripMenuItem
             // 
             this.cuentasToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
             this.cuentasToolStripMenuItem.Name = "cuentasToolStripMenuItem";
-            this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
             this.cuentasToolStripMenuItem.Text = "Cuentas";
             // 
             // movimientosToolStripMenuItem
             // 
             this.movimientosToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
             this.movimientosToolStripMenuItem.Name = "movimientosToolStripMenuItem";
-            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
             this.movimientosToolStripMenuItem.Text = "Movimientos";
             // 
             // frmEjecutivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.msEjecutivo);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblHola);
@@ -244,6 +244,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEjecutivo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TecBank";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.msEjecutivo.ResumeLayout(false);

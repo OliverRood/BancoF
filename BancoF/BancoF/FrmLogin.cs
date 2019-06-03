@@ -86,6 +86,12 @@ namespace BancoF
             txtNombre.Clear();
             frnVentanaPrincipal.ShowDialog();
         }
-        
+
+        private void btnEjecutivo_Click(object sender, EventArgs e)
+        {
+
+            frmEjecutivo frmEjecutivo = new frmEjecutivo();
+            frmEjecutivo.ShowDialog();
+        }
     }
 }
