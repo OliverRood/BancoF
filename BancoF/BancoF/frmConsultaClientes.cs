@@ -77,17 +77,8 @@ namespace BancoF
             foreach (Cuenta item in temp)
             {
                 string saldo = String.Format("{0:c}",item.pSaldo);
-                if (flagCliente)
-                {
-                    dgvCuentasCliente.Rows.Add(item.Clave, item.pNombre, saldo);
-                }
-                else
-                {
-                    if(!manejaCuentas.ValidaMovimientos(item.Clave))
-                    dgvCuentasCliente.Rows.Add(item.Clave, item.pNombre, saldo,Editar.Text="Eliminar");
-                    else
-                        dgvCuentasCliente.Rows.Add(item.Clave, item.pNombre, saldo);
-                }
+                dgvCuentasCliente.Rows.Add(item.Clave, item.pNombre, saldo);
+                
             }
 
         }
