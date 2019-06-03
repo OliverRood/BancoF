@@ -38,6 +38,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnInvitado = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEjecutivo = new System.Windows.Forms.Button();
             this.lblBienvenida = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -77,9 +78,9 @@
             this.btnAdministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdministrador.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdministrador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.btnAdministrador.Location = new System.Drawing.Point(267, 417);
+            this.btnAdministrador.Location = new System.Drawing.Point(348, 399);
             this.btnAdministrador.Name = "btnAdministrador";
-            this.btnAdministrador.Size = new System.Drawing.Size(235, 44);
+            this.btnAdministrador.Size = new System.Drawing.Size(160, 62);
             this.btnAdministrador.TabIndex = 7;
             this.btnAdministrador.Text = "Ingresar como administrador";
             this.btnAdministrador.UseVisualStyleBackColor = false;
@@ -139,9 +140,9 @@
             this.btnInvitado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInvitado.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInvitado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.btnInvitado.Location = new System.Drawing.Point(18, 417);
+            this.btnInvitado.Location = new System.Drawing.Point(16, 399);
             this.btnInvitado.Name = "btnInvitado";
-            this.btnInvitado.Size = new System.Drawing.Size(199, 44);
+            this.btnInvitado.Size = new System.Drawing.Size(160, 62);
             this.btnInvitado.TabIndex = 18;
             this.btnInvitado.Text = "Ingresar como invitado";
             this.btnInvitado.UseVisualStyleBackColor = false;
@@ -150,6 +151,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.panel1.Controls.Add(this.btnEjecutivo);
             this.panel1.Controls.Add(this.lblBienvenida);
             this.panel1.Controls.Add(this.btnInvitado);
             this.panel1.Controls.Add(this.btnAdministrador);
@@ -160,6 +162,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(520, 480);
             this.panel1.TabIndex = 19;
+            // 
+            // btnEjecutivo
+            // 
+            this.btnEjecutivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnEjecutivo.FlatAppearance.BorderSize = 0;
+            this.btnEjecutivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEjecutivo.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEjecutivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.btnEjecutivo.Location = new System.Drawing.Point(182, 399);
+            this.btnEjecutivo.Name = "btnEjecutivo";
+            this.btnEjecutivo.Size = new System.Drawing.Size(160, 62);
+            this.btnEjecutivo.TabIndex = 20;
+            this.btnEjecutivo.Text = "Ingresar como ejecutivo";
+            this.btnEjecutivo.UseVisualStyleBackColor = false;
+            this.btnEjecutivo.Click += new System.EventHandler(this.btnEjecutivo_Click);
             // 
             // lblBienvenida
             // 
@@ -207,5 +224,6 @@
         private System.Windows.Forms.Button btnInvitado;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblBienvenida;
+        private System.Windows.Forms.Button btnEjecutivo;
     }
 }
