@@ -198,14 +198,14 @@
             // tsGuardarCliente
             // 
             this.tsGuardarCliente.Name = "tsGuardarCliente";
-            this.tsGuardarCliente.Size = new System.Drawing.Size(116, 22);
+            this.tsGuardarCliente.Size = new System.Drawing.Size(180, 22);
             this.tsGuardarCliente.Text = "Guardar";
             this.tsGuardarCliente.Click += new System.EventHandler(this.tsGuardarCliente_Click);
             // 
             // tsSalirVentana
             // 
             this.tsSalirVentana.Name = "tsSalirVentana";
-            this.tsSalirVentana.Size = new System.Drawing.Size(116, 22);
+            this.tsSalirVentana.Size = new System.Drawing.Size(180, 22);
             this.tsSalirVentana.Text = "Salir";
             this.tsSalirVentana.Click += new System.EventHandler(this.tsSalirVentana_Click);
             // 

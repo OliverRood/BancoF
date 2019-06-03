@@ -64,6 +64,7 @@
             this.lblHola = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.panelDiv = new System.Windows.Forms.Panel();
+            this.editarDatosDeClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -237,6 +238,7 @@
             // 
             this.tsCliente.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsAltaCliente,
+            this.editarDatosDeClienteToolStripMenuItem,
             this.tsConsultaClientes});
             this.tsCliente.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold);
             this.tsCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
@@ -249,7 +251,7 @@
             this.tsAltaCliente.Font = new System.Drawing.Font("Ebrima", 10F);
             this.tsAltaCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.tsAltaCliente.Name = "tsAltaCliente";
-            this.tsAltaCliente.Size = new System.Drawing.Size(190, 26);
+            this.tsAltaCliente.Size = new System.Drawing.Size(215, 26);
             this.tsAltaCliente.Text = "Dar de alta cliente";
             this.tsAltaCliente.Click += new System.EventHandler(this.tsAltaCliente_Click);
             // 
@@ -258,7 +260,7 @@
             this.tsConsultaClientes.Font = new System.Drawing.Font("Ebrima", 10F);
             this.tsConsultaClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.tsConsultaClientes.Name = "tsConsultaClientes";
-            this.tsConsultaClientes.Size = new System.Drawing.Size(190, 26);
+            this.tsConsultaClientes.Size = new System.Drawing.Size(215, 26);
             this.tsConsultaClientes.Text = "Consultar";
             this.tsConsultaClientes.Click += new System.EventHandler(this.tsConsultaClientes_Click);
             // 
@@ -406,6 +408,14 @@
             this.panelDiv.Size = new System.Drawing.Size(1064, 164);
             this.panelDiv.TabIndex = 11;
             // 
+            // editarDatosDeClienteToolStripMenuItem
+            // 
+            this.editarDatosDeClienteToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
+            this.editarDatosDeClienteToolStripMenuItem.Name = "editarDatosDeClienteToolStripMenuItem";
+            this.editarDatosDeClienteToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.editarDatosDeClienteToolStripMenuItem.Text = "Editar datos de cliente";
+            this.editarDatosDeClienteToolStripMenuItem.Click += new System.EventHandler(this.editarDatosDeClienteToolStripMenuItem_Click);
+            // 
             // frnVentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -471,6 +481,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsReportesCuentas;
         private System.Windows.Forms.ToolStripMenuItem tsReportesMovimientos;
         private System.Windows.Forms.ToolStripMenuItem tsCerrarCuenta;
+        private System.Windows.Forms.ToolStripMenuItem editarDatosDeClienteToolStripMenuItem;
     }
 }
 
