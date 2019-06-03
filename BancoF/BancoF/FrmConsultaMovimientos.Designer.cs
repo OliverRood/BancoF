@@ -31,11 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaMovimientos));
             this.dgvMovimientos = new System.Windows.Forms.DataGridView();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClaveDeCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbMovimientos = new System.Windows.Forms.Label();
             this.msMovimientos = new System.Windows.Forms.MenuStrip();
             this.tsTecBank = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +39,12 @@
             this.tsSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.panelDiv = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClaveDeCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
             this.msMovimientos.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +64,7 @@
             this.dgvMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMovimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Fecha,
+            this.Hora,
             this.Tipo,
             this.ClaveDeCuenta,
             this.Importe,
@@ -72,34 +74,6 @@
             this.dgvMovimientos.Name = "dgvMovimientos";
             this.dgvMovimientos.Size = new System.Drawing.Size(906, 420);
             this.dgvMovimientos.TabIndex = 0;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            // 
-            // ClaveDeCuenta
-            // 
-            this.ClaveDeCuenta.HeaderText = "Clave cuenta";
-            this.ClaveDeCuenta.Name = "ClaveDeCuenta";
-            this.ClaveDeCuenta.Width = 125;
-            // 
-            // Importe
-            // 
-            this.Importe.HeaderText = "Importe";
-            this.Importe.Name = "Importe";
-            this.Importe.Width = 150;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre de quien realizo el movimiento";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 380;
             // 
             // lbMovimientos
             // 
@@ -122,6 +96,7 @@
             this.msMovimientos.Size = new System.Drawing.Size(1000, 27);
             this.msMovimientos.TabIndex = 23;
             this.msMovimientos.Text = "menuStrip1";
+            this.msMovimientos.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.msMovimientos_ItemClicked);
             // 
             // tsTecBank
             // 
@@ -179,6 +154,39 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            // 
+            // Hora
+            // 
+            this.Hora.HeaderText = "Hora";
+            this.Hora.Name = "Hora";
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            // 
+            // ClaveDeCuenta
+            // 
+            this.ClaveDeCuenta.HeaderText = "Clave cuenta";
+            this.ClaveDeCuenta.Name = "ClaveDeCuenta";
+            this.ClaveDeCuenta.Width = 125;
+            // 
+            // Importe
+            // 
+            this.Importe.HeaderText = "Importe";
+            this.Importe.Name = "Importe";
+            this.Importe.Width = 150;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre de quien realizo";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 280;
+            // 
             // FrmConsultaMovimientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,14 +218,15 @@
         private System.Windows.Forms.MenuStrip msMovimientos;
         private System.Windows.Forms.ToolStripMenuItem tsTecBank;
         private System.Windows.Forms.ToolStripMenuItem tsSalir;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClaveDeCuenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.Panel panelDiv;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.ToolStripMenuItem tsCerrarMovimientos;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClaveDeCuenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     }
 }

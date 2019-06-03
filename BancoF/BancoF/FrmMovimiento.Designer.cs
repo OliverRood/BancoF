@@ -122,6 +122,7 @@
             this.txtClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClave.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtClave.Location = new System.Drawing.Point(424, 204);
+            this.txtClave.MaxLength = 7;
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(412, 19);
             this.txtClave.TabIndex = 8;
@@ -160,6 +161,7 @@
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtNombre.Location = new System.Drawing.Point(424, 424);
+            this.txtNombre.MaxLength = 60;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(412, 19);
             this.txtNombre.TabIndex = 12;

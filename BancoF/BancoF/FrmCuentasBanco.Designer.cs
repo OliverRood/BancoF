@@ -59,6 +59,7 @@
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtNombre.Location = new System.Drawing.Point(260, 209);
+            this.txtNombre.MaxLength = 60;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(482, 19);
             this.txtNombre.TabIndex = 14;
@@ -85,6 +86,7 @@
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtDescripcion.Location = new System.Drawing.Point(260, 396);
+            this.txtDescripcion.MaxLength = 80;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(482, 19);
             this.txtDescripcion.TabIndex = 18;

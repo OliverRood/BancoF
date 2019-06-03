@@ -26,7 +26,7 @@ namespace BancoF
             Movimiento[] movimientos = manejaMovimiento.obtieneMovimientos();
             foreach (Movimiento item in movimientos)
             {
-                if (item != null) dgvMovimientos.Rows.Add(item.pFecha, item.pTipo, item.pClaveCuenta, item.pImporte); //, item.pNombreDepositador);
+                if (item != null) dgvMovimientos.Rows.Add(item.pFecha, item.pHora, ((item.pTipo == 'D') ? "DEPOSITO" : "RETIRO"), item.pClaveCuenta, item.pImporte, item.pNombreRealizo);
             }
         }
 
@@ -47,6 +47,11 @@ namespace BancoF
             {
                 Application.Exit();
             }
+        }
+
+        private void msMovimientos_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

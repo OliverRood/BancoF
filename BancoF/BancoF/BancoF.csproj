@@ -73,6 +73,9 @@
   <ItemGroup>
     <Compile Include="Cliente.cs" />
     <Compile Include="Cuenta.cs" />
+    <Compile Include="DataSetMovimientos.cs">
+      <DependentUpon>DataSetMovimientos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetMovimientos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -149,6 +152,12 @@
     <Compile Include="FrmMovimiento.Designer.cs">
       <DependentUpon>FrmMovimiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportMovimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportMovimientos.Designer.cs">
+      <DependentUpon>frmReportMovimientos.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManejaCatalogoCuenta.cs" />
     <Compile Include="ManejaCliente.cs" />
     <Compile Include="ManejaCuentas.cs" />
@@ -197,9 +206,12 @@
     <EmbeddedResource Include="FrmMovimiento.resx">
       <DependentUpon>FrmMovimiento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportMovimientos.resx">
+      <DependentUpon>frmReportMovimientos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportCuentas.rdlc" />
-    <EmbeddedResource Include="ReportMovimientos.rdlc" />
     <EmbeddedResource Include="ReportTiposCuenta.rdlc" />
+    <EmbeddedResource Include="rMovimientos.rdlc" />
     <EmbeddedResource Include="VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
