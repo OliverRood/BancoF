@@ -15,12 +15,12 @@ namespace BancoF
         private ManejaCliente manejaCli;
         private ManejaCuentas manejaCuentas;
         string nombreCliente;
-        private bool flagCliente;
+        private char tipoUsuario;
 
-        public FrmConsultaClientes(bool cliente,string nomCliente,ManejaCliente mClientes, ManejaCuentas mCuentas)
+        public FrmConsultaClientes(char tipoU,string nomCliente,ManejaCliente mClientes, ManejaCuentas mCuentas)
         {
             InitializeComponent();
-            flagCliente = cliente;
+            this.tipoUsuario = tipoU;
             this.nombreCliente = nomCliente;
             this.manejaCli = mClientes;
             this.manejaCuentas = mCuentas;
@@ -33,8 +33,10 @@ namespace BancoF
 
         private void frmConsultaClientes_Load(object sender, EventArgs e)
         {
-            if (flagCliente)
+
+            switch (tipoUsuario)
             {
+                case ('U'):
                 dgvCuentasCliente.Columns.RemoveAt(3);
                 dgvCuentasCliente.Size = new Size(475, 381);
                 dgvCuentasCliente.Location = new Point(415, 135);
@@ -44,21 +46,39 @@ namespace BancoF
                 txtNombreCliente.Visible = true;
                 AgregarDatosCliente();
                 AgregarCuentas();
-            }
-            else
-            {
+                    break;
+
+
+                case ('A'):
+
+                dgvCuentasCliente.Columns.RemoveAt(3);
+                dgvCuentasCliente.Size = new Size(475, 381);
+                dgvCuentasCliente.Location = new Point(415, 135);
+
                 Cliente[] temp = manejaCli.ObtenerClientes();
 
                 foreach (Cliente item in temp)
                     cmbNombreCliente.Items.Add(item.pNombre);
 
                 cmbNombreCliente.SelectedIndex = 0;
+                    break;
+
+                case ('E'):
+                    Cliente[] temp2 = manejaCli.ObtenerClientes();
+
+                    foreach (Cliente item in temp2)
+                        cmbNombreCliente.Items.Add(item.pNombre);
+
+                    cmbNombreCliente.SelectedIndex = 0;
+                    break;
             }
+                
+      
         }
 
         public void AgregarDatosCliente()
         {
-            string nomCliente = flagCliente? nombreCliente:cmbNombreCliente.Text;
+            string nomCliente = tipoUsuario=='U'? nombreCliente:cmbNombreCliente.Text;
             int claveCliente = manejaCli.KeyCliente(nomCliente);
             Cliente tempCli = manejaCli.ObtenerCliente(claveCliente);
 
@@ -72,7 +92,7 @@ namespace BancoF
 
         public void AgregarCuentas()
         {
-            string nomCliente = flagCliente ? nombreCliente : cmbNombreCliente.Text;
+            string nomCliente = tipoUsuario == 'U' ? nombreCliente : cmbNombreCliente.Text;
             int claveCliente = manejaCli.KeyCliente(nomCliente);
 
             List<Cuenta> temp = manejaCuentas.ObtenerPorCliente(claveCliente);

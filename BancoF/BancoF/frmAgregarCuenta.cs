@@ -16,10 +16,12 @@ namespace BancoF
 
         private ManejaCuentas manejaCuentas;
         private ManejaCatalogoCuenta manejaCatalogo;
+        private ManejaCliente manejaCli;
         private int claveCliente;
 
-        public frmAgregarCuenta(ManejaCuentas mCuentas, ManejaCatalogoCuenta mCatalogo)
+        public frmAgregarCuenta(ManejaCuentas mCuentas, ManejaCatalogoCuenta mCatalogo,ManejaCliente manejaC)
         {
+            this.manejaCli = manejaC;
             this.manejaCuentas = mCuentas;
             this.manejaCatalogo = mCatalogo;
             InitializeComponent();
@@ -30,11 +32,22 @@ namespace BancoF
         {
             cmbTipoCuenta.SelectedIndex = 0;
             cmbNombreCliente.SelectedIndex = 0;
+            AgregarClientes();
             agregarTiposCuentas();
             tlpCuentas.SetToolTip(txtNumCuenta,
                 "El número de cuenta es un número entero de 7 digitos que utilizamos para identificar su cuenta de forma unica y confidencial.");
             tlpCuentas.SetToolTip(txtMontoMin,"El monto de apertura debe de ser mayor o igual al monto minimo del tipo de cuenta que seleccione.\n" +
                 "En algunos casos no se necesita de ningún monto minimo para aperturar la cuenta.");
+        }
+
+        private void AgregarClientes()
+        {
+            Cliente[] temp = manejaCli.ObtenerClientes();
+
+            foreach (Cliente item in temp)
+                cmbNombreCliente.Items.Add(item.pNombre);
+
+            cmbNombreCliente.SelectedIndex = 0;
         }
 
         private void agregarTiposCuentas()
@@ -208,6 +221,7 @@ namespace BancoF
             txtMontoApertura.Text = "";
             txtNumCuenta.Text = "";
             cmbTipoCuenta.SelectedIndex = 0;
+            cmbNombreCliente.SelectedIndex = 0;
             errorP.Clear();
         }
 
@@ -274,6 +288,24 @@ namespace BancoF
                 txtMontoMin.Text = String.Format("{0:c}", temp.pMontoMinimo);
             }
 
+        }
+
+        private void cmbNombreCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cmbNombreCliente.SelectedIndex;
+            if(index!=0)
+            {
+                claveCliente = manejaCli.KeyCliente(cmbNombreCliente.Text);
+            }
+        }
+
+        private void ValidaNomCliente(object sender, EventArgs e)
+        {
+            int index = cmbNombreCliente.SelectedIndex;
+            if (index == 0)
+                errorP.SetError(cmbNombreCliente, "Seleccione un nombre de cliente valido");
+            else
+                errorP.SetError(cmbNombreCliente,"");
         }
     }
 }

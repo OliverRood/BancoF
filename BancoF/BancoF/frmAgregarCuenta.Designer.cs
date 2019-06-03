@@ -305,6 +305,8 @@
             this.cmbNombreCliente.Name = "cmbNombreCliente";
             this.cmbNombreCliente.Size = new System.Drawing.Size(239, 25);
             this.cmbNombreCliente.TabIndex = 31;
+            this.cmbNombreCliente.SelectedIndexChanged += new System.EventHandler(this.cmbNombreCliente_SelectedIndexChanged);
+            this.cmbNombreCliente.ValueMemberChanged += new System.EventHandler(this.ValidaNomCliente);
             // 
             // frmAgregarCuenta
             // 
