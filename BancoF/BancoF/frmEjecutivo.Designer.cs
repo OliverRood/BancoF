@@ -58,7 +58,7 @@
             this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.lblNombre.Location = new System.Drawing.Point(468, 227);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(350, 81);
+            this.lblNombre.Size = new System.Drawing.Size(355, 95);
             this.lblNombre.TabIndex = 15;
             this.lblNombre.Text = "Bienvenido";
             this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
@@ -71,7 +71,7 @@
             this.lblHola.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.lblHola.Location = new System.Drawing.Point(471, 165);
             this.lblHola.Name = "lblHola";
-            this.lblHola.Size = new System.Drawing.Size(123, 62);
+            this.lblHola.Size = new System.Drawing.Size(128, 75);
             this.lblHola.TabIndex = 14;
             this.lblHola.Text = "Hola";
             this.lblHola.Click += new System.EventHandler(this.lblHola_Click);
@@ -108,7 +108,7 @@
             this.lblTecBank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(48)))), ((int)(((byte)(36)))));
             this.lblTecBank.Location = new System.Drawing.Point(178, 306);
             this.lblTecBank.Name = "lblTecBank";
-            this.lblTecBank.Size = new System.Drawing.Size(244, 72);
+            this.lblTecBank.Size = new System.Drawing.Size(251, 85);
             this.lblTecBank.TabIndex = 11;
             this.lblTecBank.Text = "TecBank";
             this.lblTecBank.Click += new System.EventHandler(this.lblTecBank_Click);
@@ -124,7 +124,7 @@
             this.msEjecutivo.Location = new System.Drawing.Point(0, 0);
             this.msEjecutivo.Name = "msEjecutivo";
             this.msEjecutivo.Padding = new System.Windows.Forms.Padding(7, 5, 0, 2);
-            this.msEjecutivo.Size = new System.Drawing.Size(1000, 30);
+            this.msEjecutivo.Size = new System.Drawing.Size(1000, 33);
             this.msEjecutivo.TabIndex = 16;
             this.msEjecutivo.Text = "menuStrip1";
             // 
@@ -138,7 +138,7 @@
             this.tsBank.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold);
             this.tsBank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.tsBank.Name = "tsBank";
-            this.tsBank.Size = new System.Drawing.Size(77, 23);
+            this.tsBank.Size = new System.Drawing.Size(78, 26);
             this.tsBank.Text = "TecBank";
             // 
             // acercaDeToolStripMenuItem
@@ -146,20 +146,20 @@
             this.acercaDeToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
             this.acercaDeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(155, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(157, 6);
             // 
             // cerrarCesionToolStripMenuItem
             // 
             this.cerrarCesionToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
             this.cerrarCesionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.cerrarCesionToolStripMenuItem.Name = "cerrarCesionToolStripMenuItem";
-            this.cerrarCesionToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
+            this.cerrarCesionToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.cerrarCesionToolStripMenuItem.Text = "Cerrar sesion";
             // 
             // salirToolStripMenuItem
@@ -167,7 +167,7 @@
             this.salirToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
             this.salirToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // tsCuenta
@@ -178,7 +178,7 @@
             this.tsCuenta.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold);
             this.tsCuenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.tsCuenta.Name = "tsCuenta";
-            this.tsCuenta.Size = new System.Drawing.Size(73, 23);
+            this.tsCuenta.Size = new System.Drawing.Size(74, 26);
             this.tsCuenta.Text = "Cuentas";
             // 
             // tsAgregarCuenta
@@ -186,14 +186,14 @@
             this.tsAgregarCuenta.Font = new System.Drawing.Font("Ebrima", 10F);
             this.tsAgregarCuenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.tsAgregarCuenta.Name = "tsAgregarCuenta";
-            this.tsAgregarCuenta.Size = new System.Drawing.Size(182, 24);
+            this.tsAgregarCuenta.Size = new System.Drawing.Size(184, 26);
             this.tsAgregarCuenta.Text = "Aperturar cuenta";
             // 
             // cerrarCuentaToolStripMenuItem
             // 
             this.cerrarCuentaToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
             this.cerrarCuentaToolStripMenuItem.Name = "cerrarCuentaToolStripMenuItem";
-            this.cerrarCuentaToolStripMenuItem.Size = new System.Drawing.Size(182, 24);
+            this.cerrarCuentaToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.cerrarCuentaToolStripMenuItem.Text = "Cerrar cuenta";
             // 
             // tsBanco
@@ -203,7 +203,7 @@
             this.tsBanco.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold);
             this.tsBanco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.tsBanco.Name = "tsBanco";
-            this.tsBanco.Size = new System.Drawing.Size(62, 23);
+            this.tsBanco.Size = new System.Drawing.Size(63, 26);
             this.tsBanco.Text = "Banco";
             // 
             // reporteToolStripMenuItem
@@ -213,21 +213,21 @@
             this.movimientosToolStripMenuItem});
             this.reporteToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
             this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
-            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(126, 24);
+            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.reporteToolStripMenuItem.Text = "Reporte";
             // 
             // cuentasToolStripMenuItem
             // 
             this.cuentasToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
             this.cuentasToolStripMenuItem.Name = "cuentasToolStripMenuItem";
-            this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
+            this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.cuentasToolStripMenuItem.Text = "Cuentas";
             // 
             // movimientosToolStripMenuItem
             // 
             this.movimientosToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 10F);
             this.movimientosToolStripMenuItem.Name = "movimientosToolStripMenuItem";
-            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
+            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.movimientosToolStripMenuItem.Text = "Movimientos";
             // 
             // frmEjecutivo

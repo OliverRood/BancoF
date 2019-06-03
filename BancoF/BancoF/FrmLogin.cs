@@ -35,7 +35,7 @@ namespace BancoF
             if(!Rutinas.ValidaBlancos(nombre))
                 if (manejaCli.KeyCliente(nombre) != -1)
                 {
-                    frnVentanaPrincipal frnVentanaPrincipal = new frnVentanaPrincipal(true, nombre, manejaCli, manejaCuentas, manejaCatalogo, manejaMovi);
+                    frnVentanaPrincipal frnVentanaPrincipal = new frnVentanaPrincipal('U', nombre, manejaCli, manejaCuentas, manejaCatalogo, manejaMovi);
                     txtNombre.Clear();
                     frnVentanaPrincipal.ShowDialog();
                 }
@@ -51,7 +51,7 @@ namespace BancoF
 
         private void btnAdministrador_Click(object sender, EventArgs e)
         {
-            frnVentanaPrincipal frnVentanaPrincipal = new frnVentanaPrincipal(false, "Administrador", manejaCli, manejaCuentas, manejaCatalogo, manejaMovi);
+            frnVentanaPrincipal frnVentanaPrincipal = new frnVentanaPrincipal('A', "Administrador", manejaCli, manejaCuentas, manejaCatalogo, manejaMovi);
             txtNombre.Clear();
 
             frnVentanaPrincipal.ShowDialog();
@@ -82,16 +82,16 @@ namespace BancoF
 
         private void btnInvitado_Click(object sender, EventArgs e)
         {
-            frnVentanaPrincipal frnVentanaPrincipal = new frnVentanaPrincipal(true, null, manejaCli, manejaCuentas, manejaCatalogo, manejaMovi);
+            frnVentanaPrincipal frnVentanaPrincipal = new frnVentanaPrincipal('U', null, manejaCli, manejaCuentas, manejaCatalogo, manejaMovi);
             txtNombre.Clear();
             frnVentanaPrincipal.ShowDialog();
         }
 
         private void btnEjecutivo_Click(object sender, EventArgs e)
         {
-
-            frmEjecutivo frmEjecutivo = new frmEjecutivo();
-            frmEjecutivo.ShowDialog();
+            frnVentanaPrincipal frnVentanaPrincipal = new frnVentanaPrincipal('E', null, manejaCli, manejaCuentas, manejaCatalogo, manejaMovi);
+            txtNombre.Clear();
+            frnVentanaPrincipal.ShowDialog();
         }
     }
 }

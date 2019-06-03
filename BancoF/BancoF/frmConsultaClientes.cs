@@ -35,6 +35,10 @@ namespace BancoF
         {
             if (flagCliente)
             {
+                dgvCuentasCliente.Columns.RemoveAt(3);
+                dgvCuentasCliente.Size = new Size(475, 381);
+                dgvCuentasCliente.Location = new Point(415, 135);
+
                 lblClienteConsulta.Text = "Nombre del cliente:";
                 cmbNombreCliente.Visible = false;
                 txtNombreCliente.Visible = true;
@@ -77,10 +81,8 @@ namespace BancoF
             foreach (Cuenta item in temp)
             {
                 string saldo = String.Format("{0:c}",item.pSaldo);
-                dgvCuentasCliente.Rows.Add(item.Clave, item.pNombre, saldo);
-                
+                dgvCuentasCliente.Rows.Add(item.Clave, item.pNombre, saldo,Editar.Text="Eliminar");
             }
-
         }
 
         private void cmbNombreCliente_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,7 +116,8 @@ namespace BancoF
 
         private void dgvCuentasCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+           // if(e.RowIndex!=1 && e.ColumnIndex==3)
+           
         }
     }
 }

@@ -18,11 +18,10 @@ namespace BancoF
         private ManejaCatalogoCuenta manejaCatalogo;
         private int claveCliente;
 
-        public frmAgregarCuenta(int claveCli,ManejaCuentas mCuentas, ManejaCatalogoCuenta mCatalogo)
+        public frmAgregarCuenta(ManejaCuentas mCuentas, ManejaCatalogoCuenta mCatalogo)
         {
             this.manejaCuentas = mCuentas;
             this.manejaCatalogo = mCatalogo;
-            this.claveCliente = claveCli;
             InitializeComponent();
             
         }
@@ -30,6 +29,7 @@ namespace BancoF
         private void frmAgregarCuenta_Load(object sender, EventArgs e)
         {
             cmbTipoCuenta.SelectedIndex = 0;
+            cmbNombreCliente.SelectedIndex = 0;
             agregarTiposCuentas();
             tlpCuentas.SetToolTip(txtNumCuenta,
                 "El número de cuenta es un número entero de 7 digitos que utilizamos para identificar su cuenta de forma unica y confidencial.");
@@ -108,6 +108,13 @@ namespace BancoF
             {
                 MessageBox.Show("El monto de apertura es menor al monto minimo requerido para el tipo de cuenta seleccionado.", "Aviso",
                     MessageBoxButtons.OK,MessageBoxIcon.Error);
+                flag = false;
+            }
+
+            if(cmbNombreCliente.SelectedIndex==0)
+            {
+                MessageBox.Show("Nombre del cliente no seleccionado.", "Aviso",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
                 flag = false;
             }
 

@@ -51,6 +51,8 @@
             this.txtMontoMin = new System.Windows.Forms.TextBox();
             this.panelDiv = new System.Windows.Forms.Panel();
             this.tlpCuentas = new System.Windows.Forms.ToolTip(this.components);
+            this.lblNombreCliente = new System.Windows.Forms.Label();
+            this.cmbNombreCliente = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorP)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +73,7 @@
             // 
             this.lblTipodeCuenta.AutoSize = true;
             this.lblTipodeCuenta.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipodeCuenta.Location = new System.Drawing.Point(540, 222);
+            this.lblTipodeCuenta.Location = new System.Drawing.Point(588, 294);
             this.lblTipodeCuenta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTipodeCuenta.Name = "lblTipodeCuenta";
             this.lblTipodeCuenta.Size = new System.Drawing.Size(107, 17);
@@ -85,7 +87,7 @@
             this.cmbTipoCuenta.FormattingEnabled = true;
             this.cmbTipoCuenta.Items.AddRange(new object[] {
             "SELECCIONE EL TIPO DE CUENTA"});
-            this.cmbTipoCuenta.Location = new System.Drawing.Point(543, 252);
+            this.cmbTipoCuenta.Location = new System.Drawing.Point(591, 324);
             this.cmbTipoCuenta.Name = "cmbTipoCuenta";
             this.cmbTipoCuenta.Size = new System.Drawing.Size(262, 24);
             this.cmbTipoCuenta.TabIndex = 2;
@@ -96,7 +98,7 @@
             // 
             this.lblMontoAper.AutoSize = true;
             this.lblMontoAper.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMontoAper.Location = new System.Drawing.Point(540, 303);
+            this.lblMontoAper.Location = new System.Drawing.Point(588, 375);
             this.lblMontoAper.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMontoAper.Name = "lblMontoAper";
             this.lblMontoAper.Size = new System.Drawing.Size(125, 17);
@@ -107,7 +109,7 @@
             // 
             this.lblNumeroCuenta.AutoSize = true;
             this.lblNumeroCuenta.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroCuenta.Location = new System.Drawing.Point(540, 150);
+            this.lblNumeroCuenta.Location = new System.Drawing.Point(588, 222);
             this.lblNumeroCuenta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumeroCuenta.Name = "lblNumeroCuenta";
             this.lblNumeroCuenta.Size = new System.Drawing.Size(128, 17);
@@ -119,7 +121,7 @@
             this.txtNumCuenta.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtNumCuenta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNumCuenta.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumCuenta.Location = new System.Drawing.Point(543, 180);
+            this.txtNumCuenta.Location = new System.Drawing.Point(591, 252);
             this.txtNumCuenta.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumCuenta.MaxLength = 7;
             this.txtNumCuenta.Name = "txtNumCuenta";
@@ -135,7 +137,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(250)))));
-            this.button1.Location = new System.Drawing.Point(610, 434);
+            this.button1.Location = new System.Drawing.Point(619, 479);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(166, 47);
@@ -197,7 +199,7 @@
             this.txtMontoApertura.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtMontoApertura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtMontoApertura.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMontoApertura.Location = new System.Drawing.Point(543, 335);
+            this.txtMontoApertura.Location = new System.Drawing.Point(591, 407);
             this.txtMontoApertura.Margin = new System.Windows.Forms.Padding(4);
             this.txtMontoApertura.Name = "txtMontoApertura";
             this.txtMontoApertura.Size = new System.Drawing.Size(262, 25);
@@ -281,11 +283,36 @@
             // 
             this.tlpCuentas.ToolTipTitle = "Información de la cuenta";
             // 
+            // lblNombreCliente
+            // 
+            this.lblNombreCliente.AutoSize = true;
+            this.lblNombreCliente.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreCliente.Location = new System.Drawing.Point(588, 146);
+            this.lblNombreCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombreCliente.Name = "lblNombreCliente";
+            this.lblNombreCliente.Size = new System.Drawing.Size(142, 18);
+            this.lblNombreCliente.TabIndex = 30;
+            this.lblNombreCliente.Text = "Nombre del cliente";
+            // 
+            // cmbNombreCliente
+            // 
+            this.cmbNombreCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNombreCliente.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNombreCliente.FormattingEnabled = true;
+            this.cmbNombreCliente.Items.AddRange(new object[] {
+            "SELECCIONE AL CLIENTE"});
+            this.cmbNombreCliente.Location = new System.Drawing.Point(591, 184);
+            this.cmbNombreCliente.Name = "cmbNombreCliente";
+            this.cmbNombreCliente.Size = new System.Drawing.Size(239, 25);
+            this.cmbNombreCliente.TabIndex = 31;
+            // 
             // frmAgregarCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.cmbNombreCliente);
+            this.Controls.Add(this.lblNombreCliente);
             this.Controls.Add(this.panelDiv);
             this.Controls.Add(this.txtMontoMin);
             this.Controls.Add(this.lblMontoMin);
@@ -340,5 +367,7 @@
         private System.Windows.Forms.TextBox txtMontoMin;
         private System.Windows.Forms.Panel panelDiv;
         private System.Windows.Forms.ToolTip tlpCuentas;
+        private System.Windows.Forms.Label lblNombreCliente;
+        private System.Windows.Forms.ComboBox cmbNombreCliente;
     }
 }
