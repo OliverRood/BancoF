@@ -229,3 +229,4 @@ on cl.Clave_Cuenta=c.Clave where cl.ID_Cliente= '1000'
 update Cliente set Telefono='Worales' where id=1
 
 delete Cuenta where Clave=3434
+
