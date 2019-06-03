@@ -13,21 +13,21 @@ namespace BancoF
     public partial class frnVentanaPrincipal : Form
     {
 
-        private bool flagUsuario = true;
+        private char tipoUsuario =' ';
         private string nombre;
         private ManejaCliente manejaCli;
         private ManejaCuentas manejaCuentas;
         private ManejaCatalogoCuenta manejaCatalogo;
         private ManejaMovimiento manejaMovi;
 
-        public frnVentanaPrincipal(bool FlagUsuario, string Nombre, ManejaCliente mCli, ManejaCuentas mCue, ManejaCatalogoCuenta mCat, ManejaMovimiento mMov)
+        public frnVentanaPrincipal(char tipoU, string Nombre, ManejaCliente mCli, ManejaCuentas mCue, ManejaCatalogoCuenta mCat, ManejaMovimiento mMov)
         {
             this.manejaCli = mCli;
             this.manejaCuentas = mCue;
             this.manejaCatalogo = mCat;
             this.manejaMovi = mMov;
             InitializeComponent();
-            this.flagUsuario = FlagUsuario;
+            this.tipoUsuario = tipoU;
             this.nombre = Nombre;
             menuStrip1.Renderer = new MyRenderer();
         }
@@ -57,27 +57,41 @@ namespace BancoF
         {
             DateTime fecha = DateTime.Now;
             lblFecha.Text = Convert.ToString(fecha);
-            lblNombre.Text = "¡" + (nombre!=null ? nombre:"Bienvenido") + " !";
-            if (flagUsuario)
+            lblNombre.Text = "¡" + (nombre != null ? nombre : "Bienvenido") + " !";
+            switch (tipoUsuario)
             {
-                tsMovimiento.Visible = true;
-                tsCuenta.Visible = true;
-                tsCliente.Visible = false;
-                tsBanco.Visible = false;
-                if (string.IsNullOrEmpty(nombre))
-                {
-                    tsCuenta.Enabled = false;
-                    consultarToolStripMenuItem.Enabled = false;
-                }
+
+                case ('U'):
+                    tsMovimiento.Visible = true;
+                    tsCuenta.Visible = true;
+                    tsAgregarCuenta.Visible = false;
+                    tsCerrarCuenta.Visible = false;
+                    tsCliente.Visible = false;
+                    tsBanco.Visible = false;
+                    if (string.IsNullOrEmpty(nombre))
+                    {
+                        tsCuenta.Enabled = false;
+                        consultarToolStripMenuItem.Enabled = false;
+                    }
+                    break;
+
+                case ('A'):
+                    tsMovimiento.Visible = false;
+                    tsCuenta.Visible = false;
+                    tsCliente.Visible = true;
+                    tsBanco.Visible = true;
+                    break;
+                case ('E'):
+                    tsCrearTipoCuenta.Visible = false;
+                    tsMovimientosBanco.Visible = false;
+                    tsMovimiento.Visible = false;
+                    tsCliente.Visible =false;
+                    tsConsultarCuenta.Visible = false;
+                    break;
+
             }
-            else
-            {
-                tsMovimiento.Visible = false;
-                tsCuenta.Visible = false;
-                tsCliente.Visible = true;
-                tsBanco.Visible = true;
-            }
-        }
+        
+    }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -125,20 +139,19 @@ namespace BancoF
 
         private void tsAgregarCuenta_Click(object sender, EventArgs e)
         {
-            int claveCliente = manejaCli.KeyCliente(nombre);
-            frmAgregarCuenta añadirCuenta = new frmAgregarCuenta(claveCliente, manejaCuentas, manejaCatalogo);
+            frmAgregarCuenta añadirCuenta = new frmAgregarCuenta(manejaCuentas, manejaCatalogo,manejaCli);
             añadirCuenta.ShowDialog();
         }
 
         private void tsConsultaClientes_Click(object sender, EventArgs e)
         {
-            FrmConsultaClientes consultaCli = new FrmConsultaClientes(false, "", manejaCli, manejaCuentas);
+            FrmConsultaClientes consultaCli = new FrmConsultaClientes('A', "", manejaCli, manejaCuentas);
             consultaCli.ShowDialog();
         }
 
         private void consultarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            FrmConsultaClientes consultaCli = new FrmConsultaClientes(true,nombre, manejaCli, manejaCuentas);
+            FrmConsultaClientes consultaCli = new FrmConsultaClientes('U',nombre, manejaCli, manejaCuentas);
             consultaCli.ShowDialog();
         }
 
@@ -164,6 +177,12 @@ namespace BancoF
         {
             FrmAcercaDe frmAcercaDe = new FrmAcercaDe();
             frmAcercaDe.ShowDialog();
+        }
+
+        private void tsCerrarCuenta_Click(object sender, EventArgs e)
+        {
+            FrmConsultaClientes consultaCli = new FrmConsultaClientes('E', "", manejaCli, manejaCuentas);
+            consultaCli.ShowDialog();
         }
     }
 }

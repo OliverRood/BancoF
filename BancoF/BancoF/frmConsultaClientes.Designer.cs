@@ -189,7 +189,7 @@
             this.txtTipoCuenta,
             this.txtSaldoActual,
             this.Editar});
-            this.dgvCuentasCliente.Location = new System.Drawing.Point(375, 140);
+            this.dgvCuentasCliente.Location = new System.Drawing.Point(382, 135);
             this.dgvCuentasCliente.Name = "dgvCuentasCliente";
             this.dgvCuentasCliente.ReadOnly = true;
             this.dgvCuentasCliente.Size = new System.Drawing.Size(574, 381);
