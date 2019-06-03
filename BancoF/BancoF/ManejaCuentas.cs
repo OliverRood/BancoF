@@ -80,15 +80,31 @@ namespace BancoF
             return temp;
         }
 
-        //Not yet :D
-        /*public bool EliminarCuenta(int claveC)
+   
+        public string EliminarCuenta(int claveC)
         {
-          
-        }*/
+            string cadenaConexion = Rutinas.ObtenerStringConexion();
+            SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);
+            string eliminacion = "Delete Cuenta where Clave=@claveC";
+            SqlCommand cmd = new SqlCommand(eliminacion, conexion);
+
+            cmd.Parameters.Add("@claveC",claveC);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                conexion.Close();
+                return ex.Message;
+            }
+            conexion.Close();
+            return "Cuenta eliminada exitosamente";
+        }
 
         public int Size()
         {
-
             int count = 0;
             string cadenaConexion = Rutinas.ObtenerStringConexion();
             SqlConnection conexion = Rutinas.ConectaBD(cadenaConexion);

@@ -190,5 +190,11 @@ namespace BancoF
             frmReportMovimientos frmReportMovimientos = new frmReportMovimientos();
             frmReportMovimientos.ShowDialog();
         }
+
+        private void editarDatosDeClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEditarCliente editarCliente = new FrmEditarCliente(manejaCli);
+            editarCliente.ShowDialog();
+        }
     }
 }

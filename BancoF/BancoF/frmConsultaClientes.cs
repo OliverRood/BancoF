@@ -136,8 +136,23 @@ namespace BancoF
 
         private void dgvCuentasCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           // if(e.RowIndex!=1 && e.ColumnIndex==3)
-           
+            if (e.RowIndex!=-1 && e.ColumnIndex==3)
+            {
+                DataGridViewRow temp = dgvCuentasCliente.Rows[e.RowIndex];
+                int claveCuenta= Convert.ToInt32(temp.Cells["idCuenta"].Value);
+                if (claveCuenta != 0)
+                {
+                    if (manejaCuentas.ValidaMovimientos(claveCuenta))
+                        MessageBox.Show("Solo puede eliminar cuentas con las que no se haya realizado ningún movimiento" +
+                            "hasta el momento.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    else
+                    {
+                        string men = manejaCuentas.EliminarCuenta(claveCuenta);
+                        MessageBox.Show(men,"Aviso.",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        AgregarCuentas();
+                    }
+                }
+            }
         }
     }
 }

@@ -84,6 +84,7 @@ namespace BancoF
                 conexion.Close();
                 return ex.Message;
             }
+            conexion.Close();
             return "Dirección del cliente actualizada exitosamente";
         }
 
@@ -106,6 +107,7 @@ namespace BancoF
                 conexion.Close();
                 return ex.Message;
             }
+            conexion.Close();
             return "Teléfono del cliente actualizada exitosamente";
         }
 

@@ -45,15 +45,15 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.cmbNombreCliente = new System.Windows.Forms.ComboBox();
             this.dgvCuentasCliente = new System.Windows.Forms.DataGridView();
-            this.txtClaveCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtTipoCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSaldoActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lblCuentasCliente = new System.Windows.Forms.Label();
             this.lblDatosCli = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.panelDiv = new System.Windows.Forms.Panel();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
+            this.IdCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTipoCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSaldoActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuentasCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,7 +185,7 @@
             // 
             this.dgvCuentasCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCuentasCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.txtClaveCuenta,
+            this.IdCuenta,
             this.txtTipoCuenta,
             this.txtSaldoActual,
             this.Editar});
@@ -195,42 +195,6 @@
             this.dgvCuentasCliente.Size = new System.Drawing.Size(574, 381);
             this.dgvCuentasCliente.TabIndex = 15;
             this.dgvCuentasCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCuentasCliente_CellContentClick);
-            // 
-            // txtClaveCuenta
-            // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClaveCuenta.DefaultCellStyle = dataGridViewCellStyle1;
-            this.txtClaveCuenta.HeaderText = "Clave";
-            this.txtClaveCuenta.Name = "txtClaveCuenta";
-            this.txtClaveCuenta.ReadOnly = true;
-            this.txtClaveCuenta.Width = 130;
-            // 
-            // txtTipoCuenta
-            // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipoCuenta.DefaultCellStyle = dataGridViewCellStyle2;
-            this.txtTipoCuenta.HeaderText = "Tipo de cuenta";
-            this.txtTipoCuenta.Name = "txtTipoCuenta";
-            this.txtTipoCuenta.ReadOnly = true;
-            this.txtTipoCuenta.Width = 160;
-            // 
-            // txtSaldoActual
-            // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSaldoActual.DefaultCellStyle = dataGridViewCellStyle3;
-            this.txtSaldoActual.HeaderText = "Saldo Actual ";
-            this.txtSaldoActual.Name = "txtSaldoActual";
-            this.txtSaldoActual.ReadOnly = true;
-            this.txtSaldoActual.Width = 140;
-            // 
-            // Editar
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Editar.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Editar.HeaderText = "Edición";
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
             // 
             // lblCuentasCliente
             // 
@@ -287,6 +251,42 @@
             this.txtNombreCliente.TabIndex = 32;
             this.txtNombreCliente.Visible = false;
             // 
+            // IdCuenta
+            // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IdCuenta.DefaultCellStyle = dataGridViewCellStyle1;
+            this.IdCuenta.HeaderText = "Clave";
+            this.IdCuenta.Name = "IdCuenta";
+            this.IdCuenta.ReadOnly = true;
+            this.IdCuenta.Width = 130;
+            // 
+            // txtTipoCuenta
+            // 
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipoCuenta.DefaultCellStyle = dataGridViewCellStyle2;
+            this.txtTipoCuenta.HeaderText = "Tipo de cuenta";
+            this.txtTipoCuenta.Name = "txtTipoCuenta";
+            this.txtTipoCuenta.ReadOnly = true;
+            this.txtTipoCuenta.Width = 160;
+            // 
+            // txtSaldoActual
+            // 
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSaldoActual.DefaultCellStyle = dataGridViewCellStyle3;
+            this.txtSaldoActual.HeaderText = "Saldo Actual ";
+            this.txtSaldoActual.Name = "txtSaldoActual";
+            this.txtSaldoActual.ReadOnly = true;
+            this.txtSaldoActual.Width = 140;
+            // 
+            // Editar
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Editar.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Editar.HeaderText = "Edición";
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            // 
             // FrmConsultaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,7 +340,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Panel panelDiv;
         private System.Windows.Forms.TextBox txtNombreCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtClaveCuenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCuenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtTipoCuenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtSaldoActual;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
