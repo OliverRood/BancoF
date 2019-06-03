@@ -198,8 +198,8 @@
       <DependentUpon>FrmMovimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportCuentas.rdlc" />
-    <EmbeddedResource Include="ReportMovimientos.rdlc" />
     <EmbeddedResource Include="ReportTiposCuenta.rdlc" />
+    <EmbeddedResource Include="rMovimientos.rdlc" />
     <EmbeddedResource Include="VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </EmbeddedResource>

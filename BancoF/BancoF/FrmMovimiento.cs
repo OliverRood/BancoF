@@ -323,27 +323,22 @@ namespace BancoF
             DialogResult guardar = MessageBox.Show("Desea realizar movimiento?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (guardar == DialogResult.Yes)
             {
-                if (rdDeposito.Checked)
+                double monto = Convert.ToDouble(txtMonto.Text);
+                char tipo = ((rdRetiro.Checked) ? 'R' : 'D');
+                DateTime fecha = DateTime.Now;
+                DateTime hora = DateTime.Now;
+                int claveCuenta = Convert.ToInt32(txtClave.Text);
+                string nombre = txtNombre.Text;
+                string res = null;
+                if (rdRetiro.Checked)
                 {
-                    if (ValidaDeposito())
-                    {
-                        string fecha = lblDateTimeNow.Text;
-                        int claveCuenta = Convert.ToInt32(txtClave.Text);
-                        double monto = Convert.ToDouble(txtMonto.Text);
-                        string nombre = txtNombre.Text;
-                        // manejaMovimiento.Agrega(monto, Tipo, fecha, Hora, Folio_Movimiento, claveCuenta);
-                    }
+                    if (ValidaRetiro()) res = manejaMovimiento.Agrega(monto, tipo, fecha, hora, claveCuenta, nombre);
                 }
                 else
                 {
-                    if (ValidaRetiro())
-                    {
-                        string fecha = lblDateTimeNow.Text;
-                        int claveCuenta = Convert.ToInt32(txtClave.Text);
-                        double monto = Convert.ToDouble(txtMonto.Text);
-                        string nombre = txtNombre.Text;
-                    }
+                    if(ValidaDeposito()) res = manejaMovimiento.Agrega(monto, tipo, fecha, hora, claveCuenta, nombre);
                 }
+                if (res != null) MessageBox.Show(res, "Movimiento");
             }
         }
 
