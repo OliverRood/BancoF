@@ -213,8 +213,8 @@ select count(ID)from Cliente
 
 select c.Clave from Cuenta c inner join Cuenta_Cliente cl on cl.Clave_Cuenta = c.Clave where cl.ID_Cliente = '1000'
 
-select c.Saldo, t.Nombre, cl.ID_Cliente from Cuenta c inner join Tipo_Cuenta t on t.ID = c.ID_TipoCuenta
-inner join Cuenta_Cliente cl on cl.Clave_Cuenta = c.Clave where c.Clave ='3232322'
+select c.Clave, format(c.Saldo,'$####.00'), t.Nombre,cli.Nombre, cl.ID_Cliente from Cuenta c inner join Tipo_Cuenta t on t.ID = c.ID_TipoCuenta
+inner join Cuenta_Cliente cl on cl.Clave_Cuenta = c.Clave inner join Cliente cli on cli.ID=cl.ID_Cliente
 
 select*from Cuenta
 
@@ -228,3 +228,4 @@ on cl.Clave_Cuenta=c.Clave where cl.ID_Cliente= '1000'
 
 update Cliente set Telefono='Worales' where id=1
 
+delete Cuenta where Clave=3434

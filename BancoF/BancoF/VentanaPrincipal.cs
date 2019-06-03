@@ -80,6 +80,7 @@ namespace BancoF
                     tsCuenta.Visible = false;
                     tsCliente.Visible = true;
                     tsBanco.Visible = true;
+                    tsReportes.Visible = false;
                     break;
                 case ('E'):
                     tsCrearTipoCuenta.Visible = false;
@@ -195,6 +196,12 @@ namespace BancoF
         {
             FrmEditarCliente editarCliente = new FrmEditarCliente(manejaCli);
             editarCliente.ShowDialog();
+        }
+
+        private void tsReportesCuentas_Click(object sender, EventArgs e)
+        {
+            FrmReportCuentasClientes reporteCuentas = new FrmReportCuentasClientes();
+            reporteCuentas.ShowDialog();
         }
     }
 }

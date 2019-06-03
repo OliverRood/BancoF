@@ -73,6 +73,11 @@
   <ItemGroup>
     <Compile Include="Cliente.cs" />
     <Compile Include="Cuenta.cs" />
+    <Compile Include="DataSetCuentasClientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCuentasClientes.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetMovimientos.cs">
       <DependentUpon>DataSetMovimientos.xsd</DependentUpon>
     </Compile>
@@ -133,6 +138,12 @@
     </Compile>
     <Compile Include="FrmCuentasBanco.Designer.cs">
       <DependentUpon>FrmCuentasBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportCuentasClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportCuentasClientes.Designer.cs">
+      <DependentUpon>FrmReportCuentasClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmEditarCliente.cs">
       <SubType>Form</SubType>
@@ -197,6 +208,9 @@
     <EmbeddedResource Include="FrmCuentasBanco.resx">
       <DependentUpon>FrmCuentasBanco.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportCuentasClientes.resx">
+      <DependentUpon>FrmReportCuentasClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmEditarCliente.resx">
       <DependentUpon>FrmEditarCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,6 +239,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="DataSetCuentasClientes.xsc">
+      <DependentUpon>DataSetCuentasClientes.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCuentasClientes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCuentasClientes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetCuentasClientes.xss">
+      <DependentUpon>DataSetCuentasClientes.xsd</DependentUpon>
+    </None>
     <None Include="DataSetMovimientos.xsc">
       <DependentUpon>DataSetMovimientos.xsd</DependentUpon>
     </None>
